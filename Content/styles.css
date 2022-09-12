@@ -29,3 +29,15 @@
 .nav-line {
     border: 1px solid #093e4e;
 }
+/* Section ABOUT */
+.about {
+    padding-top: 10rem;
+    text-align: center;
+    color: #093e4e;
+}
+.card {
+    box-shadow: 0 0.4rem 1.4rem  #0eaedf;
+}
+.about p {
+    font-size: 1.5rem;
+}
