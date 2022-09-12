@@ -1,0 +1,31 @@
+/* Navigation Bar */
+.navbar {
+    background-color: #0eaedf;
+    
+}
+.navbar-brand {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #093e4e;
+}
+.navbar-toggler {
+    color: #093e4e;
+}
+.nav-link {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #093e4e;
+
+}
+.nav-item:hover {
+    cursor: pointer;
+    transform: translateY(-0.5rem);
+    transition: transform 200ms;
+  }
+.offcanvas {
+    background-color: #0eaedf;
+    color: #093e4e;
+}
+.nav-line {
+    border: 1px solid #093e4e;
+}
