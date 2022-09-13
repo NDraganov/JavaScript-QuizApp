@@ -60,3 +60,15 @@
 .text {
     font-size: 1.5rem;
 }
+/* Footer Section */
+.footer {
+    padding-top: 10rem;
+    color: #093e4e;
+}
+.footer a {
+    font-size: 1.5rem;
+}
+.fa-brands {
+    padding: 1rem;
+    color: #0eaedf;
+}
