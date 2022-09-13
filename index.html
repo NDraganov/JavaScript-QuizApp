@@ -99,6 +99,81 @@
       </div>
   </div>
 </section>
+<!-- Section Play -->
+<section id="play" class="play">
+  <div class="container">
+      <div class="card">
+          <div class="row">
+              <!-- Home page before showing the game -->
+              <div class="card-body">
+                  <div class="col-lg-12 col-md-6">
+                      <div class="h1 title">Start the Quiz</div>
+                      <p class="text">To start the Quiz, press the "START" button below.</p>
+                      <!-- The Quiz App itself -->
+                      <div id="quiz" class="quiz">
+                          <div class="container game">
+                              <!-- Introduction header -->
+                              <div id="intro">
+                                  <div class="counter">
+                                    <h2 class="prefix" id="counter">Question: 1/10</h2>
+                                    <div id="progressBar">
+                                      <div id="progressBarFull"></div>
+                                    </div>
+                                  </div>
+                                  <div class="score">
+                                    <h2 class="prefix">Score:</h2>
+                                    <h1 id="score">0</h1>
+                                  </div>
+                              </div>
+                              <!-- Question -->
+                              <div class="row question-holder">
+                              <div class="col-12">
+                                  <h1 id="question">What is the answer to this question?</h1>
+                              </div>
+                              </div>
+                              <!-- Answer Container -->
+                              <div class="row">
+                              <div class="col-12">
+                                  <div class="answer-container card">
+                                  <p class="answer-prefix">A</p>
+                                  <p class="answer-text" data-answer="a">Answer A</p>
+                                  </div>
+                              </div>
+                              </div>
+                              <div class="row">
+                              <div class="col-12">
+                                  <div class="answer-container card">
+                                  <p class="answer-prefix">B</p>
+                                  <p class="answer-text" data-answer="b">Answer B</p>
+                                  </div>
+                              </div>
+                              </div>
+                              <div class="row">
+                              <div class="col-12">
+                                  <div class="answer-container card">
+                                  <p class="answer-prefix">C</p>
+                                  <p class="answer-text" data-answer="c">Answer C</p>
+                                  </div>
+                              </div>
+                              </div>
+                              <div class="row">
+                              <div class="col-12">
+                                  <div class="answer-container card">
+                                  <p class="answer-prefix">D</p>
+                                  <p class="answer-text" data-answer="d">Answer D</p>
+                                  </div>
+                              </div>
+                              </div>
+                          </div>
+                          <!-- START Button -->
+                          <button id="btn" class="btn hide3">START</button>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
   <!-- JavaScript link -->
   <script src="Content/quiz.js"></script> 
 </body>
