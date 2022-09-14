@@ -38,3 +38,22 @@ let questions = [
      answer: "c",
    },
    ];
+// Global Constant variables
+const button = document.querySelector('#btn');
+const quiz = document.getElementById('quiz');
+// Hide the quiz first loading the page.
+function hide() {
+    quiz.style.display = "none";
+}
+hide();
+// Show the Quiz when START button is pressed.
+function show() {
+    quiz.style.display = "block";
+    const title = document.querySelector('.hide1');
+    title.style.display = "none";
+    const paragraph = document.querySelector('.hide2');
+    paragraph.style.display = "none"
+    const btn = document.querySelector('.hide3');
+    btn.style.display = "none";
+}
+button.onclick = show;
