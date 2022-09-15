@@ -63,3 +63,10 @@ function show() {
     btn.style.display = "none";
 }
 button.onclick = show;
+// Variables for the Introduction Header.
+let questionCounter;
+let score;
+const SCORE_POINTS = 10;
+const MAX_QUESTIONS = 4;
+
+let acceptingAnswers;
