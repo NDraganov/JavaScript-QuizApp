@@ -70,3 +70,11 @@ const SCORE_POINTS = 10;
 const MAX_QUESTIONS = 4;
 
 let acceptingAnswers;
+// Start the Quiz.
+startQuiz = () => {
+    // Set variables to 0 at the biginning.
+    questionCounter = 0;
+    score = 0;
+    acceptingAnswers = true;
+    scoreText.innerText = score;
+  };
