@@ -77,6 +77,8 @@ startQuiz = () => {
     score = 0;
     acceptingAnswers = true;
     scoreText.innerText = score;
+    // Get random questions and limited the number of questions.
+    availableQuestions = getRandomQuestions(questions, MAX_QUESTIONS);
   };
 // To get random question from Array of questions.
 getRandomQuestions = (arr, n) => {
