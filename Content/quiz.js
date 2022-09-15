@@ -78,3 +78,8 @@ startQuiz = () => {
     acceptingAnswers = true;
     scoreText.innerText = score;
   };
+// To get random question from Array of questions.
+getRandomQuestions = (arr, n) => {
+    const shuffled = [...arr].sort(() => 0.5 - Math.random());
+    return (selected = shuffled.slice(0, n));
+};
