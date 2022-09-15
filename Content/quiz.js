@@ -41,6 +41,12 @@ let questions = [
 // Global Constant variables
 const button = document.querySelector('#btn');
 const quiz = document.getElementById('quiz');
+const question = document.getElementById("question");
+const answers = Array.from(document.getElementsByClassName("answer-text"));
+const questionCounterText = document.getElementById("counter");
+const scoreText = document.getElementById("score");
+const progressBarFull = document.querySelector("#progressBarFull");
+const progressText = document.querySelector("#progressText");
 // Hide the quiz first loading the page.
 function hide() {
     quiz.style.display = "none";
