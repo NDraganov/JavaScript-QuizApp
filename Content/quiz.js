@@ -51,8 +51,9 @@ const progressText = document.querySelector("#progressText");
 function hide() {
     quiz.style.display = "none";
 }
+// Calling the function to hide the Quiz when first time page is loaded.
 hide();
-// Show the Quiz when START button is pressed.
+// Show the Quiz.
 function show() {
     quiz.style.display = "block";
     const title = document.querySelector('.hide1');
@@ -62,6 +63,7 @@ function show() {
     const btn = document.querySelector('.hide3');
     btn.style.display = "none";
 }
+// Calling the function to show the Quiz when Start button is pressed.
 button.onclick = show;
 // Variables for the Introduction Header.
 let questionCounter;
@@ -79,9 +81,24 @@ startQuiz = () => {
     scoreText.innerText = score;
     // Get random questions and limited the number of questions.
     availableQuestions = getRandomQuestions(questions, MAX_QUESTIONS);
+    // To get new question.
+    getNewQuestion();
   };
 // To get random question from Array of questions.
 getRandomQuestions = (arr, n) => {
     const shuffled = [...arr].sort(() => 0.5 - Math.random());
     return (selected = shuffled.slice(0, n));
 };
+// To get a new question.
+getNewQuestion = () => {
+    // Show the progressing text of Question in Introduction Header.
+    questionCounter++;
+    questionCounterText.innerText = `Question: ${questionCounter}/${MAX_QUESTIONS}`;
+    // Show the Progress Bar tracker in colour.
+    progressBarFull.style.width = `${(questionCounter/MAX_QUESTIONS) * 100}%`;
+    // Show the current question.
+    currentQuestion = availableQuestions[0];
+    question.innerText = currentQuestion.question;
+  };
+//   Calling the function to start the Quiz.
+  startQuiz();
