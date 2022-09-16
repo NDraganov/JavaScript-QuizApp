@@ -1,3 +1,4 @@
+// The code in the JavaScript file is taken from - https://www.youtube.com/watch?v=MxrGPP4F8Sc and edit by me.
 // Questions
 let questions = [
 
@@ -47,13 +48,13 @@ const questionCounterText = document.getElementById("counter");
 const scoreText = document.getElementById("score");
 const progressBarFull = document.querySelector("#progressBarFull");
 const progressText = document.querySelector("#progressText");
-// Hide the quiz first loading the page.
+// Hide the quiz first loading the page - code written by me.
 function hide() {
     quiz.style.display = "none";
 }
 // Calling the function to hide the Quiz when first time page is loaded.
 hide();
-// Show the Quiz.
+// Show the Quiz - code wrriten by me.
 function show() {
     quiz.style.display = "block";
     const title = document.querySelector('.hide1');
@@ -99,6 +100,11 @@ getNewQuestion = () => {
     // Show the current question.
     currentQuestion = availableQuestions[0];
     question.innerText = currentQuestion.question;
+    // For each option answer.
+    answers.forEach((answer) => {
+        // Show each option for current question.
+        answer.innerText = currentQuestion[answer.dataset.answer];
+      });
   };
 //   Calling the function to start the Quiz.
   startQuiz();
