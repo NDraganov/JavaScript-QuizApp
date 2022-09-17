@@ -1,7 +1,6 @@
-// The code in the JavaScript file is taken from - https://www.youtube.com/watch?v=MxrGPP4F8Sc and edit by me.
+// The code in the JavaScript file is taken from - https://www.youtube.com/watch?v=MxrGPP4F8Sc and edited by me.
 // Questions
 let questions = [
-
     {
      id:1,
      question: "Which country has the longest coastline in the world?",
@@ -104,6 +103,12 @@ getNewQuestion = () => {
     answers.forEach((answer) => {
         // Show each option for current question.
         answer.innerText = currentQuestion[answer.dataset.answer];
+        // Added Event Listener to each option answer.
+        answer.addEventListener("click", (e) => {
+            // Targeting the data according to the pressed option.
+            const clickedAnswer = e.target;
+            const answeredLetter = clickedAnswer.dataset.answer;
+          });
       });
   };
 //   Calling the function to start the Quiz.
