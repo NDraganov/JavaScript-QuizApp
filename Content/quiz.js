@@ -108,6 +108,10 @@ getNewQuestion = () => {
             // Targeting the data according to the pressed option.
             const clickedAnswer = e.target;
             const answeredLetter = clickedAnswer.dataset.answer;
+            // Check If pressed option is correct answer.
+            if (answeredLetter === currentQuestion.answer) {
+                scoreText.innerText = score;
+            }
           });
       });
   };
