@@ -108,10 +108,15 @@ getNewQuestion = () => {
             // Targeting the data according to the pressed option.
             const clickedAnswer = e.target;
             const answeredLetter = clickedAnswer.dataset.answer;
+            // Set pressed option to False and apply red coloured class.
+            acceptingAnswers = false;
+            let classToApply = "incorrect";
             // Check If pressed option is correct answer.
             if (answeredLetter === currentQuestion.answer) {
                 scoreText.innerText = score;
             }
+            // Add class to pressed option.
+            clickedAnswer.classList.add(classToApply);
           });
       });
   };
