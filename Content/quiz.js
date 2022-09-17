@@ -103,7 +103,7 @@ getNewQuestion = () => {
     answers.forEach((answer) => {
         // Show each option for current question.
         answer.innerText = currentQuestion[answer.dataset.answer];
-        // Added Event Listener to each option answer.
+        // Event Listener to each option answer.
         answer.addEventListener("click", (e) => {
             // Targeting the data according to the pressed option.
             const clickedAnswer = e.target;
@@ -113,12 +113,19 @@ getNewQuestion = () => {
             let classToApply = "incorrect";
             // Check If pressed option is correct answer.
             if (answeredLetter === currentQuestion.answer) {
+                incrementScore(SCORE_POINTS);
                 scoreText.innerText = score;
+                classToApply = "correct";
             }
             // Add class to pressed option.
             clickedAnswer.classList.add(classToApply);
           });
       });
-  };
+};
+// Function to increment the scores.
+function incrementScore(num) {
+score +=num;
+scoreText.innerText = score;
+}
 //   Calling the function to start the Quiz.
   startQuiz();
