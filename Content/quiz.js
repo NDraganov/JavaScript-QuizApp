@@ -47,6 +47,10 @@ const questionCounterText = document.getElementById("counter");
 const scoreText = document.getElementById("score");
 const progressBarFull = document.querySelector("#progressBarFull");
 const progressText = document.querySelector("#progressText");
+const modal = document.getElementById("endQuizModal");
+const modalBody = document.getElementById("modal-body");
+const closeModal = document.getElementById("close");
+const restart = document.getElementById("restart");
 // Hide the Quiz first loading the page - code written by me.
 function hide() {
     quiz.style.display = "none";
@@ -146,12 +150,19 @@ function incrementScore(num) {
 score += num;
 scoreText.innerText = score;
 }
+// To display the Modal with Result.
 displayResults = () => {
-    const modal = document.getElementById("endQuizModal");
-    const modalBody = document.getElementById("modal-body");
     modalBody.innerText = `You scored: ${score}`;
     modal.style.display = "block";
-    
 };
+// To hide the Modal.
+function hideModal() {
+    modal.style.display = "none";
+}
+//Add Event Listener to hide the Modal.
+closeModal.addEventListener("click", hideModal);
+restart.addEventListener("click", hideModal);
+// To restart the Quiz.
+restart.addEventListener("click", startQuiz);
 //   Calling the function to start the Quiz.
   startQuiz();
