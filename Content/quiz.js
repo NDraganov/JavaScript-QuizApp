@@ -99,17 +99,23 @@ getNewQuestion = () => {
     // Show the current question.
     currentQuestion = availableQuestions[0];
     question.innerText = currentQuestion.question;
+    // Show each option for current question.
+    answers.forEach((answer) => {
+        answer.innerText = currentQuestion[answer.dataset.answer];
+    });
     // For each option answer.
     answers.forEach((answer) => {
-        // Show each option for current question.
-        answer.innerText = currentQuestion[answer.dataset.answer];
+        // Return if not accepting answer.
+        if (!acceptingAnswers) {
+            return;
+        }
         // Event Listener to each option answer.
         answer.addEventListener("click", (e) => {
+            // Set pressed option to False and apply red coloured class.
+            acceptingAnswers = false;
             // Targeting the data according to the pressed option.
             const clickedAnswer = e.target;
             const answeredLetter = clickedAnswer.dataset.answer;
-            // Set pressed option to False and apply red coloured class.
-            acceptingAnswers = false;
             let classToApply = "incorrect";
             // Check If pressed option is correct answer.
             if (answeredLetter === currentQuestion.answer) {
@@ -132,7 +138,7 @@ getNewQuestion = () => {
 };
 // Function to increment the scores.
 function incrementScore(num) {
-score +=num;
+score += num;
 scoreText.innerText = score;
 }
 //   Calling the function to start the Quiz.
