@@ -47,7 +47,7 @@ const questionCounterText = document.getElementById("counter");
 const scoreText = document.getElementById("score");
 const progressBarFull = document.querySelector("#progressBarFull");
 const progressText = document.querySelector("#progressText");
-// Hide the quiz first loading the page - code written by me.
+// Hide the Quiz first loading the page - code written by me.
 function hide() {
     quiz.style.display = "none";
 }
@@ -79,18 +79,23 @@ startQuiz = () => {
     score = 0;
     acceptingAnswers = true;
     scoreText.innerText = score;
-    // Get random questions and limited the number of questions.
+    // Get random questions and limited the number of Questions.
     availableQuestions = getRandomQuestions(questions, MAX_QUESTIONS);
     // To get new question.
     getNewQuestion();
   };
-// To get random question from Array of questions.
+// To get random question from Array of Questions.
 getRandomQuestions = (arr, n) => {
     const shuffled = [...arr].sort(() => 0.5 - Math.random());
     return (selected = shuffled.slice(0, n));
 };
 // To get a new question.
 getNewQuestion = () => {
+    // If statement to display results at the ened of the Quiz.
+    if (availableQuestions.length === 0) {
+        displayResults();
+        return;
+    }
     // Show the progressing text of Question in Introduction Header.
     questionCounter++;
     questionCounterText.innerText = `Question: ${questionCounter}/${MAX_QUESTIONS}`;
@@ -141,5 +146,12 @@ function incrementScore(num) {
 score += num;
 scoreText.innerText = score;
 }
+displayResults = () => {
+    const modal = document.getElementById("endQuizModal");
+    const modalBody = document.getElementById("modal-body");
+    modalBody.innerText = `You scored: ${score}`;
+    modal.style.display = "block";
+    
+};
 //   Calling the function to start the Quiz.
   startQuiz();
