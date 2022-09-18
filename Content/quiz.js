@@ -119,8 +119,16 @@ getNewQuestion = () => {
             }
             // Add class to pressed option.
             clickedAnswer.classList.add(classToApply);
-          });
-      });
+            // Delayed function to passing to next question.
+            setTimeout(() => {
+                clickedAnswer.classList.remove(classToApply);
+                getNewQuestion();
+                acceptingAnswers = true;
+            }, 1000);
+        });
+    });
+    // Shift to the next question.
+    availableQuestions.shift();
 };
 // Function to increment the scores.
 function incrementScore(num) {
