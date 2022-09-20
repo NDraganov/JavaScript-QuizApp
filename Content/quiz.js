@@ -53,6 +53,7 @@ const closeModal = document.getElementById("close");
 const restart = document.getElementById("restart");
 const appendTens = document.getElementById("tens");
 const appendSeconds = document.getElementById("seconds");
+const appendMinutes = document.getElementById("minutes");
 // Audio Play code taken from - https://www.udemy.com/course/the-complete-web-development-bootcamp/learn/lecture/12383968#overview.
 const hoverAudio = new Audio("Content/Audio/Button-press-sound-effect.mp3");
 const wrongAudio = new Audio("Content/Audio/Wrong-answer-sound-effect.mp3");
@@ -80,6 +81,7 @@ let questionCounter;
 let interval;
 let seconds = 00;
 let tens = 00;
+let minutes = 00;
 let score;
 const SCORE_POINTS = 10;
 const MAX_QUESTIONS = 4;
@@ -168,28 +170,28 @@ function hover() {
 // Start Timer code taken from - https://codepen.io/cathydutton/pen/avYKeM.
 function startTimer() {
     tens++; 
-      
     if(tens < 9){
       appendTens.innerHTML = "0" + tens;
     }
-      
     if (tens > 9){
-      appendTens.innerHTML = tens;
-        
+      appendTens.innerHTML = tens; 
     } 
-      
     if (tens > 99) {
       seconds++;
       appendSeconds.innerHTML = "0" + seconds;
       tens = 0;
       appendTens.innerHTML = "0" + 0;
     }
-      
     if (seconds > 9){
       appendSeconds.innerHTML = seconds;
     }
-    
-  }
+    if (seconds > 59) {
+        minutes++;
+        appendMinutes.innerHTML = "0" + minutes;
+        seconds = 0;
+        appendSeconds.innerHTML = "0" + 0;
+    }
+}  
 // Function to increment the scores.
 function incrementScore(num) {
 score += num;
@@ -197,7 +199,7 @@ scoreText.innerText = score;
 }
 // To display the Modal with Result.
 displayResults = () => {
-    modalBody.innerText = `You scored: ${score}You time: ${seconds}:${tens}`;
+    modalBody.innerText = `You scored: ${score}You time: ${minutes}:${seconds}:${tens}`;
     modal.style.display = "block";
     acceptingAnswers = false;
 };
