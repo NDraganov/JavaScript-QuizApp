@@ -53,6 +53,8 @@ const closeModal = document.getElementById("close");
 const restart = document.getElementById("restart");
 const appendTens = document.getElementById("tens");
 const appendSeconds = document.getElementById("seconds");
+// Audio Play code taken from - https://www.udemy.com/course/the-complete-web-development-bootcamp/learn/lecture/12383968#overview.
+const hoverAudio = new Audio("Content/Audio/Button-press-sound-effect.mp3");
 const wrongAudio = new Audio("Content/Audio/Wrong-answer-sound-effect.mp3");
 const correctAudio = new Audio("Content/Audio/Good-idea-bell.mp3");
 // Hide the Quiz first loading the page - code written by me.
@@ -94,7 +96,7 @@ startQuiz = () => {
     availableQuestions = getRandomQuestions(questions, MAX_QUESTIONS);
     // To get new question.
     getNewQuestion();
-  };
+};
 // To get random question from Array of Questions.
 getRandomQuestions = (arr, n) => {
     const shuffled = [...arr].sort(() => 0.5 - Math.random());
@@ -127,6 +129,7 @@ getNewQuestion = () => {
         }
         // Event Listener to each option answer.
         answer.addEventListener("click", (e) => {
+            // Start Timer code taken from - https://codepen.io/cathydutton/pen/avYKeM.
             interval = setInterval(startTimer, 10);
             // Set pressed option to False and apply red coloured class.
             acceptingAnswers = false;
@@ -137,14 +140,15 @@ getNewQuestion = () => {
             
             // Check If pressed option is correct answer.
             if (answeredLetter === currentQuestion.answer) {
+                // Audio Play code taken from - https://www.udemy.com/course/the-complete-web-development-bootcamp/learn/lecture/12383968#overview.
                 correctAudio.play();
                 incrementScore(SCORE_POINTS);
                 scoreText.innerText = score;
                 classToApply = "correct";
             } else {
+                // Audio Play code taken from - https://www.udemy.com/course/the-complete-web-development-bootcamp/learn/lecture/12383968#overview.
                 wrongAudio.play();
             }
-            
             // Add class to pressed option.
             clickedAnswer.classList.add(classToApply);
             // Delayed function to passing to next question.
@@ -158,7 +162,10 @@ getNewQuestion = () => {
     // Shift to the next question.
     availableQuestions.shift();
 };
-// Start Timer.
+function hover() {
+    hoverAudio.play();
+}
+// Start Timer code taken from - https://codepen.io/cathydutton/pen/avYKeM.
 function startTimer() {
     tens++; 
       
