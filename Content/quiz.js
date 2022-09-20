@@ -53,6 +53,8 @@ const closeModal = document.getElementById("close");
 const restart = document.getElementById("restart");
 const appendTens = document.getElementById("tens");
 const appendSeconds = document.getElementById("seconds");
+const wrongAudio = new Audio("Content/Audio/Wrong-answer-sound-effect.mp3");
+const correctAudio = new Audio("Content/Audio/Good-idea-bell.mp3");
 // Hide the Quiz first loading the page - code written by me.
 function hide() {
     quiz.style.display = "none";
@@ -132,12 +134,17 @@ getNewQuestion = () => {
             const clickedAnswer = e.target;
             const answeredLetter = clickedAnswer.dataset.answer;
             let classToApply = "incorrect";
+            
             // Check If pressed option is correct answer.
             if (answeredLetter === currentQuestion.answer) {
+                correctAudio.play();
                 incrementScore(SCORE_POINTS);
                 scoreText.innerText = score;
                 classToApply = "correct";
+            } else {
+                wrongAudio.play();
             }
+            
             // Add class to pressed option.
             clickedAnswer.classList.add(classToApply);
             // Delayed function to passing to next question.
