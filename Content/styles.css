@@ -94,7 +94,9 @@ height: 100%;
 background: #C0E218; 
 width: 0%;
 }
-
+.time {
+    font-size: 2rem;
+}
 .counter,
 .score {
 text-align: center;

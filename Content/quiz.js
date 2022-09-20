@@ -51,6 +51,8 @@ const modal = document.getElementById("endQuizModal");
 const modalBody = document.getElementById("modal-body");
 const closeModal = document.getElementById("close");
 const restart = document.getElementById("restart");
+const appendTens = document.getElementById("tens");
+const appendSeconds = document.getElementById("seconds");
 // Hide the Quiz first loading the page - code written by me.
 function hide() {
     quiz.style.display = "none";
@@ -71,6 +73,9 @@ function show() {
 button.onclick = show;
 // Variables for the Introduction Header.
 let questionCounter;
+let interval;
+let seconds = 00;
+let tens = 00;
 let score;
 const SCORE_POINTS = 10;
 const MAX_QUESTIONS = 4;
@@ -102,7 +107,7 @@ getNewQuestion = () => {
     }
     // Show the progressing text of Question in Introduction Header.
     questionCounter++;
-    questionCounterText.innerText = `Question: ${questionCounter}/${MAX_QUESTIONS}`;
+    questionCounterText.innerText = `Question ${questionCounter}/${MAX_QUESTIONS}`;
     // Show the Progress Bar tracker in colour.
     progressBarFull.style.width = `${(questionCounter/MAX_QUESTIONS) * 100}%`;
     // Show the current question.
@@ -120,6 +125,7 @@ getNewQuestion = () => {
         }
         // Event Listener to each option answer.
         answer.addEventListener("click", (e) => {
+            interval = setInterval(startTimer, 10);
             // Set pressed option to False and apply red coloured class.
             acceptingAnswers = false;
             // Targeting the data according to the pressed option.
@@ -145,6 +151,31 @@ getNewQuestion = () => {
     // Shift to the next question.
     availableQuestions.shift();
 };
+// Start Timer.
+function startTimer() {
+    tens++; 
+      
+    if(tens < 9){
+      appendTens.innerHTML = "0" + tens;
+    }
+      
+    if (tens > 9){
+      appendTens.innerHTML = tens;
+        
+    } 
+      
+    if (tens > 99) {
+      seconds++;
+      appendSeconds.innerHTML = "0" + seconds;
+      tens = 0;
+      appendTens.innerHTML = "0" + 0;
+    }
+      
+    if (seconds > 9){
+      appendSeconds.innerHTML = seconds;
+    }
+    
+  }
 // Function to increment the scores.
 function incrementScore(num) {
 score += num;
@@ -152,8 +183,9 @@ scoreText.innerText = score;
 }
 // To display the Modal with Result.
 displayResults = () => {
-    modalBody.innerText = `You scored: ${score}`;
+    modalBody.innerText = `You scored: ${score}You time: ${seconds}:${tens}`;
     modal.style.display = "block";
+    acceptingAnswers = false;
 };
 // To hide the Modal.
 function hideModal() {
