@@ -85,7 +85,7 @@
               <div class="card-body">
                   <div class="col-lg-12 col-md-6">
                       <div class="h1 title hide1">Start the Quiz</div>
-                      <p class="text hide2">To start the Quiz, press the "START" button below.</p>
+                      <p class="text hide2 pt-4">To start the Quiz, press the "START" button below.</p>
                       <!-- The Quiz App itself -->
                       <div id="quiz" class="quiz">
                           <div class="container game">
@@ -148,28 +148,30 @@
                           </div>
                       </div>
                   </div>
-                  <!-- START Button -->
-                  <button type="button" id="btn" class="button hide3 mt-5">START</button>
-                  <!-- Modal - code taken from https://getbootstrap.com/docs/5.2/components/modal/ -->
-                  <div class="modal" id="endQuizModal" tabindex="-1">
-                    <div class="modal-dialog modal-dialog-centered">
-                      <div class="modal-content">
-                        <div class="modal-header">
-                          <h5 class="modal-title">Quiz Over</h5>
-                          <button type="button" class="btn-close" id="close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body" id="modal-body">
-                          <p>Modal body text goes here.</p>
-                        </div>
-                        <div class="modal-footer">
-                          <button type="button" class="btn btn-primary" id="restart">Restart</button>
-                        </div>
+                  <!-- Modal Start Quiz. -->
+                  <div class="container window" id="window">
+                    <div class="row">
+                      <div class="window-header pt-2">
+                      <h5 class="window-title">Quiz</h5>
+                      <button type="button" class="btn-close" id="close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="window-body pt-5">
+                      <p>Would you like to Start the Quiz?</p>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="window-footer pt-3">
+                      <button type="button" class="option-btn" id="yes">Yes</button>
+                      <button type="button" class="option-btn no">No</button>
                       </div>
                     </div>
                   </div>
+                  <!-- START Button -->
+                  <button type="button" id="btn" class="button hide3 mt-4">START</button>
               </div>
           </div>
-          
       </div>
   </div>
 </section>

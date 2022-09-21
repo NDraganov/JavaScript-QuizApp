@@ -41,41 +41,41 @@ let questions = [
 // Global Constant variables
 const button = document.querySelector('#btn');
 const quiz = document.getElementById('quiz');
-const question = document.getElementById("question");
-const answers = Array.from(document.getElementsByClassName("answer-text"));
-const questionCounterText = document.getElementById("counter");
-const scoreText = document.getElementById("score");
-const progressBarFull = document.querySelector("#progressBarFull");
-const progressText = document.querySelector("#progressText");
-const modal = document.getElementById("endQuizModal");
-const modalBody = document.getElementById("modal-body");
-const closeModal = document.getElementById("close");
-const restart = document.getElementById("restart");
-const appendTens = document.getElementById("tens");
-const appendSeconds = document.getElementById("seconds");
-const appendMinutes = document.getElementById("minutes");
+const startWindow = document.getElementById('window');
+const yesButton = document.getElementById('yes');
+const question = document.getElementById('question');
+const answers = Array.from(document.getElementsByClassName('answer-text'));
+const questionCounterText = document.getElementById('counter');
+const scoreText = document.getElementById('score');
+const progressBarFull = document.querySelector('#progressBarFull');
+const progressText = document.querySelector('#progressText');
+const appendTens = document.getElementById('tens');
+const appendSeconds = document.getElementById('seconds');
+const appendMinutes = document.getElementById('minutes');
 // Audio Play code taken from - https://www.udemy.com/course/the-complete-web-development-bootcamp/learn/lecture/12383968#overview.
-const hoverAudio = new Audio("Content/Audio/Button-press-sound-effect.mp3");
-const wrongAudio = new Audio("Content/Audio/Wrong-answer-sound-effect.mp3");
-const correctAudio = new Audio("Content/Audio/Good-idea-bell.mp3");
-// Hide the Quiz first loading the page - code written by me.
-function hide() {
-    quiz.style.display = "none";
+const hoverAudio = new Audio('Content/Audio/Button-press-sound-effect.mp3');
+const wrongAudio = new Audio('Content/Audio/Wrong-answer-sound-effect.mp3');
+const correctAudio = new Audio('Content/Audio/Good-idea-bell.mp3');
+// Show the Window - code written by me.
+function showWindow() {
+    btn.style.display = "none";
+    startWindow.style.display = "block";
 }
-// Calling the function to hide the Quiz when first time page is loaded.
-hide();
-// Show the Quiz - code wrriten by me.
-function show() {
+// Calling the function to show the Window when Start button is pressed.
+button.onclick = showWindow;
+// Show the Quiz - code written by me.
+function showQuiz() {
     quiz.style.display = "block";
     const title = document.querySelector('.hide1');
     title.style.display = "none";
     const paragraph = document.querySelector('.hide2');
-    paragraph.style.display = "none"
+    paragraph.style.display = "none";
+    startWindow.style.display = "none";
     const btn = document.querySelector('.hide3');
     btn.style.display = "none";
 }
-// Calling the function to show the Quiz when Start button is pressed.
-button.onclick = show;
+// Calling the function to show the Quiz when Yes button is pressed.
+yesButton.onclick = showQuiz;
 // Variables for the Introduction Header.
 let questionCounter;
 let interval;
@@ -199,18 +199,7 @@ scoreText.innerText = score;
 }
 // To display the Modal with Result.
 displayResults = () => {
-    modalBody.innerText = `You scored: ${score}You time: ${minutes}:${seconds}:${tens}`;
-    modal.style.display = "block";
-    acceptingAnswers = false;
+
 };
-// To hide the Modal.
-function hideModal() {
-    modal.style.display = "none";
-}
-//Add Event Listener to hide the Modal.
-closeModal.addEventListener("click", hideModal);
-restart.addEventListener("click", hideModal);
-// To restart the Quiz.
-restart.addEventListener("click", startQuiz);
 //   Calling the function to start the Quiz.
   startQuiz();
