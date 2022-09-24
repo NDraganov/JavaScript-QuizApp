@@ -166,6 +166,31 @@
 .incorrect {
     background-color: #FF005C;
 }
+/* Results */
+.results {
+    display: none;
+}
+.header {
+    background-color: #0eaedf;
+    border-radius: 5px 5px 0 0;
+}
+.first {
+    padding-top: 8rem;
+}
+.result {
+    color: #FF005C;
+    font-size: 2rem;
+    font-weight: bold;
+}
+.restart {
+    height: 50px;
+    width: 130px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    background-color: #C0E218;
+    border: 1px solid #093e4e;
+    border-radius: 5px;
+}
 /* Footer Section */
 .footer {
     padding-top: 10rem;
