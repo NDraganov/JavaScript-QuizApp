@@ -77,6 +77,8 @@ function showQuiz() {
     startWindow.style.display = "none";
     const btn = document.querySelector('.hide3');
     btn.style.display = "none";
+    // Start Timer code taken from - https://codepen.io/cathydutton/pen/avYKeM.
+    interval = setInterval(startTimer, 10);
 }
 // Calling the function to show the Quiz when Yes button is pressed.
 yesButton.onclick = showQuiz;
@@ -135,8 +137,6 @@ getNewQuestion = () => {
         }
         // Event Listener to each option answer.
         answer.addEventListener("click", (e) => {
-            // Start Timer code taken from - https://codepen.io/cathydutton/pen/avYKeM.
-            interval = setInterval(startTimer, 10);
             // Set pressed option to False and apply red coloured class.
             acceptingAnswers = false;
             // Targeting the data according to the pressed option.
