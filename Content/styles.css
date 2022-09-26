@@ -169,6 +169,24 @@
 /* Results */
 .results {
     display: none;
+    position: relative;
+    bottom: 672px;
+    z-index: -1;
+}
+.results-z {
+    display: block;
+    z-index: 1;
+}
+.results .section {
+    box-shadow: none;
+}
+.height {
+    height: 672px;
+}
+.padding {
+    padding-top: 0;
+    padding-left: 12px;
+    padding-right: 12px;
 }
 .header {
     background-color: #0eaedf;
@@ -195,6 +213,12 @@
 .footer {
     padding-top: 10rem;
     color: #093e4e;
+}
+.footer-responsive {
+    position: absolute;
+    top: 1700px;
+    bottom: 0px;
+    width: 100%;
 }
 .footer a {
     font-size: 1.5rem;

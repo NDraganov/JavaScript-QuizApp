@@ -41,7 +41,7 @@ let questions = [
 // Global Constant variables
 const button = document.querySelector('#btn');
 const quiz = document.getElementById('quiz');
-const abc = document.getElementById('result');
+const result = document.getElementById('result');
 const startWindow = document.getElementById('window');
 const yesButton = document.getElementById('yes');
 const question = document.getElementById('question');
@@ -56,10 +56,12 @@ const appendMinutes = document.getElementById('minutes');
 const results = document.getElementById('results');
 const resultScore = document.getElementById('result-score');
 const resultTime = document.getElementById('result-time');
+const footer = document.getElementById('footer');
 // Audio Play code taken from - https://www.udemy.com/course/the-complete-web-development-bootcamp/learn/lecture/12383968#overview.
 const hoverAudio = new Audio('Content/Audio/Button-press-sound-effect.mp3');
 const wrongAudio = new Audio('Content/Audio/Wrong-answer-sound-effect.mp3');
 const correctAudio = new Audio('Content/Audio/Good-idea-bell.mp3');
+const restartButton = document.getElementById('restart');
 // Show the Window - code written by me.
 function showWindow() {
     btn.style.display = "none";
@@ -201,11 +203,14 @@ function incrementScore(num) {
 score += num;
 scoreText.innerText = score;
 }
+
 // To display the Modal with Result.
 displayResults = () => {
     resultScore.innerText = "Your scores: " + score;
     resultTime.innerText = "Your time: " + minutes + ":" + seconds + ":" + tens;
-    abc.innerHTML = results.innerHTML;
+    // result.innerHTML = results.innerHTML; 
+    results.classList.add('results-z');
+    footer.classList.add('footer-responsive');
 };
 //   Calling the function to start the Quiz.
   startQuiz();
