@@ -209,6 +209,9 @@
     border: 1px solid #093e4e;
     border-radius: 5px;
 }
+.restart-quiz {
+    z-index: -1;
+}
 /* Footer Section */
 .footer {
     padding-top: 10rem;

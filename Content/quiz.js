@@ -212,5 +212,10 @@ displayResults = () => {
     results.classList.add('results-z');
     footer.classList.add('footer-responsive');
 };
+function restartQuiz() {
+    results.classList.add('restart-quiz');
+    startQuiz();
+}
+restartButton.addEventListener("click", restartQuiz);
 //   Calling the function to start the Quiz.
   startQuiz();
