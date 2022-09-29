@@ -92,7 +92,7 @@ let tens = 00;
 let minutes = 00;
 let score;
 const SCORE_POINTS = 10;
-const MAX_QUESTIONS = 1;
+const MAX_QUESTIONS = 4;
 
 let acceptingAnswers;
 // Start the Quiz.
@@ -207,10 +207,13 @@ scoreText.innerText = score;
 displayResults = () => {
     resultScore.innerText = "Your scores: " + score;
     resultTime.innerText = "Your time: " + minutes + ":" + seconds + ":" + tens;
-    // footer.classList.add('footer-responsive');
     result.innerHTML = results.innerHTML;
     results.style.display = "block";
 };
-
+// Restart the Quiz.
+function restartQuiz() {
+    // Code taken from - https://www.positioniseverything.net/javascript-refresh-page/.
+    window.location.reload(true);
+}
 //   Calling the function to start the Quiz.
   startQuiz();
