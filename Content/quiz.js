@@ -92,7 +92,7 @@ let tens = 00;
 let minutes = 00;
 let score;
 const SCORE_POINTS = 10;
-const MAX_QUESTIONS = 4;
+const MAX_QUESTIONS = 1;
 
 let acceptingAnswers;
 // Start the Quiz.
@@ -203,19 +203,14 @@ function incrementScore(num) {
 score += num;
 scoreText.innerText = score;
 }
-
 // To display the Modal with Result.
 displayResults = () => {
     resultScore.innerText = "Your scores: " + score;
     resultTime.innerText = "Your time: " + minutes + ":" + seconds + ":" + tens;
-    // result.innerHTML = results.innerHTML; 
-    results.classList.add('results-z');
-    footer.classList.add('footer-responsive');
+    // footer.classList.add('footer-responsive');
+    result.innerHTML = results.innerHTML;
+    results.style.display = "block";
 };
-function restartQuiz() {
-    results.classList.add('restart-quiz');
-    startQuiz();
-}
-restartButton.addEventListener("click", restartQuiz);
+
 //   Calling the function to start the Quiz.
   startQuiz();

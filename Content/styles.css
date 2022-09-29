@@ -169,31 +169,13 @@
 /* Results */
 .results {
     display: none;
-    position: relative;
-    bottom: 672px;
-    z-index: -1;
-}
-.results-z {
-    display: block;
-    z-index: 1;
-}
-.results .section {
-    box-shadow: none;
-}
-.height {
-    height: 672px;
-}
-.padding {
-    padding-top: 0;
-    padding-left: 12px;
-    padding-right: 12px;
 }
 .header {
     background-color: #0eaedf;
     border-radius: 5px 5px 0 0;
 }
 .first {
-    padding-top: 8rem;
+    padding-top: 2rem;
 }
 .result {
     color: #FF005C;
@@ -206,22 +188,14 @@
     font-size: 1.5rem;
     font-weight: bold;
     background-color: #C0E218;
+    margin-bottom: 1rem;
     border: 1px solid #093e4e;
     border-radius: 5px;
-}
-.restart-quiz {
-    z-index: -1;
 }
 /* Footer Section */
 .footer {
     padding-top: 10rem;
     color: #093e4e;
-}
-.footer-responsive {
-    position: absolute;
-    top: 1700px;
-    bottom: 0px;
-    width: 100%;
 }
 .footer a {
     font-size: 1.5rem;
