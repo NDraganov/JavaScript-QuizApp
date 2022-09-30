@@ -178,9 +178,15 @@
     padding-top: 2rem;
 }
 .result {
-    color: #FF005C;
+    color: #093e4e;
     font-size: 2rem;
     font-weight: bold;
+}
+.result-score {
+    color: #0eaedf;
+}
+.result-time {
+    color: #FF005C;
 }
 .restart {
     height: 50px;

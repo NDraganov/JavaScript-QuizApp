@@ -92,7 +92,7 @@ let tens = 00;
 let minutes = 00;
 let score;
 const SCORE_POINTS = 10;
-const MAX_QUESTIONS = 4;
+const MAX_QUESTIONS = 1;
 
 let acceptingAnswers;
 // Start the Quiz.
@@ -205,8 +205,8 @@ scoreText.innerText = score;
 }
 // To display the Modal with Result.
 displayResults = () => {
-    resultScore.innerText = "Your scores: " + score;
-    resultTime.innerText = "Your time: " + minutes + ":" + seconds + ":" + tens;
+    resultScore.innerHTML = "Your scores: " + "<span class='result-score'>" + score + "</span>";
+    resultTime.innerHTML = "Your time: " + "<span class='result-time'>" + minutes + "h" + seconds + "s" + tens + "</span>";
     result.innerHTML = results.innerHTML;
     results.style.display = "block";
 };
