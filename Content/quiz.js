@@ -45,6 +45,7 @@ const result = document.getElementById('result');
 const startWindow = document.getElementById('window');
 const yesButton = document.getElementById('yes');
 const question = document.getElementById('question');
+const mute = document.getElementsByClassName('mute');
 const answers = Array.from(document.getElementsByClassName('answer-text'));
 const questionCounterText = document.getElementById('counter');
 const scoreText = document.getElementById('score');
@@ -58,6 +59,8 @@ const resultScore = document.getElementById('result-score');
 const resultTime = document.getElementById('result-time');
 const footer = document.getElementById('footer');
 // Audio Play code taken from - https://www.udemy.com/course/the-complete-web-development-bootcamp/learn/lecture/12383968#overview.
+// Sound taken from - https://orangefreesounds.com.
+const startAudio = new Audio('Content/Audio/Game-start-countdown.mp3');
 const hoverAudio = new Audio('Content/Audio/Button-press-sound-effect.mp3');
 const wrongAudio = new Audio('Content/Audio/Wrong-answer-sound-effect.mp3');
 const correctAudio = new Audio('Content/Audio/Good-idea-bell.mp3');
@@ -81,6 +84,7 @@ function showQuiz() {
     btn.style.display = "none";
     // Start Timer code taken from - https://codepen.io/cathydutton/pen/avYKeM.
     interval = setInterval(startTimer, 10);
+    startAudio.play();
 }
 // Calling the function to show the Quiz when Yes button is pressed.
 yesButton.onclick = showQuiz;
@@ -95,6 +99,15 @@ const SCORE_POINTS = 10;
 const MAX_QUESTIONS = 1;
 
 let acceptingAnswers;
+// To mute audio.
+function muteAudio() {
+    correctAudio.pause();
+    correctAudio.currentTime = 0;
+    wrongAudio.pause();
+    wrongAudio,currentTime = 0;
+    hoverAudio.pause();
+    hoverAudio.currentTime = 0;
+}
 // Start the Quiz.
 startQuiz = () => {
     // Set variables to 0 at the biginning.
