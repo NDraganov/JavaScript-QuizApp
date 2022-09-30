@@ -81,8 +81,6 @@
     border-radius: 10px;
 }
 .window-header {
-    display: flex;
-    justify-content: space-between;
     background-color: #0eaedf;
     border-radius: 9px 9px 0px 0px;
 }

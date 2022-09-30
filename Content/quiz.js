@@ -44,6 +44,7 @@ const quiz = document.getElementById('quiz');
 const result = document.getElementById('result');
 const startWindow = document.getElementById('window');
 const yesButton = document.getElementById('yes');
+const noButton = document.getElementById('no');
 const question = document.getElementById('question');
 const mute = document.getElementsByClassName('mute');
 const answers = Array.from(document.getElementsByClassName('answer-text'));
@@ -88,6 +89,10 @@ function showQuiz() {
 }
 // Calling the function to show the Quiz when Yes button is pressed.
 yesButton.onclick = showQuiz;
+noButton.onclick = declineQuiz;
+function declineQuiz() {
+    window.location.reload(true);
+}
 // Variables for the Introduction Header.
 let questionCounter;
 let interval;
@@ -96,7 +101,7 @@ let tens = 00;
 let minutes = 00;
 let score;
 const SCORE_POINTS = 10;
-const MAX_QUESTIONS = 1;
+const MAX_QUESTIONS = 4;
 
 let acceptingAnswers;
 // To mute audio.
