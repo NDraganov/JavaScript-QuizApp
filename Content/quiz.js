@@ -113,13 +113,18 @@ const MAX_QUESTIONS = 4;
 let acceptingAnswers;
 // To mute audio - code written by me.
 function muteAudio() {
-    correctAudio.pause();
-    correctAudio.currentTime = 0;
-    wrongAudio.pause();
-    wrongAudio,currentTime = 0;
-    hoverAudio.pause();
-    hoverAudio.currentTime = 0;
+    // correctAudio.pause();
+    // correctAudio.currentTime = 0;
+    // wrongAudio.pause();
+    // wrongAudio,currentTime = 0;
+    // hoverAudio.pause();
+    // hoverAudio.currentTime = 0;
+    muteIcon();
 }
+function muteIcon() {
+    mute.innerHTML = "<i class='fa fa-volume-off sound' aria-hidden='true'></i>" + "Muted";
+}
+mute.onclick = muteAudio;
 // Start the Quiz.
 startQuiz = () => {
     // Set variables to 0 at the biginning.
@@ -144,6 +149,7 @@ getNewQuestion = () => {
         displayResults();
         return;
     }
+    
     // Show the progressing text of Question in Introduction Header.
     questionCounter++;
     questionCounterText.innerText = `Question ${questionCounter}/${MAX_QUESTIONS}`;

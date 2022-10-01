@@ -165,9 +165,9 @@ body {
 }
 .button {
     background: #C0E218;
-    color: #093e4e;
+    color: #251B37;
     width: 150px;
-    border: 1px solid #7D6E83;
+    border: 1px solid #251B37;
     border-radius: 5px;
     font-size: 1.5rem;
 }
@@ -240,6 +240,17 @@ body {
     text-align: center;
     align-items: center;
 }
+.mute {
+    background-color: #D7C0AE;
+    color: #7D6E83;
+    font-weight: bold;
+    border: 1px solid #251B37;
+    border-radius: 5px;
+    padding: 10px;
+}
+.sound {
+    color: #F8EDE3;
+}
 .answer-container {
     background-color: #F8EDE3;
     display: flex;
@@ -299,6 +310,7 @@ body {
     width: 180px;
     font-size: 1.5rem;
     background-color: #C0E218;
+    color: #251B37;
     margin-bottom: 1rem;
     border: 1px solid #7D6E83;
     border-radius: 5px;
