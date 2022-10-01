@@ -32,13 +32,13 @@
         <hr class="nav-line">
         <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
           <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="#">ABOUT</a>
+            <a class="nav-link" aria-current="page" href="#about">ABOUT</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">HOW TO...</a>
+            <a class="nav-link" href="#how-to">HOW TO...</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">PLAY</a>
+            <a class="nav-link" href="#play">PLAY</a>
           </li>
         </ul>
       </div>
@@ -175,20 +175,20 @@
                     </div>
                     <div class="row">
                       <div class="window-footer pt-3">
-                      <button type="button" class="option-btn" id="yes">Yes</button>
-                      <button type="button" class="option-btn no" id="no">No</button>
+                      <button type="button" title="Accept" class="option-btn" id="yes">Yes</button>
+                      <button type="button" title="Decline" class="option-btn no" id="no">No</button>
                       </div>
                     </div>
                   </div>
                   <!-- START Button -->
-                  <button type="button" id="btn" class="button hide3 mt-4">START</button>
+                  <button type="button" title="Start the Quiz" id="btn" class="button hide3 mt-4">START</button>
                   <!-- Results -->
                   <div class="container results text-center" id="results">
                     <h1 class="header">Results</h1>
                     <p class="result first" id="result-score"></p>
                     <p class="result" id="result-time"></p>
                     <div class="container">
-                      <button type="button" class="restart" id="restart" onclick="restartQuiz()">RESTART</button>
+                      <button type="button" title="Restart the Quiz" class="restart" id="restart" onclick="restartQuiz()">RESTART</button>
                     </div>
                   </div>
               </div>
@@ -198,12 +198,12 @@
 </section>
 </div>
 <!-- Footer Section-->
-<footer class="footer text-center" id="footer">
+<footer id="footer" class="footer text-center">
   <div class="container">
    <p class="links-text">Check the links below for open-source code or find me on social media.</p>
    <!-- Social media links -->
-   <a href="https://en-gb.facebook.com"><i class="fa-brands fa-github-square fa-2x" aria-hidden="true"></i></a>
-   <a href="https://twitter.com/?lang=en"><i class="fa fa-linkedin-square fa-2x" aria-hidden="true"></i></a>
+   <a href="https://github.com/NDraganov" title="Follow me on GitHub"><i class="fa-brands fa-github-square fa-2x" aria-hidden="true"></i></a>
+   <a href="https://www.linkedin.com/in/nedyalko-draganov-12958a235/" title="Follow me on LinkedIn"><i class="fa fa-linkedin-square fa-2x" aria-hidden="true"></i></a>
   </div>
   <div class="h4 title">Nedyalko Draganov</div>
   <p >{JavaScript project}</p>
@@ -216,7 +216,6 @@
      </span>
    </p>
   </div>
-
 </footer>
   <!-- JavaScript link -->
   <script src="Content/quiz.js"></script> 
