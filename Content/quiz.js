@@ -90,6 +90,7 @@ function showQuiz() {
 // Calling the function to show the Quiz when Yes button is pressed.
 yesButton.onclick = showQuiz;
 noButton.onclick = declineQuiz;
+// To decline the Quiz.
 function declineQuiz() {
     window.location.reload(true);
 }
@@ -102,9 +103,8 @@ let minutes = 00;
 let score;
 const SCORE_POINTS = 10;
 const MAX_QUESTIONS = 4;
-
 let acceptingAnswers;
-// To mute audio.
+// To mute audio - code written by me.
 function muteAudio() {
     correctAudio.pause();
     correctAudio.currentTime = 0;
@@ -163,7 +163,6 @@ getNewQuestion = () => {
             const clickedAnswer = e.target;
             const answeredLetter = clickedAnswer.dataset.answer;
             let classToApply = "incorrect";
-            
             // Check If pressed option is correct answer.
             if (answeredLetter === currentQuestion.answer) {
                 // Audio Play code taken from - https://www.udemy.com/course/the-complete-web-development-bootcamp/learn/lecture/12383968#overview.
@@ -188,6 +187,7 @@ getNewQuestion = () => {
     // Shift to the next question.
     availableQuestions.shift();
 };
+// To play sound effect when hover over option answers. 
 function hover() {
     hoverAudio.play();
 }
@@ -224,7 +224,7 @@ scoreText.innerText = score;
 // To display the Modal with Result.
 displayResults = () => {
     resultScore.innerHTML = "Your scores: " + "<span class='result-score'>" + score + "</span>";
-    resultTime.innerHTML = "Your time: " + "<span class='result-time'>" + minutes + "h" + seconds + "s" + tens + "</span>";
+    resultTime.innerHTML = "Your time: " + "<span class='result-time'>" + minutes + "m" + " " + seconds + "s" + " " + tens + "</span>";
     result.innerHTML = results.innerHTML;
     results.style.display = "block";
 };
