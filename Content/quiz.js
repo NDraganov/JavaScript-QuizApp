@@ -39,16 +39,18 @@ let questions = [
    },
    ];
 // Global Constant variables
+const body = document.getElementById('body');
 const offcanvas = document.getElementsByClassName('offcanvas');
 const navLinks = document.getElementsByClassName('nav-link');
 const button = document.querySelector('#btn');
+const userButton = document.getElementById('user-button');
 const quiz = document.getElementById('quiz');
 const result = document.getElementById('result');
 const startWindow = document.getElementById('window');
 const yesButton = document.getElementById('yes');
 const noButton = document.getElementById('no');
 const question = document.getElementById('question');
-const mute = document.getElementsByClassName('mute');
+const mute = document.getElementById('mute');
 const answers = Array.from(document.getElementsByClassName('answer-text'));
 const questionCounterText = document.getElementById('counter');
 const scoreText = document.getElementById('score');
@@ -75,11 +77,26 @@ function hideOffcanvas() {
 navLinks.onclick = hideOffcanvas;
 // Show the Window - code written by me.
 function showWindow() {
+    const title = document.querySelector('.hide1');
+    title.style.display = "none";
+    const paragraph = document.querySelector('.hide2');
+    paragraph.style.display = "none";
+    const btn = document.querySelector('.hide3');
     btn.style.display = "none";
     startWindow.style.display = "block";
 }
 // Calling the function to show the Window when Start button is pressed.
 button.onclick = showWindow;
+/* Modal */
+function username() {
+    let username = document.getElementById("username").value;
+    username = username.length > 0 ? username.trim() : username;
+    const player = document.getElementById("player");
+    startWindow.style.display = 'none';
+    player.textContent = username;
+    showQuiz();
+}
+userButton.onclick = username;
 // Show the Quiz - code written by me.
 function showQuiz() {
     quiz.style.display = "block";
@@ -95,12 +112,12 @@ function showQuiz() {
     startAudio.play();
 }
 // Calling the function to show the Quiz when Yes button is pressed.
-yesButton.onclick = showQuiz;
-noButton.onclick = declineQuiz;
+// yesButton.onclick = showQuiz;
+// noButton.onclick = declineQuiz;
 // To decline the Quiz.
-function declineQuiz() {
-    window.location.reload(true);
-}
+// function declineQuiz() {
+//     window.location.reload(true);
+// }
 // Variables for the Introduction Header.
 let questionCounter;
 let interval;
@@ -119,11 +136,18 @@ function muteAudio() {
     // wrongAudio,currentTime = 0;
     // hoverAudio.pause();
     // hoverAudio.currentTime = 0;
-    muteIcon();
+    // abc();
+    mute.innerHTML = "<i class='fa fa-volume-off sound' aria-hidden='true'></i>" + "   Muted";
 }
-function muteIcon() {
-    mute.innerHTML = "<i class='fa fa-volume-off sound' aria-hidden='true'></i>" + "Muted";
-}
+// function abc() {
+//     answers.forEach((answer) => {
+//         answer.addEventListener("click", bar);
+//         function bar() {
+//             correctAudio.pause();
+//             correctAudio.currentTime = 0;
+//         }
+//     })
+// }
 mute.onclick = muteAudio;
 // Start the Quiz.
 startQuiz = () => {
@@ -204,7 +228,7 @@ getNewQuestion = () => {
 function hover() {
     hoverAudio.play();
 }
-// Start Timer code taken from - https://codepen.io/cathydutton/pen/avYKeM.
+// Start Timer code taken from - https://codepen.io/cathydutton/pen/avYKeM and edited by me.
 function startTimer() {
     tens++; 
     if(tens < 9){

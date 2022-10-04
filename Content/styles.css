@@ -179,8 +179,7 @@ body {
 /* Start Quiz window. */
 .window {
     display: none;
-    height: 200px;
-    width: 300px;
+    height: 250px;
     border: 1px solid #7D6E83;
     border-radius: 10px;
 }
@@ -193,7 +192,19 @@ body {
     font-size: 1.1rem;
     font-weight: bold;
 }
-.option-btn {
+.user-button {
+    background-color: #C0E218;
+    padding: 5px;
+    font-weight: 500;
+    border: 1px solid #251B37;
+    border-radius: 5px;
+}
+.user-input {
+    padding: 5px;
+    border: 1px solid #251B37;
+    border-radius: 5px;
+}
+/* .option-btn {
     width: 100px;
     background-color: #C0E218;
     color: #251B37;
@@ -202,10 +213,14 @@ body {
 }
 .no {
     background-color: #FF005C;
-}
+} */
 /* Quiz App */
 .quiz {
     display: none;
+}
+.quiz .username {
+    font-size: 2rem;
+    font-weight: bold;
 }
 .intro {
     display: flex;

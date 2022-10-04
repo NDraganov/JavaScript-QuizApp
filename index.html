@@ -102,6 +102,9 @@
                       <div id="quiz" class="quiz">
                           <div class="container game">
                               <!-- Introduction header -->
+                              <div id="player-container">
+                                <p class="username">Welcome: <span id="player"></span></p> 
+                              </div>
                               <div id="intro" class="intro">
                                   <div class="counter">
                                     <h2 class="prefix" id="counter">Question 1/10</h2>
@@ -122,7 +125,7 @@
                               <div class="row question-holder">
                               <div class="col-12">
                                   <h1 id="question">Question goes here.</h1>
-                                  <button type="button" class="mute" title="Click to Mute" onclick="muteAudio()"><i class="fa fa-volume-up sound" aria-hidden="true"></i> Click to Mute</button>
+                                  <button type="button" class="mute" id="mute" title="Click to Mute"><i class="fa fa-volume-up sound" aria-hidden="true"></i> Click to Mute</button>
                               </div>
                               </div>
                               <!-- Answer Container -->
@@ -165,18 +168,21 @@
                   <div class="container window" id="window">
                     <div class="row">
                       <div class="window-header pt-2">
-                      <h5 class="window-title">Quiz</h5>
+                      <h5 class="window-title">Enter a Username</h5>
                       </div>
                     </div>
                     <div class="row">
                       <div class="window-body pt-5">
-                      <p>Would you like to Start the Quiz?</p>
+                        <div class="username-container">
+                          <label for="username"><b>Username</b></label>
+                          <input type="text" class="user-input" id="username" title="Enter Username" placeholder="Enter Username" name="username" minlength="3" maxlength="15" required>
+                          <p><em>Username must be between 3 and 15 characters</em></p>
+                      </div>
                       </div>
                     </div>
                     <div class="row">
                       <div class="window-footer pt-3">
-                      <button type="button" title="Accept" class="option-btn" id="yes">Yes</button>
-                      <button type="button" title="Decline" class="option-btn no" id="no">No</button>
+                        <button type="submit" class="user-button" id="user-button">Create Username</button>
                       </div>
                     </div>
                   </div>
