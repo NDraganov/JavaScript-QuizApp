@@ -70,11 +70,13 @@ const hoverAudio = new Audio('Content/Audio/Button-press-sound-effect.mp3');
 const wrongAudio = new Audio('Content/Audio/Wrong-answer-sound-effect.mp3');
 const correctAudio = new Audio('Content/Audio/Good-idea-bell.mp3');
 const restartButton = document.getElementById('restart');
+// Get the Full Year. 
+document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()));
 // Hide the Offcanvas. 
-function hideOffcanvas() {
-    offcanvas.classList.add("hide");
-}
-navLinks.onclick = hideOffcanvas;
+// function hideOffcanvas() {
+//     offcanvas.classList.add("hide");
+// }
+// navLinks.onclick = hideOffcanvas;
 // Show the Window - code written by me.
 function showWindow() {
     const title = document.querySelector('.hide1');
