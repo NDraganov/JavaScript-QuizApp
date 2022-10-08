@@ -40,8 +40,9 @@ let questions = [
    ];
 // Global Constant variables
 const body = document.getElementById('body');
-const offcanvas = document.getElementsByClassName('offcanvas');
-const navLinks = document.getElementsByClassName('nav-link');
+const navBar = document.getElementById('navbar')
+// const offcanvas = document.getElementsByClassName('offcanvas');
+// const navLinks = document.getElementsByClassName('nav-link');
 const startButton = document.querySelector('#start-button');
 const userButton = document.getElementById('user-button');
 const quiz = document.getElementById('quiz');
@@ -102,6 +103,7 @@ function showQuiz() {
     startText.classList.add('start-text-hide');
     modalContainer.classList.remove('window-container-show');
     startButton.classList.add('start-button-hide');
+    navBar.classList.add('navbar-hide');
     // Start Timer code taken from - https://codepen.io/cathydutton/pen/avYKeM.
     interval = setInterval(startTimer, 10);
     startAudio.play();

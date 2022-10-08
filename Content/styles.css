@@ -9,6 +9,9 @@ body {
 .navbar {
     background-color: #251B3770;
 }
+.navbar-hide {
+    visibility: hidden;
+}
 .navbar-brand {
     font-size: 3rem;
     font-weight: bold;
