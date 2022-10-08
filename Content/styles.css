@@ -237,15 +237,14 @@ section .title {
     border-radius: 10px;
     box-shadow: 0 0.4rem 1.4rem #F8EDE3;
 }
-/* @media screen and (max-width: 800px) {
+@media screen and (max-width: 800px) {
     .window {
-        left: 10px;
-        width: 480px;
+       width: 450px;
     }
     .window-header {
-        max-width: 480px;
+        max-width: 95.5%;
     }
-} */
+}
 .window-header {
     background-color: #7D6E83;
     color: #F8EDE3;
