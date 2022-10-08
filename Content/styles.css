@@ -294,9 +294,12 @@ section .title {
 .quiz-show {
     display: block;
 }
-.quiz .username {
+.quiz .player {
     font-size: 2rem;
     font-weight: bold;
+}
+.quiz .username {
+    color: #1572A1;
 }
 .intro {
     display: flex;
@@ -331,9 +334,9 @@ section .title {
     text-align: center;
     align-items: center;
 }
-.mute {
+.mute-button {
     background-color: #D7C0AE;
-    color: #7D6E83;
+    color: #1572A1;
     font-weight: bold;
     border: 1px solid #251B37;
     border-radius: 5px;

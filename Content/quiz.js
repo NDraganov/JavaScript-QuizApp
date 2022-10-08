@@ -49,7 +49,7 @@ const result = document.getElementById('result');
 const modalContainer = document.getElementById('window-container');
 const modal = document.getElementById('window');
 const question = document.getElementById('question');
-const mute = document.getElementById('mute');
+const muteButton = document.getElementById('mute-button');
 const answers = Array.from(document.getElementsByClassName('answer-text'));
 const questionCounterText = document.getElementById('counter');
 const scoreText = document.getElementById('score');
@@ -125,7 +125,7 @@ function muteAudio() {
     // hoverAudio.pause();
     // hoverAudio.currentTime = 0;
     // abc();
-    mute.innerHTML = "<i class='fa fa-volume-off sound' aria-hidden='true'></i>" + "   Muted";
+    muteButton.innerHTML = "<i class='fa fa-volume-off sound' aria-hidden='true'></i>" + "   Muted";
 }
 // function abc() {
 //     answers.forEach((answer) => {
@@ -136,7 +136,7 @@ function muteAudio() {
 //         }
 //     })
 // }
-mute.onclick = muteAudio;
+muteButton.onclick = muteAudio;
 // Start the Quiz.
 function startQuiz() {
     // Set variables to 0 at the biginning.
