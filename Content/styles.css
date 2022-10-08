@@ -1,9 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200;300;400;500;600;700&display=swap');
+
 * {
 	margin: 0;
 	padding: 0;
 }
 body {
     background-color: #F8EDE3;
+    font-family: 'Josefin Sans';
 }
 /* Navigation Bar */
 .navbar {
@@ -159,7 +162,8 @@ section .title {
 }
 /* Section ABOUT */
 .about {
-    padding-top: 15rem;
+    padding-top: 10rem;
+
     text-align: center;
     color: #7D6E83;
 }
@@ -199,6 +203,7 @@ section .title {
     color: #251B37;
     width: 150px;
     margin-bottom: 1rem;
+    padding-top: 5px;
     border: 1px solid #251B37;
     border-radius: 5px;
     font-size: 1.5rem;
@@ -299,6 +304,11 @@ section .title {
 .quiz .player {
     font-size: 2rem;
     font-weight: bold;
+    margin-bottom: 0;
+}
+.player-line {
+    margin-top: 0;
+    border: 1px solid #7D6E83;
 }
 .quiz .username {
     color: #1572A1;
@@ -418,6 +428,7 @@ section .title {
     color: #251B37;
     margin-bottom: 1.5rem;
     margin-top: 2rem;
+    padding-top: 5px;
     border: 1px solid #7D6E83;
     border-radius: 5px;
     box-shadow: 0 0.4rem 0.4rem #1572A1;

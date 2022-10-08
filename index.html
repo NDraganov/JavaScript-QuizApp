@@ -55,39 +55,47 @@
     <li></li>
     <li></li>
   </ul>
-<!-- Section About -->
-<section id="about" class="about">
-  <div class="container">
-      <div class="card section">
-          <div class="row">
-              <div class="card-body">
-                  <div class="col-lg-12 col-md-6">
-                      <div class="h1 title"><i class="fa-solid fa-circle-info icon"></i>About the Quiz</div>
-                      <p>This Quiz represents JavaScript project.<br>Technology used: HTML, CSS and JS.<br>Hope you enjoy it!</p>
-                  </div>
-              </div>
-          </div>
-      </div>
+<div class="container">
+  <div class="row">
+    <!-- Section About -->
+    <div class="col-lg-6 col-md-12">
+      <section id="about" class="about">
+        <div class="container">
+            <div class="card section">
+                <div class="row">
+                    <div class="card-body">
+                        <div >
+                            <div class="h1 title"><i class="fa-solid fa-circle-info icon"></i>About the Quiz</div>
+                            <p>This Quiz represents JavaScript project.<br>Technology used: HTML, CSS and JS.<br>Hope you enjoy it!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </section>
+    </div>
+    <!-- How to... Section -->
+    <div class="col-lg-6 col-md-12">
+      <section id="how-to" class="how-to">
+        <div class="container">
+            <div class="card section">
+                <div class="row">
+                    <div class="card-body">
+                        <div >
+                            <div class="h1 title"><i class="fa-solid fa-gamepad icon"></i>How to play the Quiz</div>
+                            <p>The Quiz is consist of 10 questions. The questions gonna shows up in random order, as well the 4 different options.</p>
+                            <p>Next question is loaded after choosing the option from the current question. Each correct answer gives you 10 scores.</p>
+                            <p>When you choose wrong option, the button will be displayed in red colour. Correct answer will be displayed in green colour.</p>
+                            <p>After answering all 10 questions, the result with win scores will be displayed.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </section>
+    </div>
   </div>
-</section>
-<!-- How to... Section -->
-<section id="how-to" class="how-to">
-  <div class="container">
-      <div class="card section">
-          <div class="row">
-              <div class="card-body">
-                  <div class="col-lg-12 col-md-6">
-                      <div class="h1 title"><i class="fa-solid fa-gamepad icon"></i>How to play the Quiz</div>
-                      <p>The Quiz is consist of 10 questions. The questions gonna shows up in random order, as well the 4 different options.</p>
-                      <p>Next question is loaded after choosing the option from the current question. Each correct answer gives you 10 scores.</p>
-                      <p>When you choose wrong option, the button will be displayed in red colour. Correct answer will be displayed in green colour.</p>
-                      <p>After answering all 10 questions, the result with win scores will be displayed.</p>
-                  </div>
-              </div>
-          </div>
-      </div>
-  </div>
-</section>
+</div>
 <!-- Section Play -->
 <section id="play" class="play">
   <div class="container">
@@ -104,6 +112,7 @@
                               <!-- Introduction header -->
                               <div id="player-container">
                                 <p class="player">Welcome: <span class="username" id="player"></span></p> 
+                                <hr class="player-line">
                               </div>
                               <div id="intro" class="intro">
                                   <div class="counter">
@@ -114,7 +123,7 @@
                                   </div>
                                   <div class="time">
                                     <h2>Time</h2>
-                                    <div><span id="minutes">00</span>:<span id="seconds">00</span>:<span id="tens">00</span></div>
+                                    <div><span id="minutes">00</span> : <span id="seconds">00</span> : <span id="tens">00</span></div>
                                   </div>
                                   <div class="score">
                                     <h2 class="prefix">Score</h2>
@@ -194,7 +203,7 @@
         <div class="username-container">
           <label class="user-label" for="username"><b>Username:</b></label>
           <input type="text" class="user-input" id="username" title="Enter Username" placeholder="Enter Username" name="username" minlength="3" maxlength="15" required>
-          <p class="user-guide">Username must be between 3 and 15 characters!</p>
+          <p class="user-guide" id="user-guide"></p>
         </div>
       </div>
     </div>

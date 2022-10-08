@@ -45,6 +45,7 @@ const navBar = document.getElementById('navbar')
 // const navLinks = document.getElementsByClassName('nav-link');
 const startButton = document.querySelector('#start-button');
 const userButton = document.getElementById('user-button');
+const player = document.getElementById("player");
 const quiz = document.getElementById('quiz');
 const result = document.getElementById('result');
 const modalContainer = document.getElementById('window-container');
@@ -87,11 +88,19 @@ startButton.onclick = showWindow;
 // Create a username. 
 function createUsername() {
     const username = document.getElementById("username").value;
-    // username = username.length > 0 ? username.trim() : username;
-    const player = document.getElementById("player");
     player.textContent = username;
+    // userCorrectLength();
     showQuiz();
 }
+// function userCorrectLength() {
+//     let i = username.lenght;
+//     let userGuide = document.getElementById('user-guide');
+//     if(i===0) {
+        
+//     } else {
+//         player.textContent = "Guest";
+//     } 
+// }
 // Calling the function to create a username. 
 userButton.onclick = createUsername;
 // Show the Quiz - code written by me.
@@ -250,7 +259,7 @@ scoreText.innerText = score;
 }
 // To display the Modal with Result.
 displayResults = () => {
-    answeredQuestions.innerHTML = "<span class='result-username'>" + username.value + "</span>" + ", You answered: " + "<span class='result-questions'>" + MAX_QUESTIONS + "</span>" + " questions";
+    answeredQuestions.innerHTML = "<span class='result-username'>" + username.value + "</span>" + ", you answered: " + "<span class='result-questions'>" + MAX_QUESTIONS + "</span>" + " questions";
     resultScore.innerHTML = "Your scores: " + "<span class='result-score'>" + score + "</span>";
     resultTime.innerHTML = "Your time: " + "<span class='result-time'>" + minutes + "m" + " " + seconds + "s" + " " + tens + "ms" + "</span>";
     result.innerHTML = results.innerHTML;
