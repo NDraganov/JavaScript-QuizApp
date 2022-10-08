@@ -185,7 +185,7 @@ section .title {
 .text {
     font-size: 1.5rem;
 }
-.button {
+.start-button {
     background: #C0E218;
     color: #251B37;
     width: 150px;
@@ -193,7 +193,10 @@ section .title {
     border-radius: 5px;
     font-size: 1.5rem;
 }
-.button:hover {
+.start-button-hide {
+    display: none;
+}
+.start-button:hover {
     background-color: #C0E218;
     transform: scale(1.5);
     transition: transform 200ms;
@@ -201,9 +204,7 @@ section .title {
 /* Start Quiz window. */
 .window-container {
     background-color: #7D6E8390;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: none;
     position: fixed;
     top: 0;
     left: 0;
@@ -214,10 +215,16 @@ section .title {
     max-width: 100vw;
     max-height: 100vh;
 }
+.window-container-show {
+    display: block;
+}
 .window {
     background-color: #F8EDE3;
     height: 300px;
     width: 500px;
+    position: fixed;
+    top: 280px;
+    left: 750px;
     text-align: center;
     border: 1px solid #7D6E83;
     border-radius: 10px;
@@ -225,11 +232,11 @@ section .title {
 }
 @media screen and (max-width: 800px) {
     .window {
-        margin-left: 20px;
-        margin-right: 20px;
+        left: 10px;
+        width: 480px;
     }
     .window-header {
-        max-width: 460px;
+        max-width: 480px;
     }
 }
 .window-header {

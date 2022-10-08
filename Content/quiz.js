@@ -42,13 +42,12 @@ let questions = [
 const body = document.getElementById('body');
 const offcanvas = document.getElementsByClassName('offcanvas');
 const navLinks = document.getElementsByClassName('nav-link');
-const button = document.querySelector('#btn');
+const startButton = document.querySelector('#start-button');
 const userButton = document.getElementById('user-button');
 const quiz = document.getElementById('quiz');
 const result = document.getElementById('result');
-// const modal = document.getElementById('modal');
-const yesButton = document.getElementById('yes');
-const noButton = document.getElementById('no');
+const modalContainer = document.getElementById('window-container');
+const modal = document.getElementById('window');
 const question = document.getElementById('question');
 const mute = document.getElementById('mute');
 const answers = Array.from(document.getElementsByClassName('answer-text'));
@@ -77,28 +76,24 @@ document.getElementById('copyright').appendChild(document.createTextNode(new Dat
 //     offcanvas.classList.add("hide");
 // }
 // navLinks.onclick = hideOffcanvas;
-// Show the Window - code written by me.
+// Show the Modal - code written by me.
 function showWindow() {
-    // const title = document.querySelector('.hide1');
-    // title.style.display = "none";
-    // const paragraph = document.querySelector('.hide2');
-    // paragraph.style.display = "none";
-    // const btn = document.querySelector('.hide3');
-    // btn.style.display = "none";
-    modal.showModal();
+    modalContainer.classList.add('window-container-show');
 }
-// Calling the function to show the Window when Start button is pressed.
-// button.onclick = showWindow;
+// Calling the function to show the Modal when Start button is pressed.
+startButton.onclick = showWindow;
 /* Modal */
-function username() {
+function createUsername() {
     let username = document.getElementById("username").value;
     // username = username.length > 0 ? username.trim() : username;
     const player = document.getElementById("player");
-    modal.style.display = 'none';
+    modalContainer.classList.remove('window-container-show');
     player.textContent = username;
+    startButton.classList.add('start-button-hide');
     showQuiz();
 }
-// userButton.onclick = username;
+
+userButton.onclick = createUsername;
 // Show the Quiz - code written by me.
 function showQuiz() {
     quiz.style.display = "block";
