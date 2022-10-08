@@ -182,8 +182,14 @@ section .title {
     text-align: center;
     color: #7D6E83;
 }
-.text {
+.start-title-hide {
+    display: none;
+}
+.start-text {
     font-size: 1.5rem;
+}
+.start-text-hide {
+    display: none;
 }
 .start-button {
     background: #C0E218;
@@ -280,6 +286,9 @@ section .title {
 .quiz {
     display: none;
 }
+.quiz-show {
+    display: block;
+}
 .quiz .username {
     font-size: 2rem;
     font-weight: bold;
@@ -362,6 +371,9 @@ section .title {
 /* Results */
 .results {
     display: none;
+}
+.results-show {
+    display: block;
 }
 .header {
     background-color: #7D6E83;

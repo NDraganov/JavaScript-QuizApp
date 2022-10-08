@@ -82,39 +82,29 @@ function showWindow() {
 }
 // Calling the function to show the Modal when Start button is pressed.
 startButton.onclick = showWindow;
-/* Modal */
+// Create a username. 
 function createUsername() {
     let username = document.getElementById("username").value;
     // username = username.length > 0 ? username.trim() : username;
     const player = document.getElementById("player");
-    modalContainer.classList.remove('window-container-show');
     player.textContent = username;
-    startButton.classList.add('start-button-hide');
     showQuiz();
 }
-
+// Calling the function to create a username. 
 userButton.onclick = createUsername;
 // Show the Quiz - code written by me.
 function showQuiz() {
-    quiz.style.display = "block";
-    const title = document.querySelector('.hide1');
-    title.style.display = "none";
-    const paragraph = document.querySelector('.hide2');
-    paragraph.style.display = "none";
-    startWindow.style.display = "none";
-    const btn = document.querySelector('.hide3');
-    btn.style.display = "none";
+    quiz.classList.add('quiz-show');
+    let startTitle = document.querySelector('.start-title');
+    startTitle.classList.add('start-title-hide');
+    let startText = document.querySelector('.start-text');
+    startText.classList.add('start-text-hide');
+    modalContainer.classList.remove('window-container-show');
+    startButton.classList.add('start-button-hide');
     // Start Timer code taken from - https://codepen.io/cathydutton/pen/avYKeM.
     interval = setInterval(startTimer, 10);
     startAudio.play();
 }
-// Calling the function to show the Quiz when Yes button is pressed.
-// yesButton.onclick = showQuiz;
-// noButton.onclick = declineQuiz;
-// To decline the Quiz.
-// function declineQuiz() {
-//     window.location.reload(true);
-// }
 // Variables for the Introduction Header.
 let questionCounter;
 let interval;
@@ -260,7 +250,7 @@ displayResults = () => {
     resultScore.innerHTML = "Your scores: " + "<span class='result-score'>" + score + "</span>";
     resultTime.innerHTML = "Your time: " + "<span class='result-time'>" + minutes + "m" + " " + seconds + "s" + " " + tens + "</span>";
     result.innerHTML = results.innerHTML;
-    results.style.display = "block";
+    results.classList.add('results-show');
 };
 // Restart the Quiz.
 function restartQuiz() {
