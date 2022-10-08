@@ -59,6 +59,7 @@ const appendTens = document.getElementById('tens');
 const appendSeconds = document.getElementById('seconds');
 const appendMinutes = document.getElementById('minutes');
 const results = document.getElementById('results');
+const answeredQuestions = document.getElementById('answered-questions');
 const resultScore = document.getElementById('result-score');
 const resultTime = document.getElementById('result-time');
 const footer = document.getElementById('footer');
@@ -84,7 +85,7 @@ function showWindow() {
 startButton.onclick = showWindow;
 // Create a username. 
 function createUsername() {
-    let username = document.getElementById("username").value;
+    const username = document.getElementById("username").value;
     // username = username.length > 0 ? username.trim() : username;
     const player = document.getElementById("player");
     player.textContent = username;
@@ -113,7 +114,7 @@ let tens = 00;
 let minutes = 00;
 let score;
 const SCORE_POINTS = 10;
-const MAX_QUESTIONS = 4;
+const MAX_QUESTIONS = 1;
 let acceptingAnswers;
 // To mute audio - code written by me.
 function muteAudio() {
@@ -247,8 +248,9 @@ scoreText.innerText = score;
 }
 // To display the Modal with Result.
 displayResults = () => {
+    answeredQuestions.innerHTML = "<span class='result-username'>" + username.value + "</span>" + ", You answered: " + "<span class='result-questions'>" + MAX_QUESTIONS + "</span>" + " questions";
     resultScore.innerHTML = "Your scores: " + "<span class='result-score'>" + score + "</span>";
-    resultTime.innerHTML = "Your time: " + "<span class='result-time'>" + minutes + "m" + " " + seconds + "s" + " " + tens + "</span>";
+    resultTime.innerHTML = "Your time: " + "<span class='result-time'>" + minutes + "m" + " " + seconds + "s" + " " + tens + "ms" + "</span>";
     result.innerHTML = results.innerHTML;
     results.classList.add('results-show');
 };

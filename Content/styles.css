@@ -195,15 +195,16 @@ section .title {
     background: #C0E218;
     color: #251B37;
     width: 150px;
+    margin-bottom: 1rem;
     border: 1px solid #251B37;
     border-radius: 5px;
     font-size: 1.5rem;
+    box-shadow: 0 0.4rem 0.4rem #1572A1;
 }
 .start-button-hide {
     display: none;
 }
 .start-button:hover {
-    background-color: #C0E218;
     transform: scale(1.5);
     transition: transform 200ms;
 }
@@ -258,7 +259,7 @@ section .title {
     font-size: 1.1rem;
     font-weight: bold;
 }
-.user-button {
+.create-username-button {
     background-color: #C0E218;
     padding: 5px 20px 5px;
     margin-top: 2rem;
@@ -266,6 +267,10 @@ section .title {
     border: 1px solid #251B37;
     border-radius: 5px;
     box-shadow: 0 0.4rem 0.4rem #1572A1;
+}
+.create-username-button:hover {
+    transform: scale(1.5);
+    transition: transform 200ms;
 }
 .user-label {
     color: #1572A1;
@@ -380,29 +385,41 @@ section .title {
     color: #F8EDE3;
     border-radius: 5px 5px 0 0;
 }
-.first {
-    padding-top: 2rem;
-}
 .result {
     color: #7D6E83;
     font-size: 2rem;
     font-weight: bold;
+    margin-bottom: 0;
+}
+.padding {
+    padding-top: 3rem;
+}
+.result-username {
+    color: #1572A1;
+}
+.result-questions {
+    color: #1572A1;
 }
 .result-score {
-    color: #967E76;
+    color: #1572A1;
 }
 .result-time {
-    color: #967E76;
+    color: #1572A1;
 }
-.restart {
-    height: 50px;
-    width: 180px;
-    font-size: 1.5rem;
+.restart-button {
+    width: 150px;
+    font-size: 1.2rem;
     background-color: #C0E218;
     color: #251B37;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
+    margin-top: 2rem;
     border: 1px solid #7D6E83;
     border-radius: 5px;
+    box-shadow: 0 0.4rem 0.4rem #1572A1;
+}
+.restart-button:hover {
+    transform: scale(1.5);
+    transition: transform 200ms;
 }
 /* Footer Section */
 .footer {
