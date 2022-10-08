@@ -211,7 +211,10 @@ section .title {
 /* Start Quiz window. */
 .window-container {
     background-color: #7D6E8390;
-    display: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    visibility: hidden;
     position: fixed;
     top: 0;
     left: 0;
@@ -223,21 +226,18 @@ section .title {
     max-height: 100vh;
 }
 .window-container-show {
-    display: block;
+    visibility: visible;
 }
 .window {
     background-color: #F8EDE3;
     height: 300px;
     width: 500px;
-    position: fixed;
-    top: 280px;
-    left: 750px;
     text-align: center;
     border: 1px solid #7D6E83;
     border-radius: 10px;
     box-shadow: 0 0.4rem 1.4rem #F8EDE3;
 }
-@media screen and (max-width: 800px) {
+/* @media screen and (max-width: 800px) {
     .window {
         left: 10px;
         width: 480px;
@@ -245,7 +245,7 @@ section .title {
     .window-header {
         max-width: 480px;
     }
-}
+} */
 .window-header {
     background-color: #7D6E83;
     color: #F8EDE3;
