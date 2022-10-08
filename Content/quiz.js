@@ -46,7 +46,7 @@ const button = document.querySelector('#btn');
 const userButton = document.getElementById('user-button');
 const quiz = document.getElementById('quiz');
 const result = document.getElementById('result');
-const startWindow = document.getElementById('window');
+// const modal = document.getElementById('modal');
 const yesButton = document.getElementById('yes');
 const noButton = document.getElementById('no');
 const question = document.getElementById('question');
@@ -79,26 +79,26 @@ document.getElementById('copyright').appendChild(document.createTextNode(new Dat
 // navLinks.onclick = hideOffcanvas;
 // Show the Window - code written by me.
 function showWindow() {
-    const title = document.querySelector('.hide1');
-    title.style.display = "none";
-    const paragraph = document.querySelector('.hide2');
-    paragraph.style.display = "none";
-    const btn = document.querySelector('.hide3');
-    btn.style.display = "none";
-    startWindow.style.display = "block";
+    // const title = document.querySelector('.hide1');
+    // title.style.display = "none";
+    // const paragraph = document.querySelector('.hide2');
+    // paragraph.style.display = "none";
+    // const btn = document.querySelector('.hide3');
+    // btn.style.display = "none";
+    modal.showModal();
 }
 // Calling the function to show the Window when Start button is pressed.
-button.onclick = showWindow;
+// button.onclick = showWindow;
 /* Modal */
 function username() {
     let username = document.getElementById("username").value;
-    username = username.length > 0 ? username.trim() : username;
+    // username = username.length > 0 ? username.trim() : username;
     const player = document.getElementById("player");
-    startWindow.style.display = 'none';
+    modal.style.display = 'none';
     player.textContent = username;
     showQuiz();
 }
-userButton.onclick = username;
+// userButton.onclick = username;
 // Show the Quiz - code written by me.
 function showQuiz() {
     quiz.style.display = "block";
@@ -152,7 +152,7 @@ function muteAudio() {
 // }
 mute.onclick = muteAudio;
 // Start the Quiz.
-startQuiz = () => {
+function startQuiz() {
     // Set variables to 0 at the biginning.
     questionCounter = 0;
     score = 0;

@@ -164,28 +164,6 @@
                           </div>
                       </div>
                   </div>
-                  <!-- Modal Start Quiz. -->
-                  <div class="container window" id="window">
-                    <div class="row">
-                      <div class="window-header pt-2">
-                      <h5 class="window-title">Enter a Username</h5>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="window-body pt-5">
-                        <div class="username-container">
-                          <label for="username"><b>Username</b></label>
-                          <input type="text" class="user-input" id="username" title="Enter Username" placeholder="Enter Username" name="username" minlength="3" maxlength="15" required>
-                          <p><em>Username must be between 3 and 15 characters</em></p>
-                      </div>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="window-footer pt-3">
-                        <button type="submit" class="user-button" id="user-button">Create Username</button>
-                      </div>
-                    </div>
-                  </div>
                   <!-- START Button -->
                   <button type="button" title="Start the Quiz" id="btn" class="button hide3 mt-4">START</button>
                   <!-- Results -->
@@ -202,6 +180,30 @@
       </div>
   </div>
 </section>
+<!-- Modal Start Quiz. -->
+<div class="container window-container" id="window-container">
+  <div class="window" id="window">
+    <div class="row">
+      <div class="window-header pt-2">
+      <h5 class="window-title">Enter a Username</h5>
+      </div>
+    </div>
+    <div class="row">
+      <div class="window-body">
+        <div class="username-container">
+          <label class="user-label" for="username"><b>Username:</b></label>
+          <input type="text" class="user-input" id="username" title="Enter Username" placeholder="Enter Username" name="username" minlength="3" maxlength="15" required>
+          <p class="user-guide">Username must be between 3 and 15 characters!</p>
+      </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="window-footer pt-3">
+        <button type="submit" class="user-button" id="user-button">Create</button>
+      </div>
+    </div>
+  </div>
+</div>
 </div>
 <!-- Footer Section-->
 <footer id="footer" class="footer text-center">
