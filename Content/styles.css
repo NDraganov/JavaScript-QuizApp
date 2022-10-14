@@ -398,6 +398,7 @@ section .title {
 .header {
     background-color: #7D6E83;
     color: #F8EDE3;
+    padding-top: 10px;
     border-radius: 5px 5px 0 0;
 }
 .result {

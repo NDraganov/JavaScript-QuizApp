@@ -127,30 +127,49 @@ let score;
 const SCORE_POINTS = 10;
 const MAX_QUESTIONS = 1;
 let acceptingAnswers;
-// To mute audio - code written by me.
+// To play sound effect when hover over option answers. 
+answers.forEach((answer) => {
+    answer.addEventListener("mouseover", mouseOverAudio);
+    function mouseOverAudio() {
+        hoverAudio.play();
+    }
+})
+/** To mute audio - code written by me. **/
 function muteAudio() {
-    // correctAudio.pause();
-    // correctAudio.currentTime = 0;
-    // wrongAudio.pause();
-    // wrongAudio,currentTime = 0;
-    // hoverAudio.pause();
-    // hoverAudio.currentTime = 0;
-    // abc();
+    if(!muteButton === false) {
+        pauseAudioAnswer();
+        pauseAudioHover();
+    } 
     muteButton.innerHTML = "<i class='fa fa-volume-off sound' aria-hidden='true'></i>" + "   Muted";
 }
-// function abc() {
-//     answers.forEach((answer) => {
-//         answer.addEventListener("click", bar);
-//         function bar() {
-//             correctAudio.pause();
-//             correctAudio.currentTime = 0;
-//         }
-//     })
-// }
+// To pause sound effects for answers.
+function pauseAudioAnswer() {
+    answers.forEach((answer) => {
+        answer.addEventListener("click", pauseAnswerSounds);
+        function pauseAnswerSounds() {
+            correctAudio.pause();
+            correctAudio.currentTime = 0;
+            wrongAudio.pause();
+            wrongAudio.currentTime = 0;
+            hoverAudio.pause();
+            hoverAudio.currentTime = 0;
+        }
+    })
+}
+// To pause sound effect for hover over the options.
+function pauseAudioHover() {
+    answers.forEach((answer) => {
+        answer.addEventListener("mouseover", pauseHoverSound);
+        function pauseHoverSound() {
+            hoverAudio.pause();
+            hoverAudio.currentTime = 0;
+        }
+    })
+}
 muteButton.onclick = muteAudio;
 // Start the Quiz.
 function startQuiz() {
-    // Set variables to 0 at the biginning.
+    // Set variables to 0 at the beginning.
     questionCounter = 0;
     score = 0;
     acceptingAnswers = true;
@@ -223,10 +242,6 @@ getNewQuestion = () => {
     // Shift to the next question.
     availableQuestions.shift();
 };
-// To play sound effect when hover over option answers. 
-function hover() {
-    hoverAudio.play();
-}
 // Start Timer code taken from - https://codepen.io/cathydutton/pen/avYKeM and edited by me.
 function startTimer() {
     tens++; 
