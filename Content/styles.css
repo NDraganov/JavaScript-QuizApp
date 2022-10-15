@@ -172,12 +172,17 @@ section .title {
     text-align: center;
     color: #7D6E83;
 }
+.about .title {
+    color: #1572A1;
+    font-weight: bold;
+}
 .section {
     background-color: #F8EDE3;
     box-shadow: 0 0.4rem 1.4rem #F8EDE3;
 }
 .about p {
     font-size: 1.5rem;
+    color: #F8EDE3;
 }
 /* How to... Section */
 .how-to {
@@ -185,9 +190,13 @@ section .title {
     text-align: center;
     color: #7D6E83;
 }
+.how-to .title {
+    color: #1572A1;
+    font-weight: bold;
+}
 .how-to p {
     font-size: 1.5rem;
-    padding: 1rem;
+    color: #F8EDE3;
 }
 /* Play Section */
 .play {
