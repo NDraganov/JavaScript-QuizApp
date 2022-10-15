@@ -1,5 +1,6 @@
 // The code in the JavaScript file is taken from - https://www.youtube.com/watch?v=MxrGPP4F8Sc and edited by me.
-// Questions
+
+/** Questions **/
 let questions = [
     {
      id:1,
@@ -38,7 +39,8 @@ let questions = [
      answer: "c",
    },
    ];
-// Global Constant variables
+
+/** Global Constant variables **/
 const body = document.getElementById('body');
 const navBar = document.getElementById('navbar')
 // const offcanvas = document.getElementsByClassName('offcanvas');
@@ -72,25 +74,22 @@ const hoverAudio = new Audio('Content/Audio/Button-press-sound-effect.mp3');
 const wrongAudio = new Audio('Content/Audio/Wrong-answer-sound-effect.mp3');
 const correctAudio = new Audio('Content/Audio/Good-idea-bell.mp3');
 const restartButton = document.getElementById('restart');
-// Get the Full Year. 
+
+/** Get the Full Year **/
 document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()));
-// Hide the Offcanvas. 
-// function hideOffcanvas() {
-//     offcanvas.classList.add("hide");
-// }
-// navLinks.onclick = hideOffcanvas;
-// Show the Modal - code written by me.
+
+/** Show the Modal - code written by me **/
 function showWindow() {
     modalContainer.classList.add('window-container-show');
 }
-// Calling the function to show the Modal when Start button is pressed.
-startButton.onclick = showWindow;
-// Create a username. 
+startButton.onclick = showWindow; // Calling the function to show the Modal when Start button is pressed.
+
+/** Create a username **/
 function createUsername() {
     usernameCorrectLength();
     showQuiz();
 }
-function usernameCorrectLength() {
+function usernameCorrectLength() { 
     const username = document.getElementById("username").value;
     if(username.length>0) {
         player.textContent = username;
@@ -98,9 +97,9 @@ function usernameCorrectLength() {
         player.textContent = "Guest";
     }
 }
-// Calling the function to create a username. 
-userButton.onclick = createUsername;
-// Show the Quiz - code written by me.
+userButton.onclick = createUsername; // Calling the function to create a username. 
+
+/** Show the Quiz - code written by me **/
 function showQuiz() {
     quiz.classList.add('quiz-show');
     let startTitle = document.querySelector('.start-title');
@@ -110,11 +109,12 @@ function showQuiz() {
     modalContainer.classList.remove('window-container-show');
     startButton.classList.add('start-button-hide');
     navBar.classList.add('navbar-hide');
-    // Start Timer code taken from - https://codepen.io/cathydutton/pen/avYKeM.
+    // Start Timer code taken from - https://codepen.io/cathydutton/pen/avYKeM
     interval = setInterval(startTimer, 10);
     startAudio.play();
 }
-// Variables for the Introduction Header.
+
+/** Variables for the Introduction Header **/
 let questionCounter;
 let interval;
 let seconds = 00;
@@ -124,14 +124,16 @@ let score;
 const SCORE_POINTS = 10;
 const MAX_QUESTIONS = 1;
 let acceptingAnswers;
-// To play sound effect when hover over option answers. 
+
+/** To play sound effect when hover over option answers **/
 answers.forEach((answer) => {
     answer.addEventListener("mouseover", mouseOverAudio);
     function mouseOverAudio() {
         hoverAudio.play();
     }
 })
-/** To mute audio - code written by me. **/
+
+/** To mute audio - code written by me **/
 function muteAudio() {
     if(!muteButton === false) {
         pauseAudioAnswer();
@@ -139,7 +141,8 @@ function muteAudio() {
     } 
     muteButton.innerHTML = "<i class='fa fa-volume-off sound' aria-hidden='true'></i>" + "   Muted";
 }
-// To pause sound effects for answers.
+
+/** To pause sound effects for answers **/
 function pauseAudioAnswer() {
     answers.forEach((answer) => {
         answer.addEventListener("click", pauseAnswerSounds);
@@ -153,7 +156,8 @@ function pauseAudioAnswer() {
         }
     })
 }
-// To pause sound effect for hover over the options.
+
+/** To pause sound effect for hover over the options **/
 function pauseAudioHover() {
     answers.forEach((answer) => {
         answer.addEventListener("mouseover", pauseHoverSound);
@@ -163,72 +167,74 @@ function pauseAudioHover() {
         }
     })
 }
-muteButton.onclick = muteAudio;
-// Start the Quiz.
+muteButton.onclick = muteAudio; // Calling muteAudio function when mute Button is pressed.
+
+/** Start the Quiz **/
 function startQuiz() {
     // Set variables to 0 at the beginning.
     questionCounter = 0;
     score = 0;
     acceptingAnswers = true;
     scoreText.innerText = score;
-    // Get random questions and limited the number of Questions.
-    availableQuestions = getRandomQuestions(questions, MAX_QUESTIONS);
-    // To get new question.
-    getNewQuestion();
+    
+    availableQuestions = getRandomQuestions(questions, MAX_QUESTIONS); // Get random questions and limited the number of Questions.
+    
+    getNewQuestion(); // To get new question.
 };
-// To get random question from Array of Questions.
+
+/** To get random question from Array of Questions **/
 getRandomQuestions = (arr, n) => {
     const shuffled = [...arr].sort(() => 0.5 - Math.random());
     return (selected = shuffled.slice(0, n));
 };
-// To get a new question.
-getNewQuestion = () => {
-    // If statement to display results at the ened of the Quiz.
+
+/** To get a new question **/
+function getNewQuestion() {
+    /* If statement to display results at the ened of the Quiz */
     if (availableQuestions.length === 0) {
         displayResults();
         return;
     }
     
-    // Show the progressing text of Question in Introduction Header.
     questionCounter++;
-    questionCounterText.innerText = `Question ${questionCounter}/${MAX_QUESTIONS}`;
-    // Show the Progress Bar tracker in colour.
-    progressBarFull.style.width = `${(questionCounter/MAX_QUESTIONS) * 100}%`;
-    // Show the current question.
-    currentQuestion = availableQuestions[0];
+    questionCounterText.innerText = `Question ${questionCounter}/${MAX_QUESTIONS}`; // Show the progress text of Question in Introduction Header.
+    progressBarFull.style.width = `${(questionCounter/MAX_QUESTIONS) * 100}%`; // Show the Progress Bar tracker in colour.
+    currentQuestion = availableQuestions[0]; // Show the current question.
     question.innerText = currentQuestion.question;
-    // Show each option for current question.
+
+    /* Show each option for current question */
     answers.forEach((answer) => {
         answer.innerText = currentQuestion[answer.dataset.answer];
     });
-    // For each option answer.
+
+    /* For each option answer */
     answers.forEach((answer) => {
         // Return if not accepting answer.
         if (!acceptingAnswers) {
             return;
         }
-        // Event Listener to each option answer.
+        /* Event Listener to each option answer */
         answer.addEventListener("click", (e) => {
-            // Set pressed option to False and apply red coloured class.
-            acceptingAnswers = false;
-            // Targeting the data according to the pressed option.
-            const clickedAnswer = e.target;
+            
+            acceptingAnswers = false; // Set pressed option to False and apply red coloured class.
+            
+            const clickedAnswer = e.target; // Targeting the data according to the pressed option.
             const answeredLetter = clickedAnswer.dataset.answer;
             let classToApply = "incorrect";
-            // Check If pressed option is correct answer.
+            /* Check If pressed option is correct answer */
             if (answeredLetter === currentQuestion.answer) {
-                // Audio Play code taken from - https://www.udemy.com/course/the-complete-web-development-bootcamp/learn/lecture/12383968#overview.
-                correctAudio.play();
+                correctAudio.play(); // Audio Play code taken from - https://www.udemy.com/course/the-complete-web-development-bootcamp/learn/lecture/12383968#overview
                 incrementScore(SCORE_POINTS);
                 scoreText.innerText = score;
                 classToApply = "correct";
             } else {
-                // Audio Play code taken from - https://www.udemy.com/course/the-complete-web-development-bootcamp/learn/lecture/12383968#overview.
-                wrongAudio.play();
+                wrongAudio.play(); // Audio Play code taken from - https://www.udemy.com/course/the-complete-web-development-bootcamp/learn/lecture/12383968#overview
             }
-            // Add class to pressed option.
+
+            /* Add class to pressed option */
             clickedAnswer.classList.add(classToApply);
-            // Delayed function to passing to next question.
+
+            /* Delayed function to passing to next question */
             setTimeout(() => {
                 clickedAnswer.classList.remove(classToApply);
                 getNewQuestion();
@@ -236,10 +242,12 @@ getNewQuestion = () => {
             }, 1000);
         });
     });
-    // Shift to the next question.
+
+    /* Shift to the next question */
     availableQuestions.shift();
 };
-// Start Timer code taken from - https://codepen.io/cathydutton/pen/avYKeM and edited by me.
+
+/** Start Timer code taken from - https://codepen.io/cathydutton/pen/avYKeM and edited by me **/
 function startTimer() {
     tens++; 
     if(tens < 9){
@@ -264,23 +272,26 @@ function startTimer() {
         appendSeconds.innerHTML = "0" + 0;
     }
 }  
-// Function to increment the scores.
+
+/** Function to increment the scores **/
 function incrementScore(num) {
 score += num;
 scoreText.innerText = score;
 }
-// To display the Modal with Result.
+
+/** To display the Modal with Result **/
 displayResults = () => {
-    answeredQuestions.innerHTML = "<span class='result-username'>" + player.textContent + "</span>" + ", you answered: " + "<span class='result-questions'>" + MAX_QUESTIONS + "</span>" + " questions";
+    answeredQuestions.innerHTML = "<span class='result-username'>" + player.textContent + "</span>" + ", you answered: " + "<span class='result-questions'>" + MAX_QUESTIONS +  "</span>"
+     + " questions" + " of " + "<span class='result-questions'>" + MAX_QUESTIONS + "</span>";
     resultScore.innerHTML = "Your scores: " + "<span class='result-score'>" + score + "</span>";
     resultTime.innerHTML = "Your time: " + "<span class='result-time'>" + minutes + "m" + " " + seconds + "s" + " " + tens + "ms" + "</span>";
     result.innerHTML = results.innerHTML;
     results.classList.add('results-show');
 };
-// Restart the Quiz.
+
+/** Restart the Quiz **/
 function restartQuiz() {
-    // Code taken from - https://www.positioniseverything.net/javascript-refresh-page/.
-    window.location.reload(true);
+    window.location.reload(true); // Code taken from - https://www.positioniseverything.net/javascript-refresh-page/
 }
-//   Calling the function to start the Quiz.
-  startQuiz();
+
+  startQuiz(); // Calling the function to start the Quiz.

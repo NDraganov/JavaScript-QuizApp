@@ -160,10 +160,15 @@ body {
 section .title {
     color: #1572A1;
 }
+.quiz-title {
+    text-align: center;
+    padding-top: 10rem;
+    color: #F8EDE3;
+    font-size: 4rem;
+}
 /* Section ABOUT */
 .about {
-    padding-top: 10rem;
-
+    padding-top: 7rem;
     text-align: center;
     color: #7D6E83;
 }
@@ -176,12 +181,13 @@ section .title {
 }
 /* How to... Section */
 .how-to {
-    padding-top: 10rem;
+    padding-top: 7rem;
     text-align: center;
     color: #7D6E83;
 }
 .how-to p {
     font-size: 1.5rem;
+    padding: 1rem;
 }
 /* Play Section */
 .play {
@@ -404,7 +410,7 @@ section .title {
 .result {
     color: #7D6E83;
     font-size: 2rem;
-    font-weight: bold;
+    /* font-weight: bold; */
     margin-bottom: 0;
 }
 .padding {
@@ -412,15 +418,19 @@ section .title {
 }
 .result-username {
     color: #1572A1;
+    font-weight: bold;
 }
 .result-questions {
     color: #1572A1;
+    font-weight: bold;
 }
 .result-score {
     color: #1572A1;
+    font-weight: bold;
 }
 .result-time {
     color: #1572A1;
+    font-weight: bold;
 }
 .restart-button {
     width: 150px;
