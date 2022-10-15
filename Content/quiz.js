@@ -190,59 +190,51 @@ getRandomQuestions = (arr, n) => {
 
 /** To get a new question **/
 function getNewQuestion() {
-    /* If statement to display results at the ened of the Quiz */
+    /* If statement to display results at the end of the Quiz */
     if (availableQuestions.length === 0) {
         displayResults();
         return;
     }
-    
-    questionCounter++;
-    questionCounterText.innerText = `Question ${questionCounter}/${MAX_QUESTIONS}`; // Show the progress text of Question in Introduction Header.
-    progressBarFull.style.width = `${(questionCounter/MAX_QUESTIONS) * 100}%`; // Show the Progress Bar tracker in colour.
-    currentQuestion = availableQuestions[0]; // Show the current question.
-    question.innerText = currentQuestion.question;
-
+    introShow(); // Calling the function to display Itroduction section.
     /* Show each option for current question */
     answers.forEach((answer) => {
         answer.innerText = currentQuestion[answer.dataset.answer];
     });
-
     /* For each option answer */
-    answers.forEach((answer) => {
+    answers.forEach(forEachOption);
+    function forEachOption(answer) {
         // Return if not accepting answer.
         if (!acceptingAnswers) {
             return;
         }
         /* Event Listener to each option answer */
-        answer.addEventListener("click", (e) => {
-            
+        answer.addEventListener("click", onClickOption);
+        /* Function to target data of options on click */
+        function onClickOption(e) {
             acceptingAnswers = false; // Set pressed option to False and apply red coloured class.
-            
             const clickedAnswer = e.target; // Targeting the data according to the pressed option.
             const answeredLetter = clickedAnswer.dataset.answer;
             let classToApply = "incorrect";
             /* Check If pressed option is correct answer */
             if (answeredLetter === currentQuestion.answer) {
                 correctAudio.play(); // Audio Play code taken from - https://www.udemy.com/course/the-complete-web-development-bootcamp/learn/lecture/12383968#overview
-                incrementScore(SCORE_POINTS);
+                incrementScore(SCORE_POINTS); // Increment with 10 scores.
                 scoreText.innerText = score;
                 classToApply = "correct";
             } else {
                 wrongAudio.play(); // Audio Play code taken from - https://www.udemy.com/course/the-complete-web-development-bootcamp/learn/lecture/12383968#overview
             }
-
             /* Add class to pressed option */
             clickedAnswer.classList.add(classToApply);
-
             /* Delayed function to passing to next question */
-            setTimeout(() => {
+            setTimeout(delayNewQuestion, 1000);
+            function delayNewQuestion() {
                 clickedAnswer.classList.remove(classToApply);
                 getNewQuestion();
                 acceptingAnswers = true;
-            }, 1000);
-        });
-    });
-
+            }
+        }
+    }
     /* Shift to the next question */
     availableQuestions.shift();
 };
@@ -272,6 +264,15 @@ function startTimer() {
         appendSeconds.innerHTML = "0" + 0;
     }
 }  
+
+/* Function to display Introduction components - progress bar, scores and questions */
+function introShow() {
+    questionCounter++;
+    questionCounterText.innerText = `Question ${questionCounter}/${MAX_QUESTIONS}`; // Show the progress text of Question in Introduction Header.
+    progressBarFull.style.width = `${(questionCounter/MAX_QUESTIONS) * 100}%`; // Show the Progress Bar tracker in colour.
+    currentQuestion = availableQuestions[0];       // Show the current 
+    question.innerText = currentQuestion.question; // question.
+}
 
 /** Function to increment the scores **/
 function incrementScore(num) {
