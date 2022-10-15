@@ -38,6 +38,60 @@ let questions = [
      d: "South Africa",
      answer: "c",
    },
+   {
+    id:5,
+    question: "What is the World's Smallest Country?",
+    a: "Luxembourg",
+    b: "Vatican City",
+    c: "Monaco",
+    d: "Lichtenstein",
+    answer: "b",
+  },
+  {
+    id:6,
+    question: "In which country is the world's highest waterfall?",
+    a: "USA",
+    b: "Venezuela",
+    c: "Brazil",
+    d: "South Africa",
+    answer: "b",
+  },
+  {
+    id:7,
+    question: "What is the capital of Australia?",
+    a: "Melbourne",
+    b: "Adelaide",
+    c: "Sydney",
+    d: "Canberra",
+    answer: "d",
+  },
+  {
+    id:8,
+    question: "In which country is Mount Fuji located?",
+    a: "Peru",
+    b: "North Korea",
+    c: "China",
+    d: "Japan",
+    answer: "d",
+  },
+  {
+    id:9,
+    question: "In which country is the Cape of Good Hope?",
+    a: "USA",
+    b: "Canada",
+    c: "South Africa",
+    d: "Australia",
+    answer: "c",
+  },
+  {
+    id:10,
+    question: "What country has the greatest number of active volcanoes?",
+    a: "Philippines",
+    b: "Italy",
+    c: "Japan",
+    d: "Indonesia",
+    answer: "d",
+  },
    ];
 
 /** Global Constant variables **/
@@ -122,7 +176,7 @@ let tens = 00;
 let minutes = 00;
 let score;
 const SCORE_POINTS = 10;
-const MAX_QUESTIONS = 1;
+const MAX_QUESTIONS = 10;
 let acceptingAnswers;
 
 /** To play sound effect when hover over option answers **/
@@ -178,7 +232,8 @@ function startQuiz() {
     scoreText.innerText = score;
     
     availableQuestions = getRandomQuestions(questions, MAX_QUESTIONS); // Get random questions and limited the number of Questions.
-    
+    // availableAnswers = getRandomAnswers(questions, MAX_QUESTIONS);
+    // getRandomAnswers();
     getNewQuestion(); // To get new question.
 };
 
@@ -187,6 +242,10 @@ getRandomQuestions = (arr, n) => {
     const shuffled = [...arr].sort(() => 0.5 - Math.random());
     return (selected = shuffled.slice(0, n));
 };
+
+// function getRandomAnswers() {
+//     shuffledAnswers = ques
+// }
 
 /** To get a new question **/
 function getNewQuestion() {
