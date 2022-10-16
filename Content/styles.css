@@ -1,9 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200;300;400;500;600;700&display=swap');
 
-* {
-	margin: 0;
-	padding: 0;
-}
 body {
     background-color: #F8EDE3;
     font-family: 'Josefin Sans';
@@ -21,7 +17,7 @@ body {
     color: #F8EDE3;
 }
 .navbar-brand:hover {
-    color: #1572A1;
+    color: #FF8C32;
 }
 .navbar-toggler {
     border: none;
@@ -39,7 +35,7 @@ body {
     color: #F8EDE3;
 }
 .nav-link:hover {
-    color: #1572A1;
+    color: #FF8C32;
     transform: scale(1.5);
     -webkit-transform: scale(1.5);
     -moz-transform: scale(1.5);
@@ -48,33 +44,24 @@ body {
     transition: transform 200ms;
 }
 .nav-item {
-    padding-right: 50px;
-}
-/* .nav-item:hover {
-    cursor: pointer;
-    transform: translateY(-0.5rem);
-    transition: transform 200ms;
-} */
-/* Hide Offcanvas */
-.hide {
-    display: none;
+    padding-right: 2rem;
 }
 /* Media rule for offcanvas for mobile devices */
 @media screen and (max-width: 800px) {
-.offcanvas {
-    background: linear-gradient(to right, #7D6E83, #D0B8A8);
-    color: #F8EDE3;
-}
-.nav-line {
-    border: 1px solid #F8EDE3;
-}
-.nav-link:hover {
-    transform: none;
-    -webkit-transform: none;
-    -moz-transform: none;
-    -ms-transform: none;
-    -o-transform: none;
-}
+    .offcanvas {
+        background: linear-gradient(to right, #7D6E83, #D0B8A8);
+        color: #F8EDE3;
+    }
+    .nav-line {
+        border: 1px solid #F8EDE3;
+    }
+    .nav-link:hover {
+        transform: none;
+        -webkit-transform: none;
+        -moz-transform: none;
+        -ms-transform: none;
+        -o-transform: none;
+    }
 }
 /* Animated area - code taken from https://www.divinectorweb.com/2020/10/animated-background-html-css.html and edited by me */
 .animation-area {
@@ -173,12 +160,8 @@ section .title {
     color: #7D6E83;
 }
 .about .title {
-    color: #1572A1;
+    color: #FF8C32;
     font-weight: bold;
-}
-.section {
-    background-color: #F8EDE3;
-    box-shadow: 0 0.4rem 1.4rem #F8EDE3;
 }
 .about p {
     font-size: 1.5rem;
@@ -191,7 +174,7 @@ section .title {
     color: #7D6E83;
 }
 .how-to .title {
-    color: #1572A1;
+    color: #FF8C32;
     font-weight: bold;
 }
 .how-to p {
@@ -232,6 +215,10 @@ section .title {
     transition: transform 200ms;
 }
 /* Start Quiz window. */
+.section {
+    background-color: #F8EDE3;
+    box-shadow: 0 0.4rem 1.4rem #F8EDE3;
+}
 .window-container {
     background-color: #7D6E8390;
     display: flex;
@@ -355,6 +342,9 @@ section .title {
 .counter, .score {
     text-align: center;
 }
+.score-number {
+    color: #FF8C32;
+}
 .question-holder {
     height: 10rem;
     display: flex;
@@ -368,6 +358,9 @@ section .title {
     border: 1px solid #251B37;
     border-radius: 5px;
     padding: 10px;
+}
+.quiz .fa {
+    color: #FF8C32;
 }
 .sound {
     color: #F8EDE3;
@@ -434,7 +427,7 @@ section .title {
     font-weight: bold;
 }
 .result-score {
-    color: #1572A1;
+    color: #FF8C32;
     font-weight: bold;
 }
 .result-time {
@@ -478,10 +471,10 @@ footer .title {
 }
 .footer .fa-brands {
     padding: 1rem;
-    color: #7D6E83;
+    color: #FF8C32;
 }
 .footer .fa {
-    color: #7D6E83;
+    color: #FF8C32;
     padding: 1rem;
 }
 .copyright {
