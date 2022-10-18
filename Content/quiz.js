@@ -129,6 +129,17 @@ const wrongAudio = new Audio('Content/Audio/Wrong-answer-sound-effect.mp3');
 const correctAudio = new Audio('Content/Audio/Good-idea-bell.mp3');
 const restartButton = document.getElementById('restart');
 
+
+function hideOffcanvasAbout() {
+   window.location.href = "https://ndraganov.github.io/JavaScript-QuizApp/#about";  
+}
+function hideOffcanvasHow() {
+    window.location.href = "https://ndraganov.github.io/JavaScript-QuizApp/#how-to";
+}
+function hideOffcanvasPlay() {
+    window.location.href = "https://ndraganov.github.io/JavaScript-QuizApp/#play";
+}
+
 /** Get the Full Year **/
 document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()));
 
@@ -144,7 +155,7 @@ function createUsername() {
     showQuiz();
 }
 function usernameCorrectLength() { 
-    const username = document.getElementById("username").value;
+    const username = document.getElementById('username').value;
     if(username.length>0) {  // If enter username.
         player.textContent = username; // Display input into player text.
     } else {  // If not enter username.

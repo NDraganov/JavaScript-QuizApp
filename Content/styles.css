@@ -46,6 +46,9 @@ body {
 .nav-item {
     padding-right: 2rem;
 }
+.offcanvas-hide {
+    display: none;
+}
 /* Media rule for offcanvas for mobile devices */
 @media screen and (max-width: 800px) {
     .offcanvas {
