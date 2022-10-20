@@ -32,19 +32,35 @@
         <hr class="nav-line">
         <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
           <li class="nav-item">
-            <a class="nav-link" href="#about" onclick="hideOffcanvasAbout()">ABOUT</a>
+            <a class="nav-link" href="#about" onclick="abc()">ABOUT</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#how-to" onclick="hideOffcanvasHow()">HOW TO...</a>
+            <a class="nav-link" href="#how-to" onclick="abc()">HOW TO...</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#play" onclick="hideOffcanvasPlay()">PLAY</a>
+            <a class="nav-link" href="#play" onclick="abc()">PLAY</a>
           </li>
         </ul>
       </div>
     </div>
   </div>
 </nav>
+<!-- <header class="header-area">
+  <div class="logo">
+    <a href="#"><i class="fa-brands fa-square-js"></i>  Quiz</a>
+  </div>
+  <nav class="main-menu">
+    <a href="#" class="bars-button" id="open" onclick="showOffcanvas()"><i class="fa-solid fa-bars"></i></a>
+    <div class="side-menu" id="menu">
+      <a href="#" class="close-button" id="close"><i class="fa-solid fa-xmark"></i></a>
+      <ul>
+        <li><a href="#about" class="menu-link">ABOUT</a></li>
+        <li><a href="#how-to">HOW TO...</a></li>
+        <li><a href="#play">PLAY</a></li>
+      </ul>
+    </div>
+  </nav>
+</header> -->
 <!-- Animation area - code taken from https://www.divinectorweb.com/2020/10/animated-background-html-css.html and edited by me-->
 <div class="animation-area">
   <ul class="box-area">
@@ -163,6 +179,8 @@
                   <!-- Results -->
                   <div class="container results text-center" id="results">
                     <h1 class="header">Results</h1>
+                    <!-- Icon taken from - https://uxwing.com/certificate-icon/ -->
+                    <img class="result-icon" src="Content/Images/svg-2.svg" alt="result-icon">
                     <p class="result padding" id="answered-questions"></p>
                     <p class="result" id="result-score"></p>
                     <p class="result" id="result-time"></p>

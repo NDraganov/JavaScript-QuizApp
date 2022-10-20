@@ -5,6 +5,7 @@ body {
     font-family: 'Josefin Sans';
 }
 /* Navigation Bar */
+
 .navbar {
     background-color: #251B3770;
 }
@@ -46,9 +47,82 @@ body {
 .nav-item {
     padding-right: 2rem;
 }
-.offcanvas-hide {
-    display: none;
+
+/* .header-area {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #251B3770;
+    height: 90px;
 }
+.logo a {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #F8EDE3;
+    font-weight: bold;
+    text-decoration: none;
+    margin-left: 30px;
+}
+.bars-button {
+    font-size: 30px;
+    color: #F8EDE3;
+    margin-right: 50px;
+}
+.close-button {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    font-size: 30px;
+    color: #251B37;
+}
+.side-menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    background: linear-gradient(to right, #7D6E83, #D0B8A8);
+    color: #F8EDE3;
+    width: 30vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    /* transform: translateX(100%);
+    -webkit-transform: translateX(100%);
+    -moz-transform: translateX(100%);
+    -ms-transform: translateX(100%);
+    -o-transform: translateX(100%); 
+}*/
+/* .side-menu-active {
+    transform: translateX(0);
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -o-transform: translateX(0);
+}
+.side-menu ul {
+    width: 100%;
+}
+.side-menu ul li {
+    list-style: none;
+}
+.side-menu ul li a {
+    display: block;
+    font-size: 1.4rem;
+    font-weight: bold;
+    line-height: 1.5;
+    color: #F8EDE3;
+    padding: 15px 0 15px 2vw;
+    text-decoration: none;
+}
+.menu-link:hover {
+    color: #FF8C32;
+    transform: scale(1.5);
+    -webkit-transform: scale(1.5);
+    -moz-transform: scale(1.5);
+    -ms-transform: scale(1.5);
+    -o-transform: scale(1.5);
+    transition: transform 200ms;
+} */
+
 /* Media rule for offcanvas for mobile devices */
 @media screen and (max-width: 800px) {
     .offcanvas {
@@ -412,6 +486,14 @@ section .title {
     padding-top: 10px;
     border-radius: 5px 5px 0 0;
 }
+.result-icon {
+    position: relative;
+    left: 550px;
+    color: #1572A1;
+    width: 1em;
+    height: 1em;
+    font-size: 200px;
+}
 .result {
     color: #7D6E83;
     font-size: 2rem;
@@ -419,7 +501,7 @@ section .title {
     margin-bottom: 0;
 }
 .padding {
-    padding-top: 3rem;
+    padding-top: 2.5rem;
 }
 .result-username {
     color: #1572A1;

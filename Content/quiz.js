@@ -97,8 +97,8 @@ let questions = [
 /** Global Constant variables **/
 const body = document.getElementById('body');
 const navBar = document.getElementById('navbar')
-// const offcanvas = document.getElementsByClassName('offcanvas');
-// const navLinks = document.getElementsByClassName('nav-link');
+const offcanvas = document.getElementById('offcanvasNavbar');
+const navLinks = document.getElementsByClassName('nav-link');
 const startButton = document.querySelector('#start-button');
 const userButton = document.getElementById('user-button');
 const player = document.getElementById("player");
@@ -129,16 +129,17 @@ const wrongAudio = new Audio('Content/Audio/Wrong-answer-sound-effect.mp3');
 const correctAudio = new Audio('Content/Audio/Good-idea-bell.mp3');
 const restartButton = document.getElementById('restart');
 
+// const openbtn = document.getElementById('open');
+// const closebtn = document.getElementById('close');
+// const offcanvasMenu = document.getElementById('menu');
 
-function hideOffcanvasAbout() {
-   window.location.href = "https://ndraganov.github.io/JavaScript-QuizApp/#about";  
-}
-function hideOffcanvasHow() {
-    window.location.href = "https://ndraganov.github.io/JavaScript-QuizApp/#how-to";
-}
-function hideOffcanvasPlay() {
-    window.location.href = "https://ndraganov.github.io/JavaScript-QuizApp/#play";
-}
+// function showOffcanvas() {
+//     offcanvasMenu.classList.add('side-menu-active');
+// }
+// closebtn.addEventListener('click', function hideOffcanvas() {
+//     offcanvasMenu.classList.remove('side-menu-active');
+// });
+
 
 /** Get the Full Year **/
 document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()));
@@ -187,7 +188,7 @@ let tens = 00;
 let minutes = 00;
 let score;
 const SCORE_POINTS = 10;
-const MAX_QUESTIONS = 10;
+const MAX_QUESTIONS = 1;
 let acceptingAnswers;
 let classToApply;
 
@@ -281,7 +282,7 @@ function introShow() {
 
 /** To display options answers **/
 function showAnswer(answer) {
-        answer.innerText = currentQuestion[answer.dataset.answer]; // Take options of current question and display it.
+    answer.innerText = currentQuestion[answer.dataset.answer]; // Take options of current question and display it.
 }
 
 /** For each option **/
