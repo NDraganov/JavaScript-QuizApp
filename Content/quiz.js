@@ -100,6 +100,7 @@ const navBar = document.getElementById('navbar')
 const offcanvas = document.getElementById('offcanvasNavbar');
 const navLinks = document.getElementsByClassName('nav-link');
 const startButton = document.querySelector('#start-button');
+const hide = document.querySelectorAll('.hide');
 const userButton = document.getElementById('user-button');
 const player = document.getElementById("player");
 const quiz = document.getElementById('quiz');
@@ -131,13 +132,13 @@ const restartButton = document.getElementById('restart');
 
 // const openbtn = document.getElementById('open');
 // const closebtn = document.getElementById('close');
-// const offcanvasMenu = document.getElementById('menu');
+// const offcanvasMenu =document.getElementById('menu');
 
-// function showOffcanvas() {
-//     offcanvasMenu.classList.add('side-menu-active');
-// }
-// closebtn.addEventListener('click', function hideOffcanvas() {
-//     offcanvasMenu.classList.remove('side-menu-active');
+// openbtn.addEventListener('click', function showOffcanvas() {
+//     offcanvasMenu.classList.add('offcanvas-menu-active');
+// });
+// closebtn.addEventListener('click', function showOffcanvas() {
+//     offcanvasMenu.classList.remove('offcanvas-menu-active');
 // });
 
 
@@ -169,11 +170,11 @@ userButton.onclick = createUsername; // Calling the function to create a usernam
 function showQuiz() {
     quiz.classList.add('quiz-show');
     let startTitle = document.querySelector('.start-title');
-    startTitle.classList.add('start-title-hide');
+    startTitle.classList.add('hide');
     let startText = document.querySelector('.start-text');
-    startText.classList.add('start-text-hide');
+    startText.classList.add('hide');
     modalContainer.classList.remove('window-container-show');
-    startButton.classList.add('start-button-hide');
+    startButton.classList.add('hide');
     navBar.classList.add('navbar-hide');
     // Start Timer code taken from - https://codepen.io/cathydutton/pen/avYKeM
     interval = setInterval(startTimer, 10);

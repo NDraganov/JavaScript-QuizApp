@@ -58,26 +58,35 @@
   </ul>
 <div class="intro-page">
   <h1 class="quiz-title">Welcome to GeoQuiz</h1>
-  <div class="instructions">
-    <!-- Section About -->
-    <div class="about" id="about">
-      <h2 class="about-title"><i class="fa-solid fa-circle-info icon"></i> About the Quiz</h2>
-      <p>This Quiz represents JavaScript project.</p>
-      <p>Technology used: HTML, CSS and JS.</p>
-      <p>With this Quiz, you can check your knowledge about world geography.</p>
-      <p>Why not, got fun as well.</p>
-      <p>Hope you enjoy it!</p>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <!-- Section About -->
+        <div class="about" id="about">
+          <h2 class="about-title"><i class="fa-solid fa-circle-info icon"></i> About the Quiz</h2>
+          <p>This Quiz represents JavaScript project.
+          Technology used: HTML, CSS and JS.
+          With this Quiz, you can check your knowledge about world geography.
+          Why not, got fun as well.
+          Hope you enjoy it!</p>
+        </div>
+      </div>
     </div>
-    <!-- How to... Section -->
-    <div class="how-to" id="how-to">
-      <h2 class="how-to-title"><i class="fa-solid fa-gamepad icon"></i> How to play the Quiz</h2>
-      <p>The Quiz is consist of 10 questions. The questions gonna shows up in random order, as well the 4 different options.
-      Next question is loaded after choosing the option from the current question. Each correct answer gives you 10 scores.
-      When you choose wrong option, the button will be displayed in red colour. Correct answer will be displayed in green colour.
-      After answering all 10 questions, the result with win scores will be displayed.</p>             
+    <div class="row">
+      <div class="col-lg-12 col-md-12">
+        <!-- How to... Section -->
+        <div class="how-to" id="how-to">
+          <h2 class="how-to-title"><i class="fa-solid fa-gamepad icon"></i> How to play the Quiz</h2>
+          <p>The Quiz is consist of 10 questions. The questions gonna shows up in random order.
+          Next question is loaded after choosing the option from the current question. Each correct answer gives you 10 scores.
+          When you choosen option is wrong answer, the button will be highlighted in red colour. Correct answer will be highlighted in green colour.
+          After answering all 10 questions, the results will be displayed.</p>             
+        </div>
+      </div>
     </div>
   </div>
 </div>
+
 <!-- Section Play -->
 <section id="play" class="play">
   <div class="container">
@@ -86,9 +95,9 @@
               <!-- Home page before showing the game -->
               <div class="card-body">
                   <div class="col-lg-12 col-md-6">
-                      <div class="h1 title start-title">Play the GeoQuiz</div>
-                      <p class="start-text pt-4">Are you ready to check your general geography knowledge?</p>
-                      <p class="start-text">To start the Quiz, press the "START" button below.</p>
+                      <h2 class="start-title">Play the GeoQuiz</h2>
+                      <p class="start-text pt-4">Are you ready to check your general geography knowledge?</br>
+                      To start the Quiz, press the "START" button below.</p>
                       <!-- The Quiz App itself - code taken from https://www.youtube.com/watch?v=MxrGPP4F8Sc and edited by me-->
                       <div id="quiz" class="quiz">
                           <div class="container game">
@@ -157,7 +166,7 @@
                       </div>
                   </div>
                   <!-- START Button -->
-                  <button type="button" title="Start the Quiz" id="start-button" class="start-button hide3 mt-4">START</button>
+                  <button type="button" title="Start the Quiz" id="start-button" class="start-button mt-4">START</button>
                   <!-- Results -->
                   <div class="container results text-center" id="results">
                     <h1 class="header">Results</h1>

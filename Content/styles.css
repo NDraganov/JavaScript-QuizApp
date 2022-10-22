@@ -48,6 +48,7 @@ body {
     padding-right: 2rem;
 }
 
+
 /* Media rule for offcanvas for mobile devices */
 @media screen and (max-width: 800px) {
     .offcanvas {
@@ -159,20 +160,17 @@ body {
     color: #F8EDE3;
     font-size: 4rem;
 }
-section .title {
-    color: #1572A1;
-}
 
 /* Section ABOUT */
 .about {
     padding-top: 7rem;
     text-align: center;
     color: #7D6E83;
-    width: 1000px;
 }
 .about-title {
-    color: #FF8C32;
+    font-size: 3rem;
     font-weight: bold;
+    color: #FF8C32;
 }
 .about p {
     font-size: 2rem;
@@ -183,14 +181,12 @@ section .title {
 .how-to {
     padding-top: 7rem;
     text-align: center;
-    color: #7D6E83;
-    width: 1000px;
-    padding-right: 150px;
-    line-height: 2;
+    line-height: 1.5;
 }
 .how-to-title {
-    color: #FF8C32;
+    font-size: 3rem;
     font-weight: bold;
+    color: #FF8C32;
 }
 .how-to p {
     font-size: 2rem;
@@ -198,7 +194,8 @@ section .title {
 }
 
 /* Mobile Responsiveness */
-@media screen and (max-width: 800px) {
+/* @media screen and (max-width: 800px) {
+    
     .animation-area {
         height: 2500px;
     }
@@ -236,7 +233,7 @@ section .title {
     .window-header {
         max-width: 96%;
     }
-}
+} */
 
 /* Play Section */
 .play {
@@ -244,14 +241,13 @@ section .title {
     text-align: center;
     color: #7D6E83;
 }
-.start-title-hide {
-    display: none;
+.start-title {
+    font-size: 3rem;
+    color: #1572A1;
 }
 .start-text {
     font-size: 1.5rem;
-}
-.start-text-hide {
-    display: none;
+    line-height: 1.8;
 }
 .start-button {
     background: #C0E218;
@@ -270,6 +266,9 @@ section .title {
 .start-button:hover {
     transform: scale(1.5);
     transition: transform 200ms;
+}
+.hide {
+    display: none;
 }
 
 /* Start Quiz window. */
