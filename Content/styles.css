@@ -4,8 +4,8 @@ body {
     background-color: #F8EDE3;
     font-family: 'Josefin Sans';
 }
-/* Navigation Bar */
 
+/* Navigation Bar */
 .navbar {
     background-color: #251B3770;
 }
@@ -48,81 +48,6 @@ body {
     padding-right: 2rem;
 }
 
-/* .header-area {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: #251B3770;
-    height: 90px;
-}
-.logo a {
-    font-size: 3rem;
-    font-weight: bold;
-    color: #F8EDE3;
-    font-weight: bold;
-    text-decoration: none;
-    margin-left: 30px;
-}
-.bars-button {
-    font-size: 30px;
-    color: #F8EDE3;
-    margin-right: 50px;
-}
-.close-button {
-    position: absolute;
-    top: 30px;
-    left: 30px;
-    font-size: 30px;
-    color: #251B37;
-}
-.side-menu {
-    position: fixed;
-    top: 0;
-    right: 0;
-    background: linear-gradient(to right, #7D6E83, #D0B8A8);
-    color: #F8EDE3;
-    width: 30vw;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    /* transform: translateX(100%);
-    -webkit-transform: translateX(100%);
-    -moz-transform: translateX(100%);
-    -ms-transform: translateX(100%);
-    -o-transform: translateX(100%); 
-}*/
-/* .side-menu-active {
-    transform: translateX(0);
-    -webkit-transform: translateX(0);
-    -moz-transform: translateX(0);
-    -ms-transform: translateX(0);
-    -o-transform: translateX(0);
-}
-.side-menu ul {
-    width: 100%;
-}
-.side-menu ul li {
-    list-style: none;
-}
-.side-menu ul li a {
-    display: block;
-    font-size: 1.4rem;
-    font-weight: bold;
-    line-height: 1.5;
-    color: #F8EDE3;
-    padding: 15px 0 15px 2vw;
-    text-decoration: none;
-}
-.menu-link:hover {
-    color: #FF8C32;
-    transform: scale(1.5);
-    -webkit-transform: scale(1.5);
-    -moz-transform: scale(1.5);
-    -ms-transform: scale(1.5);
-    -o-transform: scale(1.5);
-    transition: transform 200ms;
-} */
-
 /* Media rule for offcanvas for mobile devices */
 @media screen and (max-width: 800px) {
     .offcanvas {
@@ -140,6 +65,7 @@ body {
         -o-transform: none;
     }
 }
+
 /* Animated area - code taken from https://www.divinectorweb.com/2020/10/animated-background-html-css.html and edited by me */
 .animation-area {
 	background: linear-gradient(to left, #D0B8A8, #7D6E83);
@@ -221,43 +147,97 @@ body {
 		opacity: 0;
 	}
 }
-section .title {
-    color: #1572A1;
+
+.instructions {
+    display: flex;
+    justify-content: space-between;
 }
+
 .quiz-title {
     text-align: center;
     padding-top: 10rem;
     color: #F8EDE3;
     font-size: 4rem;
 }
+section .title {
+    color: #1572A1;
+}
+
 /* Section ABOUT */
 .about {
     padding-top: 7rem;
     text-align: center;
     color: #7D6E83;
+    width: 1000px;
 }
-.about .title {
+.about-title {
     color: #FF8C32;
     font-weight: bold;
 }
 .about p {
-    font-size: 1.5rem;
+    font-size: 2rem;
     color: #F8EDE3;
 }
+
 /* How to... Section */
 .how-to {
     padding-top: 7rem;
     text-align: center;
     color: #7D6E83;
+    width: 1000px;
+    padding-right: 150px;
+    line-height: 2;
 }
-.how-to .title {
+.how-to-title {
     color: #FF8C32;
     font-weight: bold;
 }
 .how-to p {
-    font-size: 1.5rem;
+    font-size: 2rem;
     color: #F8EDE3;
 }
+
+/* Mobile Responsiveness */
+@media screen and (max-width: 800px) {
+    .animation-area {
+        height: 2500px;
+    }
+    .about {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .about-title {
+        font-size: 2rem;
+    }
+    .about p {
+        font-size: 1.5rem;
+    }
+    .how-to {
+       position: absolute;
+       top: 800px;
+       padding-left: 20px;
+       padding-right: 20px;
+       font-size: 1.5rem;
+       width: 100%;
+    }
+    .how-to-title {
+        font-size: 2rem;
+    }
+    .how-to p {
+        font-size: 1.5rem;
+    }
+    .play {
+        position: absolute;
+        top: 1500px;
+    }
+    .window {
+        width: 450px;
+     }
+    .window-header {
+        max-width: 96%;
+    }
+}
+
 /* Play Section */
 .play {
     padding-top: 10rem;
@@ -291,6 +271,7 @@ section .title {
     transform: scale(1.5);
     transition: transform 200ms;
 }
+
 /* Start Quiz window. */
 .section {
     background-color: #F8EDE3;
@@ -323,14 +304,6 @@ section .title {
     border: 1px solid #7D6E83;
     border-radius: 10px;
     box-shadow: 0 0.4rem 1.4rem #F8EDE3;
-}
-@media screen and (max-width: 800px) {
-    .window {
-       width: 450px;
-    }
-    .window-header {
-        max-width: 95.5%;
-    }
 }
 .window-header {
     background-color: #7D6E83;
@@ -373,6 +346,7 @@ section .title {
     font-size: 1rem;
     font-weight: 500;
 }
+
 /* Quiz App */
 .quiz {
     display: none;
@@ -473,6 +447,7 @@ section .title {
 .incorrect {
     background-color: #FF005C;
 }
+
 /* Results */
 .results {
     display: none;
@@ -535,6 +510,7 @@ section .title {
     transform: scale(1.5);
     transition: transform 200ms;
 }
+
 /* Footer Section */
 .footer {
     /* margin-top: 10rem; */

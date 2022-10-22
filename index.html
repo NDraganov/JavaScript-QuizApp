@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JavaScript Quiz </title>
+    <title>GeoQuiz </title>
     <!-- Icon taken from - https://www.flaticon.com/free-icon/question_189665?term=question%20mark&page=1&position=5&page=1&position=5&related_id=189665 -->
     <link rel="icon" type="image/x-icon" href="Content/Images/question.png">
     <!-- Bootstrap links -->
@@ -45,22 +45,7 @@
     </div>
   </div>
 </nav>
-<!-- <header class="header-area">
-  <div class="logo">
-    <a href="#"><i class="fa-brands fa-square-js"></i>  Quiz</a>
-  </div>
-  <nav class="main-menu">
-    <a href="#" class="bars-button" id="open" onclick="showOffcanvas()"><i class="fa-solid fa-bars"></i></a>
-    <div class="side-menu" id="menu">
-      <a href="#" class="close-button" id="close"><i class="fa-solid fa-xmark"></i></a>
-      <ul>
-        <li><a href="#about" class="menu-link">ABOUT</a></li>
-        <li><a href="#how-to">HOW TO...</a></li>
-        <li><a href="#play">PLAY</a></li>
-      </ul>
-    </div>
-  </nav>
-</header> -->
+
 <!-- Animation area - code taken from https://www.divinectorweb.com/2020/10/animated-background-html-css.html and edited by me-->
 <div class="animation-area">
   <ul class="box-area">
@@ -71,29 +56,25 @@
     <li></li>
     <li></li>
   </ul>
-<div class="container">
-  <div class="row">
-    <h1 class="quiz-title">Welcome to Geography Quiz</h1>
+<div class="intro-page">
+  <h1 class="quiz-title">Welcome to GeoQuiz</h1>
+  <div class="instructions">
     <!-- Section About -->
-    <div class="col-lg-6 col-md-12">
-      <div id="about" class="about">
-        <div class="h2 title"><i class="fa-solid fa-circle-info icon"></i> About the Quiz</div>
-        <p>This Quiz represents JavaScript project.</p>
-        <p>Technology used: HTML, CSS and JS.</p>
-        <p>With this Quiz, you can check your knowledge about world geography.</p>
-        <p>Why not, got fun as well.</p>
-        <p>Hope you enjoy it!</p>
-      </div>
+    <div class="about" id="about">
+      <h2 class="about-title"><i class="fa-solid fa-circle-info icon"></i> About the Quiz</h2>
+      <p>This Quiz represents JavaScript project.</p>
+      <p>Technology used: HTML, CSS and JS.</p>
+      <p>With this Quiz, you can check your knowledge about world geography.</p>
+      <p>Why not, got fun as well.</p>
+      <p>Hope you enjoy it!</p>
     </div>
     <!-- How to... Section -->
-    <div class="col-lg-6 col-md-12">
-      <div id="how-to" class="how-to">
-        <div class="h2 title"><i class="fa-solid fa-gamepad icon"></i> How to play the Quiz</div>
-        <p>The Quiz is consist of 10 questions. The questions gonna shows up in random order, as well the 4 different options.
-        Next question is loaded after choosing the option from the current question. Each correct answer gives you 10 scores.
-        When you choose wrong option, the button will be displayed in red colour. Correct answer will be displayed in green colour.
-        After answering all 10 questions, the result with win scores will be displayed.</p>             
-      </div>
+    <div class="how-to" id="how-to">
+      <h2 class="how-to-title"><i class="fa-solid fa-gamepad icon"></i> How to play the Quiz</h2>
+      <p>The Quiz is consist of 10 questions. The questions gonna shows up in random order, as well the 4 different options.
+      Next question is loaded after choosing the option from the current question. Each correct answer gives you 10 scores.
+      When you choose wrong option, the button will be displayed in red colour. Correct answer will be displayed in green colour.
+      After answering all 10 questions, the result with win scores will be displayed.</p>             
     </div>
   </div>
 </div>
@@ -105,8 +86,9 @@
               <!-- Home page before showing the game -->
               <div class="card-body">
                   <div class="col-lg-12 col-md-6">
-                      <div class="h1 title start-title">Start the Quiz</div>
-                      <p class="start-text pt-4">To start the Quiz, press the "START" button below.</p>
+                      <div class="h1 title start-title">Play the GeoQuiz</div>
+                      <p class="start-text pt-4">Are you ready to check your general geography knowledge?</p>
+                      <p class="start-text">To start the Quiz, press the "START" button below.</p>
                       <!-- The Quiz App itself - code taken from https://www.youtube.com/watch?v=MxrGPP4F8Sc and edited by me-->
                       <div id="quiz" class="quiz">
                           <div class="container game">
