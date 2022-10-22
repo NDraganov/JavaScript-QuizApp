@@ -130,18 +130,6 @@ const wrongAudio = new Audio('Content/Audio/Wrong-answer-sound-effect.mp3');
 const correctAudio = new Audio('Content/Audio/Good-idea-bell.mp3');
 const restartButton = document.getElementById('restart');
 
-// const openbtn = document.getElementById('open');
-// const closebtn = document.getElementById('close');
-// const offcanvasMenu =document.getElementById('menu');
-
-// openbtn.addEventListener('click', function showOffcanvas() {
-//     offcanvasMenu.classList.add('offcanvas-menu-active');
-// });
-// closebtn.addEventListener('click', function showOffcanvas() {
-//     offcanvasMenu.classList.remove('offcanvas-menu-active');
-// });
-
-
 /** Get the Full Year **/
 document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()));
 
@@ -175,7 +163,6 @@ function showQuiz() {
     startText.classList.add('hide');
     modalContainer.classList.remove('window-container-show');
     startButton.classList.add('hide');
-    navBar.classList.add('navbar-hide');
     // Start Timer code taken from - https://codepen.io/cathydutton/pen/avYKeM
     interval = setInterval(startTimer, 10);
     startAudio.play();

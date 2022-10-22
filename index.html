@@ -16,36 +16,32 @@
     <script src="https://kit.fontawesome.com/39f8e3f589.js" crossorigin="anonymous"></script>
 </head>
 <body>
-<!-- Offcanvas Navigation Bar - code taken from https://getbootstrap.com/docs/5.2/components/navbar/#offcanvas and edited by me-->
-<nav class="navbar navbar-expand-lg fixed-top" id="navbar">
-  <div class="container-fluid">
-      <a class="navbar-brand" href="#"><i class="fa-brands fa-square-js"></i>  Quiz</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-      <div class="offcanvas-header">
-        <h1 class="offcanvas-title" id="offcanvasNavbarLabel"><i class="fa-brands fa-square-js"></i> Quiz</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-      </div>
-      <div class="offcanvas-body">
-        <hr class="nav-line">
-        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-          <li class="nav-item">
-            <a class="nav-link" href="#about" onclick="abc()">ABOUT</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#how-to" onclick="abc()">HOW TO...</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#play" onclick="abc()">PLAY</a>
-          </li>
-        </ul>
+  <!-- Header-Navigation Bar - code written by me -->
+<header class="header-area">
+  <nav>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <a class="logo" href="#"><i class="fa-brands fa-square-js"></i>  GeoQuiz</a>
+          <hr class="menu-line">
+        </div>
+        <div class="col-lg-12">
+          <ul class="menu">
+            <li class="menu-item">
+              <a class="menu-link" href="#about">ABOUT</a>
+            </li>
+            <li class="menu-item">
+              <a class="menu-link" href="#how-to">HOW TO...</a>
+            </li>
+            <li class="menu-item">
+              <a class="menu-link" href="#play">PLAY</a>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
-  </div>
-</nav>
-
+  </nav>
+</header>
 <!-- Animation area - code taken from https://www.divinectorweb.com/2020/10/animated-background-html-css.html and edited by me-->
 <div class="animation-area">
   <ul class="box-area">
