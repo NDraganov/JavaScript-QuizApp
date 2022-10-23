@@ -439,6 +439,14 @@ body {
     color: #1572A1;
     font-weight: bold;
 }
+.result-correct {
+    color: #C0E218;
+    font-weight: bold;
+}
+.result-incorrect {
+    color: #FF005C;
+    font-weight: bold;
+}
 .result-score {
     color: #FF8C32;
     font-weight: bold;

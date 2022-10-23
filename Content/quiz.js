@@ -119,6 +119,8 @@ const appendSeconds = document.getElementById('seconds');
 const appendMinutes = document.getElementById('minutes');
 const results = document.getElementById('results');
 const answeredQuestions = document.getElementById('answered-questions');
+const correctAnswer = document.getElementById('correct-answers');
+const incorrectAnswer = document.getElementById('incorrect-answers');
 const resultScore = document.getElementById('result-score');
 const resultTime = document.getElementById('result-time');
 const footer = document.getElementById('footer');
@@ -176,7 +178,9 @@ let seconds = 00;
 let minutes = 00;
 let score;
 const SCORE_POINTS = 10;
-const MAX_QUESTIONS = 1;
+const MAX_QUESTIONS = 4;
+let attemps = 0;
+let correctAnswers = 0;
 let acceptingAnswers;
 let classToApply;
 
@@ -293,6 +297,7 @@ function onClickOption(e) {
         incrementScore(SCORE_POINTS); // Increment with 10 scores.
         scoreText.innerText = score;
         classToApply = "correct"; // Apply green colour.
+        correctAnswers++; // Increment number of correct answers.
     } else {
         wrongAudio.play(); // Audio Play code taken from - https://www.udemy.com/course/the-complete-web-development-bootcamp/learn/lecture/12383968#overview
         classToApply = "incorrect"; // Apply red colour.
@@ -306,6 +311,7 @@ function onClickOption(e) {
         getNewQuestion(); // Get new question.
         acceptingAnswers = true;
     }
+    attemps++ // Increment number of attemps.
 }
 
 /** Function to increment the scores **/
@@ -340,10 +346,13 @@ function startTimer() {
     }
 }  
 
+
 /** To display the Modal with Result **/
 function displayResults() {
-    answeredQuestions.innerHTML = "<span class='result-username'>" + player.textContent + "</span>" + ", you answered: " + "<span class='result-questions'>" + MAX_QUESTIONS +  "</span>"
-     + " questions" + " of " + "<span class='result-questions'>" + MAX_QUESTIONS + "</span>"; // Display number answered questions of total questions.
+    answeredQuestions.innerHTML = "<span class='result-username'>" + player.textContent + "</span>" + ", you answered: " + "<span class='result-questions'>" + attemps +  "</span>" +
+    " questions"; // Display number answered questions of total questions.
+    correctAnswer.innerHTML = "Your correct answers: " + "<span class='result-correct'>" + correctAnswers + "</span>";
+    incorrectAnswer.innerHTML = "Your incorrect answers: " + "<span class='result-incorrect'>" + (attemps - correctAnswers) + "</span>"; 
     resultScore.innerHTML = "Your scores: " + "<span class='result-score'>" + score + "</span>"; // Display how many scores are won.
     resultTime.innerHTML = "Your time: " + "<span class='result-time'>" + minutes + "m" + " " + seconds + "s" + " " + tens + "ms" + "</span>"; // Display the time need it to complete the Quiz.
     result.innerHTML = results.innerHTML; // Results section take place insted of Quiz section.
