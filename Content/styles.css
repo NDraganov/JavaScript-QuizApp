@@ -497,6 +497,10 @@ footer .title {
 
 /* Mobile Responsiveness */
 @media screen and (max-width: 800px) {
+    .menu {
+        padding-left: 0;
+        padding-right: 0;
+    }
     .window {
         width: 450px;
      }
