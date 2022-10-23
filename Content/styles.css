@@ -8,7 +8,6 @@ body {
 /* Navigation Bar */
 
 .header-area {
-    position: fixed;
     background-color: #251B3780;
     text-align: center;
     width: 100%;
@@ -497,5 +496,9 @@ footer .title {
      }
     .window-header {
         max-width: 96%;
+    }
+    .result-icon {
+        position: relative;
+        left: 150px;
     }
 }
