@@ -341,7 +341,7 @@ body {
     width: 0%;
 }
 .time {
-    font-size: 1.5rem;
+    font-size: 2rem;
 }
 .counter, .score {
     text-align: center;
@@ -512,6 +512,9 @@ footer .title {
         width: 40%;
     }
     .prefix {
+        font-size: 1.5rem;
+    }
+    .time {
         font-size: 1.5rem;
     }
     .result-icon {
