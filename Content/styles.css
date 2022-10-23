@@ -507,6 +507,9 @@ footer .title {
     .window-header {
         max-width: 96%;
     }
+    .counter {
+        width: 30%;
+    }
     .result-icon {
         position: relative;
         left: 150px;
