@@ -272,6 +272,7 @@ body {
 }
 .create-username-button {
     background-color: #C0E218;
+    color: #251B37;
     padding: 5px 20px 5px;
     margin-top: 2rem;
     font-weight: 500;
@@ -515,6 +516,6 @@ footer .title {
     }
     .result-icon {
         position: relative;
-        left: 150px;
+        left: 80px;
     }
 }
