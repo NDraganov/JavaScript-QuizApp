@@ -19,8 +19,11 @@ body {
     padding-right: 32px;
 }
 .logo {
+    position: relative;
+    top: 7px;
     font-size: 3rem;
     font-weight: bold;
+    padding-top: 10px;
     color: #F8EDE3;
     text-decoration: none;
 }
@@ -337,7 +340,7 @@ body {
     width: 0%;
 }
 .time {
-    font-size: 2rem;
+    font-size: 1.5rem;
 }
 .counter, .score {
     text-align: center;

@@ -171,8 +171,8 @@ function showQuiz() {
 /** Variables for the Introduction Header **/
 let questionCounter;
 let interval;
-let seconds = 00;
 let tens = 00;
+let seconds = 00;
 let minutes = 00;
 let score;
 const SCORE_POINTS = 10;
