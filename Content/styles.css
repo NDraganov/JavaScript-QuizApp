@@ -508,7 +508,10 @@ footer .title {
         max-width: 96%;
     }
     .counter {
-        width: 30%;
+        width: 35%;
+    }
+    .prefix {
+        font-size: 1.5rem;
     }
     .result-icon {
         position: relative;

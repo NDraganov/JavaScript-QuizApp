@@ -334,7 +334,7 @@ function startTimer() {
     }
     if (seconds > 59) { // If seconds pass 59, start increasing minutes with 1.
         minutes++;
-        appendMinutes.innerHTML = "0" + minutes;
+        appendMinutes.innerHTML = minutes;
         seconds = 0;
         appendSeconds.innerHTML = "0" + 0;
     }
