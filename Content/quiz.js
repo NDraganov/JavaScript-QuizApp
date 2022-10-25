@@ -1,116 +1,113 @@
 // The code in the JavaScript file is taken from - https://www.youtube.com/watch?v=MxrGPP4F8Sc and edited by me.
 
 /** Questions **/
-// let questions = [
-//     {
-//      id:1,
-//      question: "Which country has the longest coastline in the world?",
-//      a: "Indonesia",
-//      b: "Russia",
-//      c: "Canada",
-//      d: "Australia",
-//      answer: "c",
-//    },
-//    {
-//      id:2,
-//      question: "What is the world's most populated country?",
-//      a: "USA",
-//      b: "Russia",
-//      c: "India",
-//      d: "China",
-//      answer: "d",
-//    },
-//    {
-//      id:3,
-//      question: "What is the capital of the Philippines?",
-//      a: "Marawi",
-//      b: "Jakarta",
-//      c: "Dili",
-//      d: "Manilla",
-//      answer: "d",
-//    },
-//    {
-//      id:4,
-//      question: "The Great Barrier Reef is off the coast of which country?",
-//      a: "Fiji",
-//      b: "New Zealand",
-//      c: "Australia",
-//      d: "South Africa",
-//      answer: "c",
-//    },
-//    {
-//     id:5,
-//     question: "What is the World's Smallest Country?",
-//     a: "Luxembourg",
-//     b: "Vatican City",
-//     c: "Monaco",
-//     d: "Lichtenstein",
-//     answer: "b",
-//   },
-//   {
-//     id:6,
-//     question: "In which country is the world's highest waterfall?",
-//     a: "USA",
-//     b: "Venezuela",
-//     c: "Brazil",
-//     d: "South Africa",
-//     answer: "b",
-//   },
-//   {
-//     id:7,
-//     question: "What is the capital of Australia?",
-//     a: "Melbourne",
-//     b: "Adelaide",
-//     c: "Sydney",
-//     d: "Canberra",
-//     answer: "d",
-//   },
-//   {
-//     id:8,
-//     question: "In which country is Mount Fuji located?",
-//     a: "Peru",
-//     b: "North Korea",
-//     c: "China",
-//     d: "Japan",
-//     answer: "d",
-//   },
-//   {
-//     id:9,
-//     question: "In which country is the Cape of Good Hope?",
-//     a: "USA",
-//     b: "Canada",
-//     c: "South Africa",
-//     d: "Australia",
-//     answer: "c",
-//   },
-//   {
-//     id:10,
-//     question: "What country has the greatest number of active volcanoes?",
-//     a: "Philippines",
-//     b: "Italy",
-//     c: "Japan",
-//     d: "Indonesia",
-//     answer: "d",
-//   },
-// ];
+let questions = [
+    {
+     id:1,
+     question: "Which country has the longest coastline in the world?",
+     a: "Indonesia",
+     b: "Russia",
+     c: "Canada",
+     d: "Australia",
+     answer: "c",
+   },
+   {
+     id:2,
+     question: "What is the world's most populated country?",
+     a: "USA",
+     b: "Russia",
+     c: "India",
+     d: "China",
+     answer: "d",
+   },
+   {
+     id:3,
+     question: "What is the capital of the Philippines?",
+     a: "Marawi",
+     b: "Jakarta",
+     c: "Dili",
+     d: "Manilla",
+     answer: "d",
+   },
+   {
+     id:4,
+     question: "The Great Barrier Reef is off the coast of which country?",
+     a: "Fiji",
+     b: "New Zealand",
+     c: "Australia",
+     d: "South Africa",
+     answer: "c",
+   },
+   {
+    id:5,
+    question: "What is the World's Smallest Country?",
+    a: "Luxembourg",
+    b: "Vatican City",
+    c: "Monaco",
+    d: "Lichtenstein",
+    answer: "b",
+  },
+  {
+    id:6,
+    question: "In which country is the world's highest waterfall?",
+    a: "USA",
+    b: "Venezuela",
+    c: "Brazil",
+    d: "South Africa",
+    answer: "b",
+  },
+  {
+    id:7,
+    question: "What is the capital of Australia?",
+    a: "Melbourne",
+    b: "Adelaide",
+    c: "Sydney",
+    d: "Canberra",
+    answer: "d",
+  },
+  {
+    id:8,
+    question: "In which country is Mount Fuji located?",
+    a: "Peru",
+    b: "North Korea",
+    c: "China",
+    d: "Japan",
+    answer: "d",
+  },
+  {
+    id:9,
+    question: "In which country is the Cape of Good Hope?",
+    a: "USA",
+    b: "Canada",
+    c: "South Africa",
+    d: "Australia",
+    answer: "c",
+  },
+  {
+    id:10,
+    question: "What country has the greatest number of active volcanoes?",
+    a: "Philippines",
+    b: "Italy",
+    c: "Japan",
+    d: "Indonesia",
+    answer: "d",
+  },
+];
 
-let questions = [];
+// let questions = [];
 
-fetch("questions.json")
-   .then((res) => {
-    return res.json();
-   })
-   .then((data) => {
-    questions = data.questions;
+// fetch("questions.json")
+//    .then((res) => {
+//     return res.json();
+//    })
+//    .then((data) => {
+//     questions = data.questions;
     
-   });
+//    });
 
 
 /** Global Constant variables **/
 const body = document.getElementById('body');
-const navBar = document.getElementById('navbar')
-const offcanvas = document.getElementById('offcanvasNavbar');
-const navLinks = document.getElementsByClassName('nav-link');
 const startButton = document.querySelector('#start-button');
 const hide = document.querySelectorAll('.hide');
 const userButton = document.getElementById('user-button');
@@ -131,10 +128,15 @@ const appendSeconds = document.getElementById('seconds');
 const appendMinutes = document.getElementById('minutes');
 const results = document.getElementById('results');
 const answeredQuestions = document.getElementById('answered-questions');
+const answerQuestionsNumber = document.getElementById('answered-questions-number');
 const correctAnswer = document.getElementById('correct-answers');
+const correctAnswerNumber = document.getElementById('correct-answers-number');
 const incorrectAnswer = document.getElementById('incorrect-answers');
+const incorrectAnswerNumber = document.getElementById('incorrect-answers-number');
 const resultScore = document.getElementById('result-score');
+const resultScoreNumber = document.getElementById('result-score-number');
 const resultTime = document.getElementById('result-time');
+const resultTimeNumber = document.getElementById('result-time-number');
 const footer = document.getElementById('footer');
 // Audio Play code taken from - https://www.udemy.com/course/the-complete-web-development-bootcamp/learn/lecture/12383968#overview.
 // Sound taken from - https://orangefreesounds.com.
@@ -152,7 +154,7 @@ let seconds = 00;
 let minutes = 00;
 let score;
 const SCORE_POINTS = 10;
-const MAX_QUESTIONS = 4;
+const MAX_QUESTIONS = 1;
 let attemps = 0;
 let correctAnswers = 0;
 let acceptingAnswers;
@@ -361,12 +363,17 @@ function startTimer() {
 
 /** To display the Modal with Result **/
 function displayResults() {
-    answeredQuestions.innerHTML = "<span class='result-username'>" + player.textContent + "</span>" + ", you answered: " + "<span class='result-questions'>" + attemps +  "</span>" +
-    " questions"; // Display number answered questions of total questions.
-    correctAnswer.innerHTML = "Your correct answers: " + "<span class='result-correct'>" + correctAnswers + "</span>";
-    incorrectAnswer.innerHTML = "Your incorrect answers: " + "<span class='result-incorrect'>" + (attemps - correctAnswers) + "</span>"; 
-    resultScore.innerHTML = "Your scores: " + "<span class='result-score'>" + score + "</span>"; // Display how many scores are won.
+    answeredQuestions.innerHTML = "<span class='result-username'>" + player.textContent + "</span>" + ", yours attempts: "; 
+    correctAnswer.innerHTML = "Your correct answers: ";
+    incorrectAnswer.innerHTML = "Your incorrect answers: "; 
+    resultScore.innerHTML = "Your scores: "; 
     resultTime.innerHTML = "Your time: " + "<span class='result-time'>" + minutes + "m" + " " + seconds + "s" + " " + tens + "ms" + "</span>"; // Display the time need it to complete the Quiz.
+    
+    answerQuestionsNumber.innerHTML = "<span class='result-questions'>" + attemps +  "</span>"; // Display number answered questions of total questions.
+    correctAnswerNumber.innerHTML = "<span class='result-correct'>" + correctAnswers + "</span>"; // Display number of correct answers.
+    incorrectAnswerNumber.innerHTML = "<span class='result-incorrect'>" + (attemps - correctAnswers) + "</span>"; // Display number of incorrect answers.
+    resultScoreNumber.innerHTML = "<span class='result-score'>" + score + "</span>"; // Display how many scores are won.
+
     result.innerHTML = results.innerHTML; // Results section take place insted of Quiz section.
     results.classList.add('results-show'); // Add class to show the Results.
 };

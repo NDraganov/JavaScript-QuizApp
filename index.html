@@ -168,11 +168,37 @@
                     <h1 class="header">Results</h1>
                     <!-- Icon taken from - https://uxwing.com/certificate-icon/ -->
                     <img class="result-icon" src="Content/Images/svg-2.svg" alt="result-icon">
-                    <p class="result padding" id="answered-questions"></p>
-                    <p class="result" id="correct-answers"></p>
-                    <p class="result" id="incorrect-answers"></p>
-                    <p class="result" id="result-score"></p>
-                    <p class="result" id="result-time"></p>
+                    <div class="container padding">
+                      <div class="row">
+                        <div class="col-lg-12 result-line">
+                          <p class="result" id="answered-questions"></p>
+                          <p class="numbers" id="answered-questions-number"></p>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-lg-12 result-line">
+                          <p class="result" id="correct-answers"></p>
+                          <p class="numbers" id="correct-answers-number"></p>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-lg-12 result-line">
+                          <p class="result" id="incorrect-answers"></p>
+                          <p class="numbers" id="incorrect-answers-number"></p>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-lg-12 result-line">
+                          <p class="result" id="result-score"></p>
+                          <p class="numbers" id="result-score-number"></p>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-lg-12 time-col">
+                          <p class="result-left time-box" id="result-time"></p>
+                        </div>
+                      </div>
+                    </div>
                     <div class="container">
                       <button type="button" title="Restart the Quiz" class="restart-button" id="restart" onclick="restartQuiz()">RESTART</button>
                     </div>

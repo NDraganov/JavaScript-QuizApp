@@ -208,7 +208,7 @@ body {
     width: 150px;
     margin-bottom: 1rem;
     padding-top: 5px;
-    border: 1px solid #251B37;
+    border: 1.5px solid #251B37;
     border-radius: 5px;
     font-size: 1.5rem;
     box-shadow: 0 0.4rem 0.4rem #1572A1;
@@ -217,7 +217,7 @@ body {
     display: none;
 }
 .start-button:hover {
-    transform: scale(1.5);
+    transform: scale(1.3);
     transition: transform 200ms;
 }
 .hide {
@@ -276,12 +276,12 @@ body {
     padding: 5px 20px 5px;
     margin-top: 2rem;
     font-weight: 500;
-    border: 1px solid #251B37;
+    border: 1.5px solid #251B37;
     border-radius: 5px;
     box-shadow: 0 0.4rem 0.4rem #1572A1;
 }
 .create-username-button:hover {
-    transform: scale(1.5);
+    transform: scale(1.3);
     transition: transform 200ms;
 }
 .user-label {
@@ -359,9 +359,14 @@ body {
     background-color: #D7C0AE;
     color: #1572A1;
     font-weight: bold;
-    border: 1px solid #251B37;
+    border: 1.5px solid #251B37;
     border-radius: 5px;
     padding: 10px;
+    
+}
+.mute-button:hover {
+    transform: scale(1.2);
+    transition: transform 200ms;
 }
 .quiz .fa {
     color: #FF8C32;
@@ -422,10 +427,30 @@ body {
     height: 1em;
     font-size: 200px;
 }
+.result-line {
+    display: flex;
+    justify-content: space-between;
+}
 .result {
     color: #7D6E83;
     font-size: 2rem;
+    text-align: left;
+    text-decoration: 2px underline;
+    text-shadow: 1px 2px 5px #D0B8A8;
     margin-bottom: 0;
+}
+.numbers {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 1.5rem;
+    border: 2px solid #7D6E83;
+    border-radius: 10px;
+    box-shadow: 2px 4px 10px 2px #7D6E83;
+    width: 40px;
+    height: 40px;
+    margin-top: 5px;
+    margin-bottom: 13px;
 }
 .padding {
     padding-top: 2.5rem;
@@ -437,9 +462,7 @@ body {
 .result-questions {
     color: #1572A1;
     font-weight: bold;
-    background-color: #7D6E83;
-    width: 10px;
-    height: 10px;
+    margin-bottom: 0;
 }
 .result-correct {
     color: #C0E218;
@@ -453,9 +476,25 @@ body {
     color: #FF8C32;
     font-weight: bold;
 }
+.time-col {
+    text-align: center !important;
+}
+.result-left {
+    color: #7D6E83;
+    font-size: 2rem;
+    text-align: center;
+    text-shadow: 1px 2px 5px #D0B8A8;
+    margin-bottom: 0;
+}
 .result-time {
     color: #1572A1;
     font-weight: bold;
+}
+.time-box {
+    margin-top: 30px;
+    border: 2px solid #7D6E83;
+    border-radius: 10px;
+    box-shadow: 2px 4px 10px 2px #7D6E83;
 }
 .restart-button {
     width: 150px;
@@ -465,12 +504,12 @@ body {
     margin-bottom: 1.5rem;
     margin-top: 2rem;
     padding-top: 5px;
-    border: 1px solid #7D6E83;
+    border: 1.5px solid #251B37;
     border-radius: 5px;
     box-shadow: 0 0.4rem 0.4rem #1572A1;
 }
 .restart-button:hover {
-    transform: scale(1.5);
+    transform: scale(1.3);
     transition: transform 200ms;
 }
 
