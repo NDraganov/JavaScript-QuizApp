@@ -1,98 +1,110 @@
 // The code in the JavaScript file is taken from - https://www.youtube.com/watch?v=MxrGPP4F8Sc and edited by me.
 
 /** Questions **/
-let questions = [
-    {
-     id:1,
-     question: "Which country has the longest coastline in the world?",
-     a: "Indonesia",
-     b: "Russia",
-     c: "Canada",
-     d: "Australia",
-     answer: "c",
-   },
-   {
-     id:2,
-     question: "What is the world's most populated country?",
-     a: "USA",
-     b: "Russia",
-     c: "India",
-     d: "China",
-     answer: "d",
-   },
-   {
-     id:3,
-     question: "What is the capital of the Philippines?",
-     a: "Marawi",
-     b: "Jakarta",
-     c: "Dili",
-     d: "Manilla",
-     answer: "d",
-   },
-   {
-     id:4,
-     question: "The Great Barrier Reef is off the coast of which country?",
-     a: "Fiji",
-     b: "New Zealand",
-     c: "Australia",
-     d: "South Africa",
-     answer: "c",
-   },
-   {
-    id:5,
-    question: "What is the World's Smallest Country?",
-    a: "Luxembourg",
-    b: "Vatican City",
-    c: "Monaco",
-    d: "Lichtenstein",
-    answer: "b",
-  },
-  {
-    id:6,
-    question: "In which country is the world's highest waterfall?",
-    a: "USA",
-    b: "Venezuela",
-    c: "Brazil",
-    d: "South Africa",
-    answer: "b",
-  },
-  {
-    id:7,
-    question: "What is the capital of Australia?",
-    a: "Melbourne",
-    b: "Adelaide",
-    c: "Sydney",
-    d: "Canberra",
-    answer: "d",
-  },
-  {
-    id:8,
-    question: "In which country is Mount Fuji located?",
-    a: "Peru",
-    b: "North Korea",
-    c: "China",
-    d: "Japan",
-    answer: "d",
-  },
-  {
-    id:9,
-    question: "In which country is the Cape of Good Hope?",
-    a: "USA",
-    b: "Canada",
-    c: "South Africa",
-    d: "Australia",
-    answer: "c",
-  },
-  {
-    id:10,
-    question: "What country has the greatest number of active volcanoes?",
-    a: "Philippines",
-    b: "Italy",
-    c: "Japan",
-    d: "Indonesia",
-    answer: "d",
-  },
-   ];
+// let questions = [
+//     {
+//      id:1,
+//      question: "Which country has the longest coastline in the world?",
+//      a: "Indonesia",
+//      b: "Russia",
+//      c: "Canada",
+//      d: "Australia",
+//      answer: "c",
+//    },
+//    {
+//      id:2,
+//      question: "What is the world's most populated country?",
+//      a: "USA",
+//      b: "Russia",
+//      c: "India",
+//      d: "China",
+//      answer: "d",
+//    },
+//    {
+//      id:3,
+//      question: "What is the capital of the Philippines?",
+//      a: "Marawi",
+//      b: "Jakarta",
+//      c: "Dili",
+//      d: "Manilla",
+//      answer: "d",
+//    },
+//    {
+//      id:4,
+//      question: "The Great Barrier Reef is off the coast of which country?",
+//      a: "Fiji",
+//      b: "New Zealand",
+//      c: "Australia",
+//      d: "South Africa",
+//      answer: "c",
+//    },
+//    {
+//     id:5,
+//     question: "What is the World's Smallest Country?",
+//     a: "Luxembourg",
+//     b: "Vatican City",
+//     c: "Monaco",
+//     d: "Lichtenstein",
+//     answer: "b",
+//   },
+//   {
+//     id:6,
+//     question: "In which country is the world's highest waterfall?",
+//     a: "USA",
+//     b: "Venezuela",
+//     c: "Brazil",
+//     d: "South Africa",
+//     answer: "b",
+//   },
+//   {
+//     id:7,
+//     question: "What is the capital of Australia?",
+//     a: "Melbourne",
+//     b: "Adelaide",
+//     c: "Sydney",
+//     d: "Canberra",
+//     answer: "d",
+//   },
+//   {
+//     id:8,
+//     question: "In which country is Mount Fuji located?",
+//     a: "Peru",
+//     b: "North Korea",
+//     c: "China",
+//     d: "Japan",
+//     answer: "d",
+//   },
+//   {
+//     id:9,
+//     question: "In which country is the Cape of Good Hope?",
+//     a: "USA",
+//     b: "Canada",
+//     c: "South Africa",
+//     d: "Australia",
+//     answer: "c",
+//   },
+//   {
+//     id:10,
+//     question: "What country has the greatest number of active volcanoes?",
+//     a: "Philippines",
+//     b: "Italy",
+//     c: "Japan",
+//     d: "Indonesia",
+//     answer: "d",
+//   },
+// ];
+
+let questions = [];
+
+fetch("questions.json")
+   .then((res) => {
+    return res.json();
+   })
+   .then((data) => {
+    questions = data.questions;
+    
+   });
+
 
 /** Global Constant variables **/
 const body = document.getElementById('body');
@@ -132,6 +144,20 @@ const wrongAudio = new Audio('Content/Audio/Wrong-answer-sound-effect.mp3');
 const correctAudio = new Audio('Content/Audio/Good-idea-bell.mp3');
 const restartButton = document.getElementById('restart');
 
+/** Variables for the Introduction Header **/
+let questionCounter;
+let interval;
+let tens = 00;
+let seconds = 00;
+let minutes = 00;
+let score;
+const SCORE_POINTS = 10;
+const MAX_QUESTIONS = 4;
+let attemps = 0;
+let correctAnswers = 0;
+let acceptingAnswers;
+let classToApply;
+
 /** Get the Full Year **/
 document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()));
 
@@ -169,20 +195,6 @@ function showQuiz() {
     interval = setInterval(startTimer, 10);
     startAudio.play();
 }
-
-/** Variables for the Introduction Header **/
-let questionCounter;
-let interval;
-let tens = 00;
-let seconds = 00;
-let minutes = 00;
-let score;
-const SCORE_POINTS = 10;
-const MAX_QUESTIONS = 4;
-let attemps = 0;
-let correctAnswers = 0;
-let acceptingAnswers;
-let classToApply;
 
 /** To play sound effect when hover over option answers **/
 answers.forEach((answer) => {

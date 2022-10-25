@@ -425,7 +425,6 @@ body {
 .result {
     color: #7D6E83;
     font-size: 2rem;
-    /* font-weight: bold; */
     margin-bottom: 0;
 }
 .padding {
@@ -438,6 +437,9 @@ body {
 .result-questions {
     color: #1572A1;
     font-weight: bold;
+    background-color: #7D6E83;
+    width: 10px;
+    height: 10px;
 }
 .result-correct {
     color: #C0E218;
