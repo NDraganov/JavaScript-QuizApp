@@ -105,6 +105,22 @@ let questions = [
     
 //    });
 
+// function loadFromFile() {
+//     let xhr = new XMLHttpRequest();
+
+//     xhr.open("GET", "questions.json", false);
+//     xhr.send();
+//     xhr.onload = function() {
+//         if (this.status == 200) {
+//             return xhr.response;
+//         } else {
+//             console.log("Something went wrong!");
+//         }
+//     }
+// }
+
+// let questions = JSON.parse(loadFromFile());
+
 
 /** Global Constant variables **/
 const body = document.getElementById('body');
