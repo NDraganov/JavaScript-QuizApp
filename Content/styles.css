@@ -146,7 +146,7 @@ body {
 .quiz-title {
     text-align: center;
     font-size: 4rem;
-    background: linear-gradient(to right, #9900F0 0%, #1572A1 25%, #C0E218 50%, #FF8C32 75%, #FF005C 100%);
+    background: linear-gradient(to right, #F900BF 0%, #9900F0 20%, #1572A1 40%, #C0E218 60%, #FF8C32 80%, #FF005C 100%);
     background-size: auto auto;
     background-clip: border-box;
     background-size: 200% auto;
@@ -208,9 +208,12 @@ body {
     text-align: center;
     color: #7D6E83;
 }
+.icon-play {
+    color: #F900BF;
+}
 .start-title {
     font-size: 3rem;
-    color: #1572A1;
+    color: #9900F0;
 }
 .start-text {
     font-size: 1.5rem;
