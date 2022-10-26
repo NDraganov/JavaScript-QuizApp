@@ -460,7 +460,6 @@ body {
     color: #7D6E83;
     font-size: 2rem;
     text-align: left;
-    text-decoration: 2px underline;
     text-shadow: 1px 2px 5px #D0B8A8;
     margin-bottom: 0;
 }
@@ -619,7 +618,7 @@ footer .title {
         left: 80px;
     }
     .result-line {
-        padding: 0px 20px;
+        padding: 0px 10px;
     }
     .time-col {
         padding: 0px 20px;
