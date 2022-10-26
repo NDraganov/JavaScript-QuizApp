@@ -599,11 +599,18 @@ footer .title {
     .counter {
         width: 40%;
     }
+    .score-number {
+        font-size: 2.5rem;
+        padding-top: 10px;
+    }
     .prefix {
         font-size: 1.5rem;
     }
     .time {
         font-size: 1.5rem;
+    }
+    .time div {
+        padding-top: 10px;
     }
     .result-icon {
         position: relative;
