@@ -454,6 +454,7 @@ body {
 .result-line {
     display: flex;
     justify-content: space-between;
+    padding: 0px 200px;
 }
 .result {
     color: #7D6E83;
@@ -502,6 +503,7 @@ body {
 }
 .time-col {
     text-align: center !important;
+    padding: 0px 400px;
 }
 .result-left {
     color: #7D6E83;
@@ -615,5 +617,11 @@ footer .title {
     .result-icon {
         position: relative;
         left: 80px;
+    }
+    .result-line {
+        padding: 0px 20px;
+    }
+    .time-col {
+        padding: 0px 20px;
     }
 }
