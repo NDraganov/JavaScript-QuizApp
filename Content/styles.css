@@ -287,11 +287,33 @@ body {
     font-size: 1.1rem;
     font-weight: bold;
 }
+.user-label {
+    font-size: 1.5rem;
+    color: #1572A1;
+}
+.user-input {
+    padding: 5px;
+    background-color: #EDEDED;
+    border: 1.5px solid #7D6E83;
+    border-radius: 5px;
+}
+.user-guide {
+    color: #FF005C;
+    padding-top: 0.5rem;
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 0;
+}
+.guest {
+    font-size: 1rem;
+    color: #1572A1;
+    margin-bottom: 0;
+}
 .create-username-button {
     background-color: #C0E218;
     color: #251B37;
     padding: 5px 20px 5px;
-    margin-top: 2rem;
+    margin-top: 1.7rem;
     font-weight: 500;
     border: 1.5px solid #251B37;
     border-radius: 5px;
@@ -300,21 +322,6 @@ body {
 .create-username-button:hover {
     transform: scale(1.3);
     transition: transform 200ms;
-}
-.user-label {
-    color: #1572A1;
-}
-.user-input {
-    padding: 5px;
-    background-color: #EDEDED;
-    border: 1px solid #251B37;
-    border-radius: 5px;
-}
-.user-guide {
-    color: #FF005C;
-    padding-top: 0.5rem;
-    font-size: 1rem;
-    font-weight: 500;
 }
 
 /* Quiz App */
