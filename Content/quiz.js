@@ -94,32 +94,32 @@
 //   },
 // ];
 
-// let questions = [];
+let questions = [];
 
-// fetch("questions.json")
-//    .then((res) => {
-//     return res.json();
-//    })
-//    .then((data) => {
-//     questions = data.questions;
+fetch("questions.json")
+   .then((res) => {
+    return res.json();
+   })
+   .then((data) => {
+    questions = data.questions;
     
-//    });
+   });
 
-function loadFromFile() {
-    let xhr = new XMLHttpRequest();
+// function loadFromFile() {
+//     let xhr = new XMLHttpRequest();
 
-    xhr.open("GET", "questions.json", false);
-    xhr.send();
-    xhr.onload = function() {
-        if (this.status == 200) {
-            return xhr.response;
-        } else {
-            console.log("Something went wrong!");
-        }
-    }
-}
+//     xhr.open("GET", "questions.json", false);
+//     xhr.send();
+//     xhr.onload = function() {
+//         if (this.status == 200) {
+//             return xhr.response;
+//         } else {
+//             console.log("Something went wrong!");
+//         }
+//     }
+// }
 
-let questions = JSON.parse(loadFromFile());
+// let questions = JSON.parse(loadFromFile());
 
 
 /** Global Constant variables **/
