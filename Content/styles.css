@@ -142,12 +142,28 @@ body {
     display: flex;
     justify-content: space-between;
 }
-
+/* Animated Gradient Text - code taken from https://codepen.io/shshaw/pen/YpERQQ */
 .quiz-title {
     text-align: center;
-    color: #F8EDE3;
     font-size: 4rem;
+    background: linear-gradient(to right, #9900F0 0%, #1572A1 25%, #C0E218 50%, #FF8C32 75%, #FF005C 100%);
+    background-size: auto auto;
+    background-clip: border-box;
+    background-size: 200% auto;
+    color: #fff;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    
+    animation: welcome 4s linear infinite;
+    -webkit-animation: welcome 4s linear infinite;
+    
 }
+@keyframes welcome {
+        to {
+          background-position: 200% center;
+        }
+      }
 .intro-page {
     padding-top: 100px;
 }
@@ -185,8 +201,6 @@ body {
     font-size: 2rem;
     color: #F8EDE3;
 }
-
-
 
 /* Play Section */
 .play {
@@ -330,7 +344,7 @@ body {
 .progressBar {
     width: 100%;
     height: 2.5rem;
-    border: 0.2rem solid #7D6E83;
+    border: 1.5px solid #7D6E83;
     margin-top: 1rem;
     border-radius: 10px;
     overflow: hidden;
@@ -547,6 +561,21 @@ footer .title {
 
 /* Mobile Responsiveness */
 @media screen and (max-width: 800px) {
+    .about-title {
+        font-size: 2.5rem;
+    }
+    .about p {
+        font-size: 1.5rem;
+    }
+    .how-to-title {
+        font-size: 2.5rem;
+    }
+    .how-to p {
+        font-size: 1.5rem;
+    }
+    .start-title {
+        font-size: 2.5rem;
+    }
     .menu {
         padding-left: 0;
         padding-right: 0;
