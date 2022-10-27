@@ -379,10 +379,10 @@ function startTimer() {
 
 /** To display the Modal with Result **/
 function displayResults() {
-    answeredQuestions.innerHTML = "<span class='result-username'>" + player.textContent + "</span>" + ", yours attempts: "; 
-    correctAnswer.innerHTML = "Your correct answers: ";
-    incorrectAnswer.innerHTML = "Your incorrect answers: "; 
-    resultScore.innerHTML = "Your scores: "; 
+    answeredQuestions.innerHTML = "Your attempts: "; 
+    correctAnswer.innerText = "Your correct answers: ";
+    incorrectAnswer.innerText = "Your incorrect answers: "; 
+    resultScore.innerText = "Your scores: "; 
     resultTime.innerHTML = "Your time: " + "<span class='result-time'>" + minutes + "m" + " " + seconds + "s" + " " + tens + "ms" + "</span>"; // Display the time need it to complete the Quiz.
     
     answerQuestionsNumber.innerHTML = "<span class='result-questions'>" + attemps +  "</span>"; // Display number answered questions of total questions.
@@ -392,11 +392,27 @@ function displayResults() {
 
     result.innerHTML = results.innerHTML; // Results section take place insted of Quiz section.
     results.classList.add('results-show'); // Add class to show the Results.
+    resultAddress(); // calling the function to address the User.
 };
+
+/* Address the User at the end of the Quiz */
+function resultAddress() {
+    let resultAddress = document.getElementById('result-address');
+
+    if(score >= 90) {
+        resultAddress.innerHTML = "Great Job, " + "<span class='result-username'>" + player.textContent + "</span>" + " !!!";
+    } 
+    if(score >= 50 && score <= 90) {
+        resultAddress.innerHTML = "Well Done, " + "<span class='result-username'>" + player.textContent + "</span>" + " !!!";
+    } 
+    if(score < 50 ) {
+        resultAddress.innerHTML = "Sorry, " + "<span class='result-username'>" + player.textContent + "</span>" + ". You failed" + " !!!";
+    }
+}
 
 /** Restart the Quiz **/
 function restartQuiz() {
     window.location.reload(true); // Code taken from - https://www.positioniseverything.net/javascript-refresh-page/
 }
 
-  startQuiz(); // Calling the function to start the Quiz.
+startQuiz(); // Calling the function to start the Quiz.

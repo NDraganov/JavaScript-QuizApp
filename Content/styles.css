@@ -450,6 +450,14 @@ body {
     height: 1em;
     font-size: 200px;
 }
+.result-address {
+    font-size: 1.7rem;
+    color: #980F5A;
+}
+.result-username {
+    color: #1572A1;
+    font-weight: bold;
+}
 .result-line {
     display: flex;
     justify-content: space-between;
@@ -477,10 +485,6 @@ body {
 }
 .padding {
     padding-top: 2.5rem;
-}
-.result-username {
-    color: #1572A1;
-    font-weight: bold;
 }
 .result-questions {
     color: #1572A1;
