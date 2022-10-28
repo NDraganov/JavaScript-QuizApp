@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200;300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sigmar+One&display=swap');
 
 body {
     background-color: #F8EDE3;
@@ -219,6 +220,8 @@ body {
     line-height: 1.8;
 }
 .start-button {
+    font-size: 1.5rem;
+    font-family: 'Sigmar One';
     background: #C0E218;
     color: #251B37;
     width: 150px;
@@ -226,8 +229,7 @@ body {
     padding-top: 5px;
     border: 1.5px solid #251B37;
     border-radius: 5px;
-    font-size: 1.5rem;
-    box-shadow: 0 0.4rem 0.4rem #1572A1;
+    box-shadow: 2px 3px 10px 2px #1572A1;
 }
 .start-button-hide {
     display: none;
@@ -309,14 +311,14 @@ body {
     margin-bottom: 0;
 }
 .create-username-button {
-    background-color: #C0E218;
-    color: #251B37;
+    font-weight: 500;
+    font-family: 'Sigmar One';
+    background-color: #FF8C32;
+    color: #F8EDE3;
     padding: 5px 20px 5px;
     margin-top: 1.7rem;
-    font-weight: 500;
     border: 1.5px solid #251B37;
     border-radius: 5px;
-    box-shadow: 0 0.4rem 0.4rem #1572A1;
 }
 .create-username-button:hover {
     transform: scale(1.3);
@@ -527,14 +529,15 @@ body {
 .restart-button {
     width: 150px;
     font-size: 1.2rem;
-    background-color: #C0E218;
-    color: #251B37;
+    font-family: 'Sigmar One';
+    background-color: #F806CC;
+    color: #570A57;
     margin-bottom: 1.5rem;
     margin-top: 2rem;
     padding-top: 5px;
-    border: 1.5px solid #251B37;
+    border: 2px solid #570A57;
     border-radius: 5px;
-    box-shadow: 0 0.4rem 0.4rem #1572A1;
+    /* box-shadow: 0px 3px 10px 2px #570A57; */
 }
 .restart-button:hover {
     transform: scale(1.3);
