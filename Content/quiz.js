@@ -93,21 +93,19 @@ let questions = [
     answer: "d",
   },
 ];
-
+/* JSON Load using fetch */
 // let questions = [];
-
 // fetch("questions.json")
 //    .then((res) => {
 //     return res.json();
 //    })
 //    .then((data) => {
 //     questions = data.questions;
-    
 //    });
 
+/* JSON Load using XMLHttpRequest */
 // function loadFromFile() {
 //     let xhr = new XMLHttpRequest();
-
 //     xhr.open("GET", "questions.json", false);
 //     xhr.send();
 //     xhr.onload = function() {
@@ -118,31 +116,19 @@ let questions = [
 //         }
 //     }
 // }
-
 // let questions = JSON.parse(loadFromFile());
 
 
 /** Global Constant variables **/
-const body = document.getElementById('body');
 const startButton = document.querySelector('#start-button');
-const hide = document.querySelectorAll('.hide');
 const userButton = document.getElementById('user-button');
 const player = document.getElementById("player");
-const quiz = document.getElementById('quiz');
-const result = document.getElementById('result');
 const modalContainer = document.getElementById('window-container');
-const modal = document.getElementById('window');
-const question = document.getElementById('question');
 const muteButton = document.getElementById('mute-button');
 const answers = Array.from(document.getElementsByClassName('answer-text'));
-const questionCounterText = document.getElementById('counter');
-const scoreText = document.getElementById('score');
-const progressBarFull = document.querySelector('#progressBarFull');
-const progressText = document.querySelector('#progressText');
 const appendTens = document.getElementById('tens');
 const appendSeconds = document.getElementById('seconds');
 const appendMinutes = document.getElementById('minutes');
-const results = document.getElementById('results');
 const answeredQuestions = document.getElementById('answered-questions');
 const answerQuestionsNumber = document.getElementById('answered-questions-number');
 const correctAnswer = document.getElementById('correct-answers');
@@ -153,24 +139,23 @@ const resultScore = document.getElementById('result-score');
 const resultScoreNumber = document.getElementById('result-score-number');
 const resultTime = document.getElementById('result-time');
 const resultTimeNumber = document.getElementById('result-time-number');
-const footer = document.getElementById('footer');
 // Audio Play code taken from - https://www.udemy.com/course/the-complete-web-development-bootcamp/learn/lecture/12383968#overview.
-// Sound taken from - https://orangefreesounds.com.
+// Sounds taken from - https://orangefreesounds.com.
 const startAudio = new Audio('Content/Audio/Game-start-countdown.mp3');
 const hoverAudio = new Audio('Content/Audio/Button-press-sound-effect.mp3');
 const wrongAudio = new Audio('Content/Audio/Wrong-answer-sound-effect.mp3');
 const correctAudio = new Audio('Content/Audio/Good-idea-bell.mp3');
 const restartButton = document.getElementById('restart');
+const SCORE_POINTS = 10;
+const MAX_QUESTIONS = 1;
 
-/** Variables for the Introduction Header **/
+/** Variables **/
 let questionCounter;
 let interval;
 let tens = 00;
 let seconds = 00;
 let minutes = 00;
 let score;
-const SCORE_POINTS = 10;
-const MAX_QUESTIONS = 10;
 let attemps = 0;
 let correctAnswers = 0;
 let acceptingAnswers;
@@ -179,13 +164,13 @@ let classToApply;
 /** Get the Full Year **/
 document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()));
 
-/** Show the Modal - code written by me **/
+/** Show the Modal for username - code written by me **/
 function showWindow() {
     modalContainer.classList.add('window-container-show'); // Add slass to show the Modal for enter the username.
 }
 startButton.onclick = showWindow; // Calling the function to show the Modal when Start button is pressed.
 
-/** Create a username **/
+/* Create a username */
 function createUsername() {
     usernameCorrectLength();
     showQuiz();
@@ -202,6 +187,7 @@ userButton.onclick = createUsername; // Calling the function to create a usernam
 
 /** Show the Quiz - code written by me **/
 function showQuiz() {
+    let quiz = document.getElementById('quiz');
     quiz.classList.add('show');
     let startTitle = document.querySelector('.start-title');
     startTitle.classList.add('hide');
@@ -231,7 +217,7 @@ function muteAudio() {
     muteButton.innerHTML = "<i class='fa fa-volume-off sound' aria-hidden='true'></i>" + "   Muted";
 }
 
-/** To pause sound effects for answers **/
+/* To pause sound effects for answers */
 function pauseAudioAnswer() {
     answers.forEach((answer) => {
         answer.addEventListener("click", pauseAnswerSounds);
@@ -246,7 +232,7 @@ function pauseAudioAnswer() {
     })
 }
 
-/** To pause sound effect for hover over the options **/
+/* To pause sound effect for hover over the options */
 function pauseAudioHover() {
     answers.forEach(mouseOverOption);
 }
@@ -266,18 +252,17 @@ function startQuiz() {
     questionCounter = 0; // Question an score counters set 
     score = 0;           // to 0 when the Quiz starts.
     acceptingAnswers = true;
-    scoreText.innerText = score;
     availableQuestions = getRandomQuestions(questions, MAX_QUESTIONS); // Get random questions and limited the number of Questions.
     getNewQuestion(); // Get new question.
 };
 
-/** To get random question from Array of Questions **/
+/* To get random question from Array of Questions */
 function getRandomQuestions(arr, n) {
     const shuffled = [...arr].sort(() => 0.5 - Math.random()); // Display randomly the questions.
     return (selected = shuffled.slice(0, n));
 };
 
-/** To get a new question **/
+/* To get a new question */
 function getNewQuestion() {
     /* If statement to display results at the end of the Quiz */
     if (availableQuestions.length === 0) {
@@ -293,8 +278,11 @@ function getNewQuestion() {
     availableQuestions.shift();
 }
 
-/** Function to display Introduction components - progress bar, scores and questions **/
+/* Function to display Introduction components - progress bar, scores and questions */
 function introShow() {
+    let questionCounterText = document.getElementById('counter');
+    let progressBarFull = document.querySelector('#progressBarFull');  
+
     questionCounter++;
     questionCounterText.innerText = `Question ${questionCounter}/${MAX_QUESTIONS}`; // Show the progress text of Question in Introduction Header.
     progressBarFull.style.width = `${(questionCounter/MAX_QUESTIONS) * 100}%`; // Show the Progress Bar tracker in colour.
@@ -302,12 +290,12 @@ function introShow() {
     question.innerText = currentQuestion.question; // question.
 }
 
-/** To display options answers **/
+/* To display options answers */
 function showAnswer(answer) {
     answer.innerText = currentQuestion[answer.dataset.answer]; // Take options of current question and display it.
 }
 
-/** For each option **/
+/* For each option */
 function forEachOption(answer) {
     if (!acceptingAnswers) { // If not accepting answer.
         return;
@@ -325,7 +313,6 @@ function onClickOption(e) {
     if (answeredLetter === currentQuestion.answer) { // If the pressed option is the correct answer to the current question.
         correctAudio.play(); // Audio Play code taken from - https://www.udemy.com/course/the-complete-web-development-bootcamp/learn/lecture/12383968#overview
         incrementScore(SCORE_POINTS); // Increment with 10 scores.
-        scoreText.innerText = score;
         classToApply = "correct"; // Apply green colour.
         correctAnswers++; // Increment number of correct answers.
     } else {
@@ -346,8 +333,9 @@ function onClickOption(e) {
 
 /** Function to increment the scores **/
 function incrementScore(num) {
-score += num; // Add 10 scores.
-scoreText.innerText = score;
+    let scoreText = document.getElementById('score');
+    score += num; // Add 10 scores.
+    scoreText.innerText = score;
 }
 
 /** Start Timer code taken from - https://codepen.io/cathydutton/pen/avYKeM and edited by me **/
@@ -378,6 +366,9 @@ function startTimer() {
 
 /** To display the Modal with Result **/
 function displayResults() {
+    let result = document.getElementById('result');
+    let results = document.getElementById('results');
+
     answeredQuestions.innerHTML = "Attempts: "; 
     correctAnswer.innerText = "Correct answers: ";
     incorrectAnswer.innerText = "Incorrect answers: "; 
@@ -392,6 +383,7 @@ function displayResults() {
     result.innerHTML = results.innerHTML; // Results section take place insted of Quiz section.
     results.classList.add('show'); // Add class to show the Results.
     resultAddress(); // calling the function to address the User.
+    restartButton.addEventListener("click", restartQuiz);
 };
 
 /* Address the User at the end of the Quiz */
