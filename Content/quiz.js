@@ -202,7 +202,7 @@ userButton.onclick = createUsername; // Calling the function to create a usernam
 
 /** Show the Quiz - code written by me **/
 function showQuiz() {
-    quiz.classList.add('quiz-show');
+    quiz.classList.add('show');
     let startTitle = document.querySelector('.start-title');
     startTitle.classList.add('hide');
     let startText = document.querySelector('.start-text');
@@ -390,7 +390,7 @@ function displayResults() {
     resultScoreNumber.innerHTML = "<span class='result-score'>" + score + "</span>"; // Display how many scores are won.
 
     result.innerHTML = results.innerHTML; // Results section take place insted of Quiz section.
-    results.classList.add('results-show'); // Add class to show the Results.
+    results.classList.add('show'); // Add class to show the Results.
     resultAddress(); // calling the function to address the User.
 };
 
