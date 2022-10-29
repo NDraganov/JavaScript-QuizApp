@@ -610,17 +610,16 @@ footer .title {
     } 
     .time {
         font-size: 1.5rem;
-        padding-top: 15px;
+    }
+    .time div {
+        padding-top: 25px;
     }
     .score-number {
         font-size: 2.5rem;
-        padding-top: 15px;
+        padding-top: 25px;
     }
     .prefix {
         font-size: 1.5rem;
-    }
-    .time div {
-        padding-top: 10px;
     }
     .result-icon {
         position: relative;
