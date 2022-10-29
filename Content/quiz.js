@@ -376,14 +376,13 @@ function startTimer() {
     }
 }  
 
-
 /** To display the Modal with Result **/
 function displayResults() {
-    answeredQuestions.innerHTML = "Your attempts: "; 
-    correctAnswer.innerText = "Your correct answers: ";
-    incorrectAnswer.innerText = "Your incorrect answers: "; 
-    resultScore.innerText = "Your scores: "; 
-    resultTime.innerHTML = "Your time: " + "<span class='result-time'>" + minutes + "m" + " " + seconds + "s" + " " + tens + "ms" + "</span>"; // Display the time need it to complete the Quiz.
+    answeredQuestions.innerHTML = "Attempts: "; 
+    correctAnswer.innerText = "Correct answers: ";
+    incorrectAnswer.innerText = "Incorrect answers: "; 
+    resultScore.innerText = "Scores: "; 
+    resultTime.innerHTML = "Time: " + "<span class='result-time'>" + minutes + "m" + " " + seconds + "s" + " " + tens + "ms" + "</span>"; // Display the time need it to complete the Quiz.
     
     answerQuestionsNumber.innerHTML = "<span class='result-questions'>" + attemps +  "</span>"; // Display number answered questions of total questions.
     correctAnswerNumber.innerHTML = "<span class='result-correct'>" + correctAnswers + "</span>"; // Display number of correct answers.
