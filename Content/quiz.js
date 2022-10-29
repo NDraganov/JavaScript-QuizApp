@@ -170,7 +170,7 @@ let seconds = 00;
 let minutes = 00;
 let score;
 const SCORE_POINTS = 10;
-const MAX_QUESTIONS = 1;
+const MAX_QUESTIONS = 10;
 let attemps = 0;
 let correctAnswers = 0;
 let acceptingAnswers;
@@ -401,13 +401,12 @@ function resultAddress() {
 
     if(score >= 90) {
         resultAddress.innerHTML = "Great Job, " + "<span class='result-username'>" + player.textContent + "</span>" + " !!!";
-    } 
-    if(score >= 50 && score <= 90) {
+    } else if(score >= 50 && score <= 90) {
         resultAddress.innerHTML = "Well Done, " + "<span class='result-username'>" + player.textContent + "</span>" + " !!!";
-    } 
-    if(score < 50 ) {
+    } else if(score < 50 ) {
         resultAddress.innerHTML = "Sorry, " + "<span class='result-username'>" + player.textContent + "</span>" + ". You failed" + " !!!";
     }
+
 }
 
 /** Restart the Quiz **/
