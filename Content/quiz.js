@@ -94,14 +94,21 @@
 //   },
 // ];
 /* JSON Load using fetch */
-let questions = [];
-fetch("questions.json")
-   .then((res) => {
-    return res.json();
-   })
-   .then((data) => {
-    questions = data.questions;
-   });
+// let questions = [];
+// fetch("questions.json")
+//    .then((res) => {
+//     return res.json();
+//    })
+//    .then((data) => {
+//     questions = data.questions;
+//    });
+
+
+/* Import JSON */
+
+import questionsJSON from "questions.json";
+
+let questions = JSON.parse(questionsJSON);
 
 /* JSON Load using XMLHttpRequest */
 // function loadFromFile() {
