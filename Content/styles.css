@@ -601,13 +601,13 @@ footer .title {
         width: 200px;
     }
     .window {
-        width: 400px;
+        width: 370px;
      }
     .window-header {
-        max-width: 94.5%;
+        max-width: 94.3%;
     }
     .submit-username-button {
-        margin-top: 0.4rem;
+        margin-top: 0.1rem;
     }
     .counter {
         width: 40%;
