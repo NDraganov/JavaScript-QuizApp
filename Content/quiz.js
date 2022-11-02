@@ -1,3 +1,5 @@
+// jshint esversion: 6
+
 // The code in the JavaScript file is taken from - https://www.youtube.com/watch?v=MxrGPP4F8Sc and edited by me.
 
 /** Questions **/
@@ -217,7 +219,7 @@ let questionsJSON = `[
       "d": "Indonesia",
       "answer": "d"
     }
-]`
+]`;
 
 let questions = JSON.parse(questionsJSON);
 
@@ -240,7 +242,6 @@ const incorrectAnswerNumber = document.getElementById('incorrect-answers-number'
 const resultScore = document.getElementById('result-score');
 const resultScoreNumber = document.getElementById('result-score-number');
 const resultTime = document.getElementById('result-time');
-const resultTimeNumber = document.getElementById('result-time-number');
 // Audio Play code taken from - https://www.udemy.com/course/the-complete-web-development-bootcamp/learn/lecture/12383968#overview.
 // Sounds taken from - https://orangefreesounds.com.
 const startAudio = new Audio('Content/Audio/Game-start-countdown.mp3');
@@ -254,12 +255,15 @@ const MAX_QUESTIONS = 10;
 /** Variables **/
 let questionCounter;
 let interval;
-let tens = 00;
-let seconds = 00;
-let minutes = 00;
+let tens = 0;
+let seconds = 0;
+let minutes = 0;
 let score;
 let attemps = 0;
 let correctAnswers = 0;
+let availableQuestions;
+let selected;
+let currentQuestion;
 let acceptingAnswers;
 let classToApply;
 
@@ -308,11 +312,11 @@ answers.forEach((answer) => {
     function mouseOverAudio() {
         hoverAudio.play();
     }
-})
+});
 
 /** To mute audio - code written by me **/
 function muteAudio() {
-    if(!muteButton === false) { // If mute Button is pressed.
+    if(muteButton === false) { // If mute Button is pressed.
         pauseAudioAnswer();
         pauseAudioHover();
     } 
@@ -331,7 +335,7 @@ function pauseAudioAnswer() {
             hoverAudio.pause();
             hoverAudio.currentTime = 0;
         }
-    })
+    });
 }
 
 /* To pause sound effect for hover over the options */
@@ -356,13 +360,13 @@ function startQuiz() {
     acceptingAnswers = true;
     availableQuestions = getRandomQuestions(questions, MAX_QUESTIONS); // Get random questions and limited the number of Questions.
     getNewQuestion(); // Get new question.
-};
+}
 
 /* To get random question from Array of Questions */
 function getRandomQuestions(arr, n) {
     const shuffled = [...arr].sort(() => 0.5 - Math.random()); // Display randomly the questions.
     return (selected = shuffled.slice(0, n));
-};
+}
 
 /* To get a new question */
 function getNewQuestion() {
@@ -430,7 +434,7 @@ function onClickOption(e) {
         getNewQuestion(); // Get new question.
         acceptingAnswers = true;
     }
-    attemps++ // Increment number of attemps.
+    attemps++; // Increment number of attemps.
 }
 
 /** Function to increment the scores **/
@@ -486,7 +490,7 @@ function displayResults() {
     results.classList.add('show'); // Add class to show the Results.
     resultAddress(); // calling the function to address the User.
     restartButton.addEventListener("click", restartQuiz);
-};
+}
 
 /* Address the User at the end of the Quiz */
 function resultAddress() {

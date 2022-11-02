@@ -208,6 +208,9 @@ body {
 .icon-play {
     color: #F900BF;
 }
+.play .fa-brands {
+    color: #F900BF;
+}
 .start-title {
     font-size: 3rem;
     color: #9900F0;
@@ -369,6 +372,7 @@ body {
 }
 .score-number {
     color: #FF8C32;
+    font-size: 2.5rem;
 }
 .question-holder {
     height: 10rem;
