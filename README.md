@@ -10,7 +10,7 @@
 
    Here is the link to live site: [Live site](https://ndraganov.github.io/JavaScript-QuizApp/ "Live site")
 
-![nav-bar](Content/Images-README/Nav Bar.png)
+![quiz](Content/Images-README/Quiz-Game.png "GeoQuiz")
 
 ## Deployment
 
@@ -61,20 +61,25 @@
 
   * Navigation Bar
      - I used my own Nav Bar for this project(no Bootstrap)
+     ![nav-bar](Content/Images-README/Nav-Bar.png "Nav Bar")
   * About section
      - Short explanation about the GeoQuiz
   * How to play section
      - Short instruction guide for GeoQuiz
+     ![about](Content/Images-README/Inroduction.png "About")
   * Play section
      - Small section with included START button to play GeoQuiz
+     ![play](Content/Images-README/Play.png "Play")
   * Modal window
      - Small Modal window with included input for enter Username and SUBMIT button
+     ![modal](Content/Images-README/Modal.png "Modal")
   * Quiz Game window
      - On very top text "Welcome [Username]"
      - Below intro with Progress bar for questions tracker, Time tracker, Score tracker
      - Below current Question
      - Below Mute button to pause sounds
      - Below four Options for current Question
+     ![quiz-game](Content/Images-README/Quiz-Game.png "Quiz Game")
   * Sound effects
      - With the start of the Quiz, start quiz like sound played
      - On hover question's options, click like sound played
@@ -84,6 +89,7 @@
      - Below Address to the User with message acording to the Results
      - Below Info for Attemts, Correct and Incorrect answers, Scores and Time
      - Below included RESTART button
+     ![results](Content/Images-README/Results.png "Results")
   * Footer section
      - Social media links to my GitHub and LinkedIn profiles
 
@@ -92,8 +98,18 @@
 ### Validator testing
 
   * HTML Validator -  https://validator.w3.org/#validate_by_input
+  ![html](Content/Images-README/HTML-Validator.png "HTML Validator")
   * CSS Validator - http://jigsaw.w3.org/css-validator/
+  ![css](Content/Images-README/CSS-Validator.png "CSS Validator")
   * JavaScript Validator - https://javascriptvalidator.ne
+  ![js](Content/Images-README/JS-Validator.png "JavaScript Validator")
+     - At first Validator throw me 51 warnings(most of it about ES6). Solution for it:<br>
+     comment at the top of quiz.js(//jshint esversion: 6)
+     ![js-11](Content/Images-README/Js-11-warnings.png "JavaScript Validator 11")
+     - Then I deleted or added missing parts to resolve the rest 11 warnings
+     ![js-4](Content/Images-README/JS-4-undefine.png "JavaScript Validator 4")
+     - Then I set variables with the rest of mine quiz.js variables at the top and deleted unused variable
+     ![js-no](Content/Images-README/JS-no-warnings.png "JavaScript Validator No")
 
 ### Live site Testing
 
