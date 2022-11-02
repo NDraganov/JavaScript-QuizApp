@@ -601,10 +601,10 @@ footer .title {
         width: 200px;
     }
     .window {
-        width: 370px;
+        width: 350px;
      }
     .window-header {
-        max-width: 94.3%;
+        max-width: 94%;
     }
     .submit-username-button {
         margin-top: 0.1rem;
@@ -616,11 +616,11 @@ footer .title {
         font-size: 1.5rem;
     }
     .time div {
-        padding-top: 25px;
+        padding-top: 30px;
     }
     .score-number {
         font-size: 2.5rem;
-        padding-top: 20px;
+        padding-top: 25px;
     }
     .prefix {
         font-size: 1.5rem;
