@@ -4,7 +4,7 @@
 ## Purpose
 
    This website presents Quiz App and was created to complete my second project for Learning People's Front End Developer course.</br>
-   The purpose of this project is to show my ability to create a website using JavaScript. the full list of technology used can be found down below in Technology section.</br>
+   The purpose of this project is to show my ability to create a website using JavaScript. The full list of technology used can be found down below in Technology section.</br>
 
    Users are able to play the Quiz with 10 geography oriented questions.</br>
 
