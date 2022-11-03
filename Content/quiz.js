@@ -230,9 +230,6 @@ const player = document.getElementById("player");
 const modalContainer = document.getElementById('window-container');
 const muteButton = document.getElementById('mute-button');
 const answers = Array.from(document.getElementsByClassName('answer-text'));
-const appendTens = document.getElementById('tens');
-const appendSeconds = document.getElementById('seconds');
-const appendMinutes = document.getElementById('minutes');
 const answeredQuestions = document.getElementById('answered-questions');
 const answerQuestionsNumber = document.getElementById('answered-questions-number');
 const correctAnswer = document.getElementById('correct-answers');
@@ -286,7 +283,7 @@ function usernameCorrectLength() {
     if(username.length>0) {  // If enter username.
         player.textContent = username; // Display input into player text.
     } else {  // If not enter username.
-        player.textContent = "Guest"; // Display player text as Guest.
+        player.textContent = `Guest`; // Display player text as Guest.
     }
 }
 userButton.onclick = createUsername; // Calling the function to create a username. 
@@ -294,10 +291,11 @@ userButton.onclick = createUsername; // Calling the function to create a usernam
 /** Show the Quiz - code written by me **/
 function showQuiz() {
     let quiz = document.getElementById('quiz');
-    quiz.classList.add('show');
     let startTitle = document.querySelector('.start-title');
-    startTitle.classList.add('hide');
     let startText = document.querySelector('.start-text');
+
+    quiz.classList.add('show');
+    startTitle.classList.add('hide');
     startText.classList.add('hide');
     modalContainer.classList.remove('window-container-show');
     startButton.classList.add('hide');
@@ -320,7 +318,7 @@ function muteAudio() {
         pauseAudioAnswer();
         pauseAudioHover();
     } 
-    muteButton.innerHTML = "<i class='fa fa-volume-off sound' aria-hidden='true'></i>" + "   Muted";
+    muteButton.innerHTML = `<i class='fa fa-volume-off sound' aria-hidden='true'></i>   Muted`;
 }
 
 /* To pause sound effects for answers */
@@ -388,7 +386,7 @@ function getNewQuestion() {
 function introShow() {
     let questionCounterText = document.getElementById('counter');
     let progressBarFull = document.querySelector('#progressBarFull');  
-
+    
     questionCounter++;
     questionCounterText.innerText = `Question ${questionCounter}/${MAX_QUESTIONS}`; // Show the progress text of Question in Introduction Header.
     progressBarFull.style.width = `${(questionCounter/MAX_QUESTIONS) * 100}%`; // Show the Progress Bar tracker in colour.
@@ -446,27 +444,31 @@ function incrementScore(num) {
 
 /** Start Timer code taken from - https://codepen.io/cathydutton/pen/avYKeM and edited by me **/
 function startTimer() {
+    let appendTens = document.getElementById('tens');
+    let appendSeconds = document.getElementById('seconds');
+    let appendMinutes = document.getElementById('minutes');
+
     tens++; // Start increasing milliseconds with 1.
     if(tens < 9){
-      appendTens.innerHTML = "0" + tens;
+      appendTens.innerHTML = `0${tens}`;
     }
     if (tens > 9){
-      appendTens.innerHTML = tens; 
+      appendTens.innerHTML = `${tens}`; 
     } 
     if (tens > 99) { // If milliseconds pass 99, start increasing seconds with 1.
       seconds++;
-      appendSeconds.innerHTML = "0" + seconds;
+      appendSeconds.innerHTML = `0${seconds}`;
       tens = 0;
-      appendTens.innerHTML = "0" + 0;
+      appendTens.innerHTML = `0${0}`;
     }
     if (seconds > 9){
-      appendSeconds.innerHTML = seconds;
+      appendSeconds.innerHTML = `${seconds}`;
     }
     if (seconds > 59) { // If seconds pass 59, start increasing minutes with 1.
         minutes++;
-        appendMinutes.innerHTML = "0" + minutes;
+        appendMinutes.innerHTML = `0${minutes}`;
         seconds = 0;
-        appendSeconds.innerHTML = "0" + 0;
+        appendSeconds.innerHTML = `0${0}`;
     }
 }  
 
@@ -475,16 +477,16 @@ function displayResults() {
     let result = document.getElementById('result');
     let results = document.getElementById('results');
 
-    answeredQuestions.innerHTML = "Attempts: "; 
-    correctAnswer.innerText = "Correct answers: ";
-    incorrectAnswer.innerText = "Incorrect answers: "; 
-    resultScore.innerText = "Scores: "; 
-    resultTime.innerHTML = "Time: " + "<span class='result-time'>" + minutes + "m" + " " + seconds + "s" + " " + tens + "ms" + "</span>"; // Display the time need it to complete the Quiz.
+    answeredQuestions.innerHTML = `Attempts: `; 
+    correctAnswer.innerText = `Correct answers: `;
+    incorrectAnswer.innerText = `Incorrect answers: `; 
+    resultScore.innerText = `Scores: `; 
+    resultTime.innerHTML = `Time: <span class='result-time'>${minutes}m ${seconds}s ${tens}ms</span>`; // Display the time need it to complete the Quiz.
     
-    answerQuestionsNumber.innerHTML = "<span class='result-questions'>" + attemps +  "</span>"; // Display number answered questions of total questions.
-    correctAnswerNumber.innerHTML = "<span class='result-correct'>" + correctAnswers + "</span>"; // Display number of correct answers.
-    incorrectAnswerNumber.innerHTML = "<span class='result-incorrect'>" + (attemps - correctAnswers) + "</span>"; // Display number of incorrect answers.
-    resultScoreNumber.innerHTML = "<span class='result-score'>" + score + "</span>"; // Display how many scores are won.
+    answerQuestionsNumber.innerHTML = `<span class='result-questions'>${attemps}</span>`; // Display number answered questions of total questions.
+    correctAnswerNumber.innerHTML = `<span class='result-correct'>${correctAnswers}</span>`; // Display number of correct answers.
+    incorrectAnswerNumber.innerHTML = `<span class='result-incorrect'>${(attemps - correctAnswers)}</span>`; // Display number of incorrect answers.
+    resultScoreNumber.innerHTML = `<span class='result-score'>${score}</span>`; // Display how many scores are won.
 
     result.innerHTML = results.innerHTML; // Results section take place insted of Quiz section.
     results.classList.add('show'); // Add class to show the Results.
@@ -497,13 +499,12 @@ function resultAddress() {
     let resultAddress = document.getElementById('result-address');
 
     if(score >= 90) {
-        resultAddress.innerHTML = "Great Job, " + "<span class='result-username'>" + player.textContent + "</span>" + " !!!";
+        resultAddress.innerHTML = `Great Jod, <span class='result-username'>${player.textContent}</span> !!!`;
     } else if(score >= 50 && score <= 90) {
-        resultAddress.innerHTML = "Well Done, " + "<span class='result-username'>" + player.textContent + "</span>" + " !!!";
+        resultAddress.innerHTML = `Well Done, <span class='result-username'>${player.textContent}</span> !!!`;
     } else if(score < 50 ) {
-        resultAddress.innerHTML = "Sorry, " + "<span class='result-username'>" + player.textContent + "</span>" + ". You failed" + " !!!";
+        resultAddress.innerHTML = `Sorry, <span class='result-username'>${player.textContent}</span>. You failed !!!`;
     }
-
 }
 
 /** Restart the Quiz **/
