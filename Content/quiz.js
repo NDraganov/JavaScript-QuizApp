@@ -224,32 +224,20 @@ let questionsJSON = `[
 let questions = JSON.parse(questionsJSON);
 
 /** Global Constant variables **/
-const startButton = document.querySelector('#start-button');
-const userButton = document.getElementById('user-button');
 const player = document.getElementById("player");
 const modalContainer = document.getElementById('window-container');
 const muteButton = document.getElementById('mute-button');
 const answers = Array.from(document.getElementsByClassName('answer-text'));
-const answeredQuestions = document.getElementById('answered-questions');
-const answerQuestionsNumber = document.getElementById('answered-questions-number');
-const correctAnswer = document.getElementById('correct-answers');
-const correctAnswerNumber = document.getElementById('correct-answers-number');
-const incorrectAnswer = document.getElementById('incorrect-answers');
-const incorrectAnswerNumber = document.getElementById('incorrect-answers-number');
-const resultScore = document.getElementById('result-score');
-const resultScoreNumber = document.getElementById('result-score-number');
-const resultTime = document.getElementById('result-time');
-// Audio Play code taken from - https://www.udemy.com/course/the-complete-web-development-bootcamp/learn/lecture/12383968#overview.
-// Sounds taken from - https://orangefreesounds.com.
-const startAudio = new Audio('Content/Audio/Game-start-countdown.mp3');
-const hoverAudio = new Audio('Content/Audio/Button-press-sound-effect.mp3');
-const wrongAudio = new Audio('Content/Audio/Wrong-answer-sound-effect.mp3');
-const correctAudio = new Audio('Content/Audio/Good-idea-bell.mp3');
-const restartButton = document.getElementById('restart');
-const SCORE_POINTS = 10;
-const MAX_QUESTIONS = 10;
+// New Audio code taken from - https://www.udemy.com/course/the-complete-web-development-bootcamp/learn/lecture/12383968#overview.
+const startAudio = new Audio('Content/Audio/Game-start-countdown.mp3');      // Sounds
+const hoverAudio = new Audio('Content/Audio/Button-press-sound-effect.mp3'); // taken
+const wrongAudio = new Audio('Content/Audio/Wrong-answer-sound-effect.mp3'); // from
+const correctAudio = new Audio('Content/Audio/Good-idea-bell.mp3');          // https://orangefreesounds.com.
 
-/** Variables **/
+const SCORE_POINTS = 10;
+const MAX_QUESTIONS = 1;
+
+/** Global Let Variables **/
 let questionCounter;
 let interval;
 let tens = 0;
@@ -263,6 +251,8 @@ let selected;
 let currentQuestion;
 let acceptingAnswers;
 let classToApply;
+let startButton = document.querySelector('#start-button');
+let userButton = document.getElementById('user-button');
 
 /** Get the Full Year **/
 document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()));
@@ -476,6 +466,16 @@ function startTimer() {
 function displayResults() {
     let result = document.getElementById('result');
     let results = document.getElementById('results');
+    let answeredQuestions = document.getElementById('answered-questions');
+    let answerQuestionsNumber = document.getElementById('answered-questions-number');
+    let correctAnswer = document.getElementById('correct-answers');
+    let correctAnswerNumber = document.getElementById('correct-answers-number');
+    let incorrectAnswer = document.getElementById('incorrect-answers');
+    let incorrectAnswerNumber = document.getElementById('incorrect-answers-number');
+    let resultScore = document.getElementById('result-score');
+    let resultScoreNumber = document.getElementById('result-score-number');
+    let resultTime = document.getElementById('result-time');
+    let restartButton = document.getElementById('restart');
 
     answeredQuestions.innerHTML = `Attempts: `; 
     correctAnswer.innerText = `Correct answers: `;
