@@ -235,7 +235,7 @@ const wrongAudio = new Audio('Content/Audio/Wrong-answer-sound-effect.mp3'); // 
 const correctAudio = new Audio('Content/Audio/Good-idea-bell.mp3');          // https://orangefreesounds.com.
 
 const SCORE_POINTS = 10;
-const MAX_QUESTIONS = 1;
+const MAX_QUESTIONS = 10;
 
 /** Global Let Variables **/
 let questionCounter;
