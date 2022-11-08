@@ -147,6 +147,9 @@ Here are some of the biggest.
     - I created Text to address the user in Results window, according to their results. For this purpose I used if, else if statement with<br>
       conditions according to the win scores(example: score > 50 && score < 90). Does not displayed text properly for every condition
     - Solution was to add "=" sign(score >= 50 && score <= 90). Then every condition worked properly
+  * Console error for Timer when Results showed up
+    - In Console error: (Uncaught TypeError: Cannot set properties of null (setting 'innerHTML') at startTimer) with infinity counter of number of errors.
+    - Solution: I forgot to clearInterval(interval). So I created function stopTimer and set it first in displayResults function.
 
 ## Credits
 
