@@ -99,14 +99,14 @@
 
 
 /* JSON Load using fetch */
-let questions = [];
-fetch("questions.json")
-   .then((res) => {
-    return res.json();
-   })
-   .then((data) => {
-    questions = data.questions;
-   });
+// let questions = [];
+// fetch("questions.json")
+//    .then((res) => {
+//     return res.json();
+//    })
+//    .then((data) => {
+//     questions = data.questions;
+//    });
 
 /* Import JSON */
 // import questionsJSON from "questions.json";
@@ -128,100 +128,100 @@ fetch("questions.json")
 // }
 // let questions = JSON.parse(loadFromFile());
 
-// let questionsJSON = `[
-//     {
-//       "id": 1,
-//       "question": "Which country has the longest coastline in the world?",
-//       "a": "Indonesia",
-//       "b": "Russia",
-//       "c": "Canada",
-//       "d": "Australia",
-//       "answer": "c"
-//     },
-//     {
-//       "id": 2,
-//       "question": "What is the world's most populated country?",
-//       "a": "USA",
-//       "b": "Russia",
-//       "c": "India",
-//       "d": "China",
-//       "answer": "d"
-//     },
-//     {
-//       "id": 3,
-//       "question": "What is the capital of the Philippines?",
-//       "a": "Marawi",
-//       "b": "Jakarta",
-//       "c": "Dili",
-//       "d": "Manilla",
-//       "answer": "d"
-//     },
-//     {
-//       "id": 4,
-//       "question": "The Great Barrier Reef is off the coast of which country?",
-//       "a": "Fiji",
-//       "b": "New Zealand",
-//       "c": "Australia",
-//       "d": "South Africa",
-//       "answer": "c"
-//     },
-//     {
-//       "id": 5,
-//       "question": "What is the World's Smallest Country?",
-//       "a": "Luxembourg",
-//       "b": "Vatican City",
-//       "c": "Monaco",
-//       "d": "Lichtenstein",
-//       "answer": "b"
-//     },
-//     {
-//       "id": 6,
-//       "question": "In which country is the world's highest waterfall?",
-//       "a": "USA",
-//       "b": "Venezuela",
-//       "c": "Brazil",
-//       "d": "South Africa",
-//       "answer": "b"
-//     },
-//     {
-//       "id": 7,
-//       "question": "What is the capital of Australia?",
-//       "a": "Melbourne",
-//       "b": "Adelaide",
-//       "c": "Sydney",
-//       "d": "Canberra",
-//       "answer": "d"
-//     },
-//     {
-//       "id": 8,
-//       "question": "In which country is Mount Fuji located?",
-//       "a": "Peru",
-//       "b": "North Korea",
-//       "c": "China",
-//       "d": "Japan",
-//       "answer": "d"
-//     },
-//     {
-//       "id": 9,
-//       "question": "In which country is the Cape of Good Hope?",
-//       "a": "USA",
-//       "b": "Canada",
-//       "c": "South Africa",
-//       "d": "Australia",
-//       "answer": "c"
-//     },
-//     {
-//       "id": 10,
-//       "question": "What country has the greatest number of active volcanoes?",
-//       "a": "Philippines",
-//       "b": "Italy",
-//       "c": "Japan",
-//       "d": "Indonesia",
-//       "answer": "d"
-//     }
-// ]`;
+let questionsJSON = `[
+    {
+      "id": 1,
+      "question": "Which country has the longest coastline in the world?",
+      "a": "Indonesia",
+      "b": "Russia",
+      "c": "Canada",
+      "d": "Australia",
+      "answer": "c"
+    },
+    {
+      "id": 2,
+      "question": "What is the world's most populated country?",
+      "a": "USA",
+      "b": "Russia",
+      "c": "India",
+      "d": "China",
+      "answer": "d"
+    },
+    {
+      "id": 3,
+      "question": "What is the capital of the Philippines?",
+      "a": "Marawi",
+      "b": "Jakarta",
+      "c": "Dili",
+      "d": "Manilla",
+      "answer": "d"
+    },
+    {
+      "id": 4,
+      "question": "The Great Barrier Reef is off the coast of which country?",
+      "a": "Fiji",
+      "b": "New Zealand",
+      "c": "Australia",
+      "d": "South Africa",
+      "answer": "c"
+    },
+    {
+      "id": 5,
+      "question": "What is the World's Smallest Country?",
+      "a": "Luxembourg",
+      "b": "Vatican City",
+      "c": "Monaco",
+      "d": "Lichtenstein",
+      "answer": "b"
+    },
+    {
+      "id": 6,
+      "question": "In which country is the world's highest waterfall?",
+      "a": "USA",
+      "b": "Venezuela",
+      "c": "Brazil",
+      "d": "South Africa",
+      "answer": "b"
+    },
+    {
+      "id": 7,
+      "question": "What is the capital of Australia?",
+      "a": "Melbourne",
+      "b": "Adelaide",
+      "c": "Sydney",
+      "d": "Canberra",
+      "answer": "d"
+    },
+    {
+      "id": 8,
+      "question": "In which country is Mount Fuji located?",
+      "a": "Peru",
+      "b": "North Korea",
+      "c": "China",
+      "d": "Japan",
+      "answer": "d"
+    },
+    {
+      "id": 9,
+      "question": "In which country is the Cape of Good Hope?",
+      "a": "USA",
+      "b": "Canada",
+      "c": "South Africa",
+      "d": "Australia",
+      "answer": "c"
+    },
+    {
+      "id": 10,
+      "question": "What country has the greatest number of active volcanoes?",
+      "a": "Philippines",
+      "b": "Italy",
+      "c": "Japan",
+      "d": "Indonesia",
+      "answer": "d"
+    }
+]`;
 
-// let questions = JSON.parse(questionsJSON);
+let questions = JSON.parse(questionsJSON);
 
 /** Global Constant variables **/
 const player = document.getElementById("player");
@@ -235,7 +235,7 @@ const wrongAudio = new Audio('Content/Audio/Wrong-answer-sound-effect.mp3'); // 
 const correctAudio = new Audio('Content/Audio/Good-idea-bell.mp3');          // https://orangefreesounds.com.
 
 const SCORE_POINTS = 10;
-const MAX_QUESTIONS = 10;
+const MAX_QUESTIONS = 1;
 
 /** Global Let Variables **/
 let questionCounter;
@@ -443,7 +443,7 @@ function startTimer() {
       appendTens.innerHTML = `0${tens}`;
     }
     if (tens > 9){
-      appendTens.innerHTML = `${tens}`; 
+      appendTens.innerHTML = tens; 
     } 
     if (tens > 99) { // If milliseconds pass 99, start increasing seconds with 1.
       seconds++;
@@ -464,6 +464,7 @@ function startTimer() {
 
 /** To display the Modal with Result **/
 function displayResults() {
+    stopTimer(); // Stop Timer.
     let result = document.getElementById('result');
     let results = document.getElementById('results');
     let answeredQuestions = document.getElementById('answered-questions');
@@ -492,6 +493,12 @@ function displayResults() {
     results.classList.add('show'); // Add class to show the Results.
     resultAddress(); // calling the function to address the User.
     restartButton.addEventListener("click", restartQuiz);
+    
+}
+/* To stop the Timer */
+function stopTimer() {
+    clearInterval(interval);
+    // interval = 0;
 }
 
 /* Address the User at the end of the Quiz */
