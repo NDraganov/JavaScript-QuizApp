@@ -120,14 +120,14 @@ function loadFromFile() {
     xhr.send(null);
     xhr.onload = function() {
         if (this.readyState == 4 && this.status == 200) {
-            return xhr.response;
+            return (JSON.parse(xhr.response));
         } else {
             console.log("Something went wrong!");
         }
     }
 }
 
-let questions = JSON.parse(loadFromFile());
+let questions = loadFromFile();
 
 // let questionsJSON = `[
 //     {
