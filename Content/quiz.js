@@ -127,7 +127,7 @@ function loadFromFile() {
     }
 }
 
-let questions = loadFromFile();
+let questions = [loadFromFile()];
 
 // let questionsJSON = `[
 //     {
