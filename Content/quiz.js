@@ -282,7 +282,7 @@ function onClickOption(e) {
     /* Check if pressed option is correct answer */
     if (answeredLetter === currentQuestion.answer) { // If the pressed option is the correct answer to the current question.
         correctAudio.play(); // Audio Play code taken from - https://www.udemy.com/course/the-complete-web-development-bootcamp/learn/lecture/12383968#overview
-        incrementScore(SCORE_POINTS); // Increment with 10 scores.
+        incrementScore();
         classToApply = "correct"; // Apply green colour.
         correctAnswers++; // Increment number of correct answers.
     } else {
@@ -302,9 +302,9 @@ function onClickOption(e) {
 }
 
 /** Function to increment the scores **/
-function incrementScore(num) {
+function incrementScore() {
     let scoreText = document.getElementById('score');
-    score += num; // Add 10 scores.
+    score += SCORE_POINTS;
     scoreText.innerText = score;
 }
 
