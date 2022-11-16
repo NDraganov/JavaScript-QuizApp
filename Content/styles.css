@@ -286,6 +286,14 @@ body {
 .window-title {
     padding-top: 10px;
 }
+.close-btn {
+    position: absolute;
+    bottom: 10px;
+    right: 15px;
+    color: #EDEDED;
+    background-color: #7D6E83;
+    border: none;
+}
 .window-body {
     padding-top: 4rem;
     font-size: 1.1rem;

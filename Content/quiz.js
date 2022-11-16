@@ -135,7 +135,12 @@ document.getElementById('copyright').appendChild(document.createTextNode(new Dat
 
 /** Show the Modal for username - code written by me **/
 function showWindow() {
-    modalContainer.classList.add('window-container-show'); // Add slass to show the Modal for enter the username.
+    const closeBtn = document.getElementById('close-btn');
+  
+    modalContainer.classList.add('window-container-show'); // Add slass to show the Modal for enter the username. 
+    closeBtn.addEventListener('click', () => {
+        modalContainer.classList.remove('window-container-show');
+    })
 }
 startButton.onclick = showWindow; // Calling the function to show the Modal when Start button is pressed.
 
