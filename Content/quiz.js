@@ -382,7 +382,7 @@ function resultAddress() {
     let resultAddress = document.getElementById('result-address');
 
     if(score >= 90) {
-        resultAddress.innerHTML = `Great Jod, <span class='result-username'>${player.textContent}</span> !!!`;
+        resultAddress.innerHTML = `Great Job, <span class='result-username'>${player.textContent}</span> !!!`;
     } else if(score >= 50 && score <= 90) {
         resultAddress.innerHTML = `Well Done, <span class='result-username'>${player.textContent}</span> !!!`;
     } else if(score < 50 ) {
